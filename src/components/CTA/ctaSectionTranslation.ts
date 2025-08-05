@@ -1,0 +1,38 @@
+export const ctaSectionTranslation = {
+  es: {
+    titleMain: 'Contáctanos para',
+    titleAccent: 'Cotizar',
+    description: "Completa el formulario y uno de nuestros asesores especializados se pondrá en contacto contigo para brindarte una cotización personalizada.",
+    queObtendras: "¿Qué obtendrás?",
+    cotizacion: "Cotización detallada en menos de 24 horas",
+    asesoria: "Asesoría técnica especializada",
+    precios: "Precios competitivos directos de fábrica",
+    seguimiento: "Seguimiento personalizado de tu pedido",
+    hablarDirecto: "¿Prefieres hablar directamente?",
+    telefono: "+51 946 885 531",
+  },
+  en: {
+    titleMain: 'Contact us to',
+    titleAccent: 'Get a Quote',
+    description: "Fill out the form and one of our specialized advisors will contact you to provide a personalized quote.",
+    queObtendras: "What will you get?",
+    cotizacion: "Detailed quote in less than 24 hours",
+    asesoria: "Specialized technical advice",
+    precios: "Competitive prices direct from the factory",
+    seguimiento: "Personalized order tracking",
+    hablarDirecto: "Prefer to talk directly?",
+    telefono: "+51 946 885 531",
+  },
+  pt: {
+    titleMain: 'Fale conosco para',
+    titleAccent: 'Orçar',
+    description: "Preencha o formulário e um de nossos consultores especializados entrará em contato para fornecer uma cotação personalizada.",
+    queObtendras: "O que você receberá?",
+    cotizacion: "Cotação detalhada em menos de 24 horas",
+    asesoria: "Assessoria técnica especializada",
+    precios: "Preços competitivos direto da fábrica",
+    seguimiento: "Acompanhamento personalizado do seu pedido",
+    hablarDirecto: "Prefere falar diretamente?",
+    telefono: "+51 946 885 531",
+  }
+};

@@ -1,0 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Orbitron:wght@500;700;900&display=swap');
+
+body, html, p, span, div, input, textarea, select, ul, li, button, a, h1, h2, h3, h4, h5, h6, label, th, td {
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif !important;
+}
+ 
+.font-orbitron {
+  font-family: 'Orbitron', Arial, Helvetica, sans-serif !important;
+} 

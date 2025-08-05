@@ -1,0 +1,17 @@
+# dependencies
+/node_modules
+
+# production
+/dist
+.build
+.out
+
+# misc
+.DS_Store
+.env
+*.log
+*.xlsx
+
+# editor folders
+.vscode
+.idea
