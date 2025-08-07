@@ -254,11 +254,13 @@ export const SaraXoraSection = () => {
         </button>
       )}
 
-      {/* BOTÓN FLOTANTE DE SARA MEJORADO - Con animación de salto del conejo */}
-      <button
-        className="fixed bottom-20 md:bottom-6 right-6 z-50 bg-[#171D4C] shadow-xl rounded-full p-3 border border-[#139ED4]/30 hover:shadow-2xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#139ED4]/50 group chat-button animate-hop"
-        aria-label="Abrir chat con Sara"
-        onClick={() => {/* Aquí puedes abrir el chat de Sara */}}
+      {/* BOTÓN FLOTANTE DE SARA CONVERTIDO A ENLACE WHATSAPP - Con animación de salto del conejo */}
+      <a
+        href="https://wa.me/946885531?text=Hola%2C%20quiero%20hablar%20con%20Sara%20Xora%2C%20el%20asistente%20virtual%20de%20INXORA"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-20 md:bottom-6 right-6 z-50 bg-[#171D4C] shadow-xl rounded-full p-3 border border-[#139ED4]/30 hover:shadow-2xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#139ED4]/50 group chat-button animate-hop inline-flex items-center justify-center"
+        aria-label="Hablar con Sara por WhatsApp"
       >
         <img
           src="./logo_inxora/LOGO-03.png"
@@ -269,7 +271,7 @@ export const SaraXoraSection = () => {
         
         {/* Indicador de disponibilidad */}
         <div className="absolute -top-1 -right-1 w-4 h-4 bg-green-500 rounded-full border-2 border-white animate-pulse"></div>
-      </button>
+      </a>
     </section>
   );
 };
