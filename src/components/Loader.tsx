@@ -19,30 +19,30 @@ const Loader = () => {
 
   return (
     <div
-      className={`fixed top-0 left-0 w-screen h-screen bg-white flex items-center justify-center z-[9999] transition-opacity duration-700 ${
+      className={`fixed top-0 left-0 w-screen h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 flex items-center justify-center z-[9999] transition-opacity duration-700 ${
         fadeOut ? 'opacity-0 pointer-events-none' : 'opacity-100'
       }`}
     >
       <div className="flex flex-col items-center justify-center gap-3">
         {/* Conejo SVG animado */}
         <svg
-          className="w-24 h-24 animate-bounceRabbit"
+          className="w-24 h-24 animate-bounceRabbit filter brightness-110"
           viewBox="0 0 128 128"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <image href="logo_inxora/LOGO-03.svg" width="128" height="128" />
+          <image href="logo_inxora/LOGO-03.png" width="128" height="128" />
         </svg>
 
         {/* Líneas animadas */}
         <div className="flex items-center justify-center gap-2">
-          <span className="block h-2 w-24 bg-[#139ED4] rounded-full animate-pathline" />
-          <span className="block h-2 w-16 bg-[#88D4E4] rounded-full animate-pathline" />
-          <span className="block h-2 w-10 bg-[#D90E8C] rounded-full animate-pathline" />
+          <span className="block h-2 w-24 bg-[#139ED4] rounded-full animate-pathline shadow-lg" />
+          <span className="block h-2 w-16 bg-[#88D4E4] rounded-full animate-pathline shadow-lg" />
+          <span className="block h-2 w-10 bg-[#D90E8C] rounded-full animate-pathline shadow-lg" />
         </div>
 
         {/* Texto de carga */}
-        <span className="text-[#139ED4] text-base font-medium animate-pulse">
+        <span className="text-white text-base font-medium animate-pulse drop-shadow-sm">
           {t}
         </span>
       </div>

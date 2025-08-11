@@ -280,11 +280,11 @@ export const ContactForm = () => {
   const fileInputRef = React.useRef<HTMLInputElement>(null);
 
   return (
-    <form onSubmit={handleSubmit} className="bg-white p-4 sm:p-6 md:p-8 rounded-lg shadow-lg border border-[#88D4E4] max-w-xl mx-auto w-full">
-      <h3 className="text-xl sm:text-2xl font-bold text-[#171D4C] mb-6 text-center">{t.title}</h3>
+    <form onSubmit={handleSubmit} className="bg-white dark:bg-dark-surface p-4 sm:p-6 md:p-8 rounded-lg shadow-lg border border-[#88D4E4] dark:border-dark-accent max-w-xl mx-auto w-full">
+      <h3 className="text-xl sm:text-2xl font-bold text-[#171D4C] dark:text-dark-text dark:text-dark-text mb-6 text-center">{t.title}</h3>
       {/* 1. Tipo de cliente */}
       <div className="mb-3 sm:mb-4">
-        <label htmlFor="tipo_cliente" className="block text-[#171D4C] font-medium mb-2">
+        <label htmlFor="tipo_cliente" className="block text-[#171D4C] dark:text-dark-text dark:text-dark-text font-medium mb-2">
           {t.tipoCliente}
         </label>
         <select
@@ -292,7 +292,7 @@ export const ContactForm = () => {
           name="tipo_cliente"
           value={clientType}
           onChange={handleClientTypeChange}
-          className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#139ED4] focus:border-[#139ED4] transition-colors"
+          className="w-full px-4 py-3 border border-gray-300 dark:border-dark-accent rounded-md focus:outline-none focus:ring-2 focus:ring-[#139ED4] focus:border-[#139ED4] transition-colors bg-white dark:bg-dark-bg text-gray-900 dark:text-dark-text"
           required
         >
           <option value="persona">{t.persona}</option>
@@ -301,7 +301,7 @@ export const ContactForm = () => {
       </div>
       {/* 2. Nombre Completo */}
       <div className="mb-3 sm:mb-4">
-        <label htmlFor="nombrecompleto" className="block text-[#171D4C] font-medium mb-2">
+        <label htmlFor="nombrecompleto" className="block text-[#171D4C] dark:text-dark-text dark:text-dark-text font-medium mb-2">
           {t.nombreCompleto}
         </label>
         <input
@@ -310,7 +310,7 @@ export const ContactForm = () => {
           name="nombrecompleto"
           value={formData.nombrecompleto}
           onChange={handleChange}
-          className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#139ED4] focus:border-[#139ED4] transition-colors"
+          className="w-full px-4 py-3 border border-gray-300 dark:border-dark-accent rounded-md focus:outline-none focus:ring-2 focus:ring-[#139ED4] focus:border-[#139ED4] transition-colors bg-white dark:bg-dark-bg text-gray-900 dark:text-dark-text"
           required
           autoComplete="name"
           readOnly={clientType === 'persona'}
@@ -320,7 +320,7 @@ export const ContactForm = () => {
       {/* 3. DNI (solo persona) */}
       {clientType === 'persona' && (
         <div className="mb-3 sm:mb-4">
-          <label htmlFor="dni" className="block text-[#171D4C] font-medium mb-2">
+          <label htmlFor="dni" className="block text-[#171D4C] dark:text-dark-text dark:text-dark-text font-medium mb-2">
             {t.dni}
           </label>
           <input
@@ -332,7 +332,7 @@ export const ContactForm = () => {
             onBlur={() => handleApiLookup('dni')}
             maxLength={8}
             pattern="\d{8}"
-            className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#139ED4] focus:border-[#139ED4] transition-colors"
+            className="w-full px-4 py-3 border border-gray-300 dark:border-dark-accent rounded-md focus:outline-none focus:ring-2 focus:ring-[#139ED4] focus:border-[#139ED4] transition-colors bg-white dark:bg-dark-bg text-gray-900 dark:text-dark-text"
             required
             autoComplete="off"
           />
@@ -342,7 +342,7 @@ export const ContactForm = () => {
       {clientType === 'empresa' && (
         <>
           <div className="mb-3 sm:mb-4">
-            <label htmlFor="ruc" className="block text-[#171D4C] font-medium mb-2">
+            <label htmlFor="ruc" className="block text-[#171D4C] dark:text-dark-text dark:text-dark-text font-medium mb-2">
               {t.ruc}
             </label>
             <input
@@ -354,13 +354,13 @@ export const ContactForm = () => {
               onBlur={() => handleApiLookup('ruc')}
               maxLength={11}
               pattern="\d{11}"
-              className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#139ED4] focus:border-[#139ED4] transition-colors"
+              className="w-full px-4 py-3 border border-gray-300 dark:border-dark-accent rounded-md focus:outline-none focus:ring-2 focus:ring-[#139ED4] focus:border-[#139ED4] transition-colors bg-white dark:bg-dark-bg text-gray-900 dark:text-dark-text"
               required
               autoComplete="off"
             />
           </div>
           <div className="mb-3 sm:mb-4">
-            <label htmlFor="razonsocial" className="block text-[#171D4C] font-medium mb-2">
+            <label htmlFor="razonsocial" className="block text-[#171D4C] dark:text-dark-text dark:text-dark-text font-medium mb-2">
               {t.razonSocial}
             </label>
             <input
@@ -369,7 +369,7 @@ export const ContactForm = () => {
               name="razonsocial"
               value={formData.razonsocial}
               onChange={handleChange}
-              className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#139ED4] focus:border-[#139ED4] transition-colors"
+              className="w-full px-4 py-3 border border-gray-300 dark:border-dark-accent rounded-md focus:outline-none focus:ring-2 focus:ring-[#139ED4] focus:border-[#139ED4] transition-colors bg-white dark:bg-dark-bg text-gray-900 dark:text-dark-text"
               required
               autoComplete="organization"
               readOnly={clientType === 'empresa'}
@@ -377,7 +377,7 @@ export const ContactForm = () => {
             />
           </div>
           <div className="mb-3 sm:mb-4">
-            <label htmlFor="rubroempresa" className="block text-[#171D4C] font-medium mb-2">
+            <label htmlFor="rubroempresa" className="block text-[#171D4C] dark:text-dark-text dark:text-dark-text font-medium mb-2">
               {t.rubroEmpresa}
             </label>
             <select
@@ -385,7 +385,7 @@ export const ContactForm = () => {
               name="rubroempresa"
               value={formData.rubroempresa}
               onChange={handleChange}
-              className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#139ED4] focus:border-[#139ED4] transition-colors"
+              className="w-full px-4 py-3 border border-gray-300 dark:border-dark-accent rounded-md focus:outline-none focus:ring-2 focus:ring-[#139ED4] focus:border-[#139ED4] transition-colors bg-white dark:bg-dark-bg text-gray-900 dark:text-dark-text"
               required
               autoComplete="off"
             >
@@ -421,7 +421,7 @@ export const ContactForm = () => {
       )}
       {/* 5. Teléfono */}
       <div className="mb-3 sm:mb-4">
-        <label htmlFor="telefono" className="block text-[#171D4C] font-medium mb-2">
+        <label htmlFor="telefono" className="block text-[#171D4C] dark:text-dark-text dark:text-dark-text font-medium mb-2">
           {t.telefono}
         </label>
         <input
@@ -430,7 +430,7 @@ export const ContactForm = () => {
           name="telefono"
           value={formData.telefono}
           onChange={handleChange}
-          className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#139ED4] focus:border-[#139ED4] transition-colors"
+          className="w-full px-4 py-3 border border-gray-300 dark:border-dark-accent rounded-md focus:outline-none focus:ring-2 focus:ring-[#139ED4] focus:border-[#139ED4] transition-colors bg-white dark:bg-dark-bg text-gray-900 dark:text-dark-text"
           autoComplete="tel"
           maxLength={9}
           pattern="[0-9]{9}"
@@ -438,7 +438,7 @@ export const ContactForm = () => {
       </div>
       {/* 6. Correo electrónico */}
       <div className="mb-3 sm:mb-4">
-        <label htmlFor="correo" className="block text-[#171D4C] font-medium mb-2">
+        <label htmlFor="correo" className="block text-[#171D4C] dark:text-dark-text dark:text-dark-text font-medium mb-2">
           {t.correo}
         </label>
         <input
@@ -447,14 +447,14 @@ export const ContactForm = () => {
           name="correo"
           value={formData.correo}
           onChange={handleChange}
-          className="w-full px-4 py-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#139ED4] focus:border-[#139ED4] transition-colors"
+          className="w-full px-4 py-3 border border-gray-300 dark:border-dark-accent rounded-md focus:outline-none focus:ring-2 focus:ring-[#139ED4] focus:border-[#139ED4] transition-colors bg-white dark:bg-dark-bg text-gray-900 dark:text-dark-text"
           required
           autoComplete="email"
         />
       </div>
       {/* 7. Archivos */}
       <div className="mb-3 sm:mb-4">
-        <label className="block text-[#171D4C] font-medium mb-2">
+        <label className="block text-[#171D4C] dark:text-dark-text dark:text-dark-text font-medium mb-2">
           {t.requerimiento}
         </label>
         <button
@@ -487,7 +487,7 @@ export const ContactForm = () => {
         {files.length > 0 && (
           <ul className="mt-2 space-y-1">
             {files.map((file, idx) => (
-              <li key={idx} className="flex items-center justify-between bg-gray-100 px-2 py-1 rounded">
+              <li key={idx} className="flex items-center justify-between bg-gray-100 dark:bg-dark-accent px-2 py-1 rounded">
                 <span className="truncate text-xs">{file.name}</span>
                 <button
                   type="button"

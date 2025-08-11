@@ -4,14 +4,14 @@ import { howItWorksSectionTranslation } from './howItWorksSectionTranslation';
 export const HowItWorksSection = () => {
   const { lang } = useLanguage();
   const t = howItWorksSectionTranslation[lang];
-  return <section id="comoFunciona" className="py-8 md:py-12 lg:py-16 bg-white w-full scroll-mt-20 md:scroll-mt-32">
+  return <section id="comoFunciona" className="py-8 md:py-12 lg:py-16 bg-white dark:bg-dark-bg w-full scroll-mt-20 md:scroll-mt-32">
     <div className="container mx-auto px-3 sm:px-4 lg:px-8">
       <div className="text-center mb-6 md:mb-10 lg:mb-12">
-        <h2 className="font-orbitron text-2xl md:text-4xl font-bold text-[#171D4C] mb-2 md:mb-4 line-clamp-2 drop-shadow-sm">
-          <span className="font-orbitron text-[#171D4C]">{t.titleMain} </span>
+        <h2 className="font-orbitron text-2xl md:text-4xl font-bold text-[#171D4C] dark:text-dark-text mb-2 md:mb-4 line-clamp-2 drop-shadow-sm">
+          <span className="font-orbitron text-[#171D4C] dark:text-dark-text">{t.titleMain} </span>
           <span className="font-orbitron text-[#D90E8C]">{t.titleAccent}</span>
         </h2>
-        <p className="font-montserrat text-base md:text-lg text-[#139ED4] max-w-3xl mx-auto line-clamp-2 md:line-clamp-none">
+        <p className="font-montserrat text-base md:text-lg text-[#139ED4] dark:text-[#88D4E4] max-w-3xl mx-auto line-clamp-2 md:line-clamp-none">
           {t.subtitle}
         </p>
       </div>
@@ -28,7 +28,7 @@ export const HowItWorksSection = () => {
             {t.steps.map((step, idx) => (
               <div
                 key={step.title}
-                className={`bg-white/80 backdrop-blur-md p-6 rounded-xl shadow-md border-b-4 relative transition-all duration-200 min-h-[220px] flex flex-col hover:scale-105 hover:shadow-xl`}
+                className={`bg-white/80 dark:bg-dark-surface/80 backdrop-blur-md p-6 rounded-xl shadow-md border-b-4 relative transition-all duration-200 min-h-[220px] flex flex-col hover:scale-105 hover:shadow-xl`}
                 style={{ borderBottomColor: '#fff' }}
               >
                 <div
@@ -43,10 +43,10 @@ export const HowItWorksSection = () => {
                   {idx === 2 && <TruckIcon size={44} className="drop-shadow" style={{ color: colors[2] }} />}
                   {idx === 3 && <HeadsetIcon size={44} className="drop-shadow" style={{ color: colors[3] }} />}
                 </div>
-                <h3 className="font-orbitron text-base md:text-lg font-semibold mb-2 text-[#171D4C] line-clamp-2 drop-shadow-sm">
+                <h3 className="font-orbitron text-base md:text-lg font-semibold mb-2 text-[#171D4C] dark:text-dark-text line-clamp-2 drop-shadow-sm">
                   {step.title}
                 </h3>
-                <p className="text-[#139ED4] text-sm md:text-base line-clamp-3 md:line-clamp-none flex-1">
+                <p className="text-[#139ED4] dark:text-[#88D4E4] text-sm md:text-base line-clamp-3 md:line-clamp-none flex-1">
                   {step.desc}
                 </p>
               </div>

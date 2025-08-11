@@ -74,14 +74,14 @@ export const ProvidersSection = () => {
     'Logo_Proveedores/VAINSA.png',
   ];
 
-  return <section id="proveedores" className="py-16 bg-white w-full scroll-mt-24 md:scroll-mt-32">
+  return <section id="proveedores" className="py-16 bg-white dark:bg-dark-bg w-full scroll-mt-24 md:scroll-mt-32">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#171D4C] mb-4 line-clamp-2">
-            <span className="text-[#171D4C]">{t.titleMain} </span>
+          <h2 className="text-3xl md:text-4xl font-bold text-[#171D4C] dark:text-dark-text mb-4 line-clamp-2">
+            <span className="text-[#171D4C] dark:text-dark-text">{t.titleMain} </span>
             <span className="text-[#D90E8C]">{t.titleAccent}</span>
           </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto line-clamp-2 md:line-clamp-none">
+          <p className="text-lg text-gray-600 dark:text-dark-muted max-w-3xl mx-auto line-clamp-2 md:line-clamp-none">
             {t.subtitle}
           </p>
         </div>
@@ -110,7 +110,7 @@ export const ProvidersSection = () => {
           </div>
         </div>
         <div className="mt-12 text-center">
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-6">
+          <p className="text-lg text-gray-600 dark:text-dark-muted max-w-3xl mx-auto mb-6">
             {t.join}
           </p>
           <Link to={getRouteByLang('providersForm', lang)} className="border-2 border-[#D90E8C] text-[#D90E8C] px-6 py-3 rounded-md font-medium hover:bg-[#139ED4] hover:text-white transition-all duration-200 inline-block shadow-sm hover:shadow-md hover:scale-105">

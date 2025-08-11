@@ -19,6 +19,7 @@ import TermsAndConditions from '@/components/Footer/enlaces/TerminosCondiciones/
 import LegalNotice from '@/components/Footer/enlaces/AvisoLegal/LegalNotice';
 import ClaimsBook from '@/components/Footer/LibroReclamaciones/LibroReclamaciones';
 import { LanguageProvider } from './context/LanguageContext';
+import { ThemeProvider } from './context/ThemeContext';
 import NotFound404 from '@/components/NotFound404';
 import { routeSlugs } from '@/components/types/routes';
 import { useLanguage } from './context/LanguageContext';
@@ -36,7 +37,7 @@ function ScrollToTopButton() {
     <button
       onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
       aria-label="Volver arriba"
-      className="fixed bottom-6 right-6 z-50 bg-[#139ED4] hover:bg-[#171D4C] text-white p-3 rounded-full shadow-lg transition-colors focus:outline-none focus:ring-2 focus:ring-[#88D4E4]"
+      className="fixed bottom-6 left-6 z-50 bg-[#139ED4] hover:bg-[#171D4C] dark:bg-[#88D4E4] dark:hover:bg-[#139ED4] text-white p-3 rounded-full shadow-lg transition-colors focus:outline-none focus:ring-2 focus:ring-[#88D4E4]"
     >
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
         <path strokeLinecap="round" strokeLinejoin="round" d="M5 15l7-7 7 7" />
@@ -65,10 +66,10 @@ export function App() {
   }, []);
 
   return (
-    <div className="w-full min-h-screen bg-white">
+    <div className="w-full min-h-screen bg-white dark:bg-dark-bg transition-colors duration-300">
       {loading && <Loader />}
       <Header />
-      <main>
+      <main className="dark:bg-dark-bg transition-colors duration-300">
         <Routes>
           <Route path={routeSlugs.home[lang]} element={
             <>
@@ -93,6 +94,7 @@ export function App() {
         </Routes>
       </main>
       <Footer />
+      <ScrollToTopButton />
     </div>
   );
 }

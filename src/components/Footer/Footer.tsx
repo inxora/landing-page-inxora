@@ -10,7 +10,7 @@ export const Footer = () => {
   const navigate = useNavigate();
   const { lang } = useLanguage();
   const t = footerTranslations[lang];
-  return <footer className="bg-gray-800 text-white w-full">
+  return <footer className="bg-gray-800 dark:bg-dark-bg text-white dark:text-dark-text w-full border-t dark:border-dark-accent">
     <div className="container mx-auto px-3 sm:px-4 lg:px-8 py-6">
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-4">
           <div>

@@ -17,14 +17,14 @@ export const ReconocimientosSection = () => {
   });
 
   return (
-    <section className="py-8 md:py-12 lg:py-16 bg-white w-full">
+    <section className="py-8 md:py-12 lg:py-16 bg-white dark:bg-dark-bg w-full">
       <div className="container mx-auto px-3 sm:px-4 lg:px-8">
         <div className="text-center mb-6 md:mb-10 lg:mb-12">
           <h2 className="font-orbitron text-3xl md:text-4xl font-bold mb-4 drop-shadow-sm">
-            <span className="font-orbitron text-[#171D4C]">{t.titleMain} </span>
+            <span className="font-orbitron text-[#171D4C] dark:text-dark-text">{t.titleMain} </span>
             <span className="font-orbitron text-[#D90E8C]">{t.titleAccent}</span>
           </h2>
-          <p className="font-montserrat text-lg text-[#139ED4] max-w-3xl mx-auto">
+          <p className="font-montserrat text-lg text-[#139ED4] dark:text-[#88D4E4] max-w-3xl mx-auto">
             {t.subtitle}
           </p>
         </div>

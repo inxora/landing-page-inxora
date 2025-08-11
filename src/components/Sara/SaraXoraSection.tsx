@@ -12,23 +12,12 @@ export const SaraXoraSection = () => {
 
   // Responsividad: radio y tamaño de burbujas según ancho de pantalla
   const [windowWidth, setWindowWidth] = React.useState(1024);
-  const [showScrollButton, setShowScrollButton] = React.useState(false);
 
   React.useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth);
     window.addEventListener('resize', handleResize);
     handleResize();
     return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  // Detectar scroll para mostrar/ocultar botón
-  React.useEffect(() => {
-    const handleScroll = () => {
-      setShowScrollButton(window.scrollY > 300);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   // Configuración responsiva mejorada con más espacio y mejor distribución
@@ -72,17 +61,9 @@ export const SaraXoraSection = () => {
   // Mantener siempre el pentágono, nunca usar grid
   const useGrid = false;
 
-  // Función para scroll hacia arriba
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  };
-
   return (
-    <section className="relative w-full py-10 md:py-16 px-2 sm:px-4 lg:px-8 bg-[#f7fbfd] flex flex-col items-center overflow-visible min-h-[400px] md:min-h-[520px] lg:min-h-[600px]">
-      <h2 className="font-orbitron text-2xl sm:text-3xl md:text-4xl font-bold mb-4 line-clamp-2 text-center max-w-2xl mx-auto">
+    <section className="relative w-full py-10 md:py-16 px-2 sm:px-4 lg:px-8 bg-[#f7fbfd] dark:bg-dark-surface flex flex-col items-center overflow-visible min-h-[400px] md:min-h-[520px] lg:min-h-[600px]">
+      <h2 className="font-orbitron text-2xl sm:text-3xl md:text-4xl font-bold mb-4 line-clamp-2 text-center max-w-2xl mx-auto text-gray-900 dark:text-dark-text">
         <span className="font-montserrat">{lang === 'es' ? 'Conoce a' : lang === 'pt' ? 'Conheça a' : 'Meet'} </span>
         <span className="text-[#D90E8C] font-orbitron">Sara Xora</span>
       </h2>
@@ -124,6 +105,7 @@ export const SaraXoraSection = () => {
                   strokeWidth={3}
                   strokeDasharray="6 6"
                   opacity={0.7}
+                  className="dark:stroke-[#139ED4]"
                 />
               );
             })}
@@ -243,23 +225,12 @@ export const SaraXoraSection = () => {
         }
       `}</style>
       
-      {/* Botón flotante a la izquierda para ir al inicio - solo visible cuando hay scroll */}
-      {showScrollButton && (
-        <button
-          onClick={scrollToTop}
-          className="fixed bottom-20 md:bottom-6 left-6 z-50 bg-white text-[#139ED4] px-5 py-3 rounded-full font-semibold shadow-lg hover:scale-105 transition-all duration-300 flex items-center gap-2 border-2 border-[#139ED4]"
-          aria-label="Ir al inicio"
-        >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M5 15l7-7 7 7" /></svg>
-        </button>
-      )}
-
       {/* BOTÓN FLOTANTE DE SARA CONVERTIDO A ENLACE WHATSAPP - Con animación de salto del conejo */}
       <a
         href="https://wa.me/946885531?text=Hola%2C%20quiero%20hablar%20con%20Sara%20Xora%2C%20el%20asistente%20virtual%20de%20INXORA"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-20 md:bottom-6 right-6 z-50 bg-[#171D4C] shadow-xl rounded-full p-3 border border-[#139ED4]/30 hover:shadow-2xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#139ED4]/50 group chat-button animate-hop inline-flex items-center justify-center"
+        className="fixed bottom-20 md:bottom-6 right-6 z-50 bg-[#171D4C] dark:bg-dark-accent shadow-xl rounded-full p-3 border border-[#139ED4]/30 dark:border-[#88D4E4]/30 hover:shadow-2xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#139ED4]/50 group chat-button animate-hop inline-flex items-center justify-center"
         aria-label="Hablar con Sara por WhatsApp"
       >
         <img
@@ -278,7 +249,7 @@ export const SaraXoraSection = () => {
 
 // Componente burbuja reutilizable mejorado - más rectangular
 const Bubble = ({ icon, text, bubbleClass }: { icon: React.ReactNode; text: string; bubbleClass: string }) => (
-  <div className={`flex flex-col items-center justify-center bg-white/95 backdrop-blur-sm shadow-lg rounded-2xl ${bubbleClass} text-center text-[#171D4C] font-medium transition-all duration-300 hover:scale-110 hover:shadow-xl pointer-events-auto select-none border-0 cursor-pointer`}>
+  <div className={`flex flex-col items-center justify-center bg-white/95 dark:bg-dark-surface/95 backdrop-blur-sm shadow-lg rounded-2xl ${bubbleClass} text-center text-[#171D4C] dark:text-dark-text font-medium transition-all duration-300 hover:scale-110 hover:shadow-xl pointer-events-auto select-none border-0 cursor-pointer`}>
     {icon}
     <span className="leading-tight">{text}</span>
   </div>
