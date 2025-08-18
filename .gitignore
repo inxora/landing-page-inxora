@@ -9,9 +9,35 @@
 # misc
 .DS_Store
 .env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 *.log
 *.xlsx
+
+# Google Cloud credentials
+service-account-key.json
+*-service-account.json
+google-credentials.json
+firebase-service-account.json
+
+# Other sensitive files
+*.pem
+*.key
+*.p12
+*.pfx
 
 # editor folders
 .vscode
 .idea
+
+# Temporary files
+.tmp
+*.tmp
+*.temp
+
+# OS generated files
+Thumbs.db
+*.swp
+*.swo
