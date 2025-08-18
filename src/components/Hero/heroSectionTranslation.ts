@@ -1,7 +1,6 @@
 export const heroSectionTranslation = {
   es: {
     title: "El Primer Marketplace Industrial del Perú potenciado con Inteligencia Artificial",
-    subtitle: "La plataforma B2B que optimiza tus compras de mantenimiento, operación y reposición industrial con cotizaciones rápidas y precios competitivos.",
     cta: "Solicitar Cotización",
     ctaAdviser: "Hablar con un asesor",
     seoTitle: "INXORA - Marketplace de Suministros Industriales en Perú",
@@ -9,7 +8,6 @@ export const heroSectionTranslation = {
   },
   en: {
     title: "The First Industrial Marketplace in Peru powered by Artificial Intelligence",
-    subtitle: "The B2B platform that optimizes your maintenance, operation, and industrial replenishment purchases with fast quotes and competitive prices.",
     cta: "Request a Quote",
     ctaAdviser: "Talk to an advisor",
     seoTitle: "INXORA - Industrial Supplies Marketplace in Peru",
@@ -17,7 +15,6 @@ export const heroSectionTranslation = {
   },
   pt: {
     title: "O Primeiro Marketplace Industrial do Peru potenciado com Inteligência Artificial",
-    subtitle: "A plataforma B2B que otimiza suas compras de manutenção, operação e reposição industrial com cotações rápidas e preços competitivos.",
     cta: "Solicitar Cotação",
     ctaAdviser: "Falar com um consultor",
     seoTitle: "INXORA - Marketplace de Suprimentos Industriais no Peru",

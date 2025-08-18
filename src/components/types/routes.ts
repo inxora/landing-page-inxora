@@ -36,6 +36,36 @@ export const routeSlugs = {
     en: '/claims-book',
     pt: '/livro-de-reclamacoes',
   },
+  investors: {
+    es: '/inversores',
+    en: '/investors',
+    pt: '/investidores',
+  },
+  register: {
+    es: '/registro',
+    en: '/register',
+    pt: '/registro',
+  },
+  updatePassword: {
+    es: '/auth/update-password',
+    en: '/auth/update-password',
+    pt: '/auth/update-password',
+  },
+  emailConfirmed: {
+    es: '/correo-confirmado',
+    en: '/email-confirmed',
+    pt: '/email-confirmado',
+  },
+  careers: {
+    es: '/trabaja-con-nosotros',
+    en: '/careers',
+    pt: '/trabalhe-conosco',
+  },
+  emailVerification: {
+    es: '/verificar-email',
+    en: '/verify-email',
+    pt: '/verificar-email',
+  },
 };
 
 export function getRouteByLang(routeKey: keyof typeof routeSlugs, lang: Language): string {

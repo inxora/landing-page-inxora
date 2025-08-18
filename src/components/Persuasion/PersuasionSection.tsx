@@ -74,7 +74,7 @@ export const PersuasionSection = () => {
     loop: true,
     drag: true,
   }, [autoplay({ delay: 3000, stopOnInteraction: false, pauseOnMouseEnter: true })]);
-  return <section id="beneficios" className="py-8 md:py-12 lg:py-16 bg-gradient-to-br from-gray-50 to-[#e9f6fc] dark:from-dark-bg dark:to-dark-surface w-full scroll-mt-20 md:scroll-mt-32">
+  return <section id="beneficios" className="py-8 md:py-12 lg:py-16 bg-gradient-to-br from-gray-50 to-[#e9f6fc] dark:from-dark-bg dark:to-dark-accent w-full scroll-mt-20 md:scroll-mt-32">
       <div className="container mx-auto px-3 sm:px-4 lg:px-8 pb-10 md:pb-8">
         <div className="text-center mb-8 md:mb-12">
           <h2 className="font-orbitron text-3xl md:text-4xl font-bold mb-4 line-clamp-2 drop-shadow-sm text-center">
@@ -117,73 +117,15 @@ export const PersuasionSection = () => {
             ))}
           </div>
         </div>
-        {/* <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-          <div className="bg-white dark:bg-dark-surface p-6 rounded-lg shadow-md border border-[#88D4E4] hover:shadow-lg transition-shadow">
-            <div className="flex items-center mb-4">
-              <div className="h-12 w-12 bg-[#139ED4] rounded-full flex items-center justify-center text-white font-bold">
-                JM
-              </div>
-              <div className="ml-4">
-                <h4 className="font-semibold text-[#171D4C] dark:text-dark-text">Juan Mendoza</h4>
-                <p className="text-sm text-gray-500 dark:text-dark-muted">
-                  Jefe de Mantenimiento, Minera Andina
-                </p>
-              </div>
-            </div>
-            <p className="text-gray-600 dark:text-dark-text italic">
-              "INXORA nos ha permitido reducir los tiempos de adquisición de
-              repuestos críticos. Su asesoría técnica es invaluable para
-              nuestras operaciones."
-            </p>
-            <div className="mt-3 text-[#D90E8C] flex">★★★★★</div>
-          </div>
-          <div className="bg-white dark:bg-dark-surface p-6 rounded-lg shadow-md border border-[#88D4E4] hover:shadow-lg transition-shadow">
-            <div className="flex items-center mb-4">
-              <div className="h-12 w-12 bg-[#139ED4] rounded-full flex items-center justify-center text-white font-bold">
-                LC
-              </div>
-              <div className="ml-4">
-                <h4 className="font-semibold text-[#171D4C] dark:text-dark-text">Laura Campos</h4>
-                <p className="text-sm text-gray-500 dark:text-dark-muted">
-                  Gerente de Compras, Industrias Metálicas
-                </p>
-              </div>
-            </div>
-            <p className="text-gray-600 dark:text-dark-text italic">
-              "La transparencia en los precios y la rapidez de cotización nos
-              han ayudado a optimizar nuestro presupuesto de mantenimiento
-              anual."
-            </p>
-            <div className="mt-3 text-[#D90E8C] flex">★★★★★</div>
-          </div>
-          <div className="bg-white dark:bg-dark-surface p-6 rounded-lg shadow-md border border-[#88D4E4] hover:shadow-lg transition-shadow">
-            <div className="flex items-center mb-4">
-              <div className="h-12 w-12 bg-[#139ED4] rounded-full flex items-center justify-center text-white font-bold">
-                RP
-              </div>
-              <div className="ml-4">
-                <h4 className="font-semibold text-[#171D4C] dark:text-dark-text">Roberto Paredes</h4>
-                <p className="text-sm text-gray-500 dark:text-dark-muted">
-                  Director de Operaciones, Textil Peruana
-                </p>
-              </div>
-            </div>
-            <p className="text-gray-600 italic">
-              "El servicio post-venta y seguimiento de INXORA es excepcional.
-              Han sido un socio estratégico para nuestra expansión."
-            </p>
-            <div className="mt-3 text-[#D90E8C] flex">★★★★★</div>
-          </div>
-        </div> */}
         {/* Sellos de garantía */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {t.seals.map((seal, idx) => (
-            <div key={seal.title} className="bg-white dark:bg-dark-surface p-6 rounded-xl shadow-md flex flex-col items-center text-center hover:shadow-xl transition-all duration-200 hover:scale-105">
+            <div key={seal.title} className="bg-white dark:bg-dark-accent p-6 rounded-xl shadow-md flex flex-col items-center text-center hover:shadow-xl transition-all duration-200 hover:scale-105">
               {idx === 0 && <Shield className="text-[#139ED4] mb-2 drop-shadow" size={40} />}
               {idx === 1 && <Award className="text-[#139ED4] mb-2 drop-shadow" size={40} />}
               {idx === 2 && <TrendingUp className="text-[#139ED4] mb-2 drop-shadow" size={40} />}
               {idx === 3 && <Clock className="text-[#139ED4] mb-2 drop-shadow" size={40} />}
-              <h4 className="font-semibold mb-1 text-[#171D4C] dark:text-dark-text drop-shadow-sm">{seal.title}</h4>
+              <h4 className="font-semibold mb-3 text-[#171D4C] dark:text-dark-text drop-shadow-sm">{seal.title}</h4>
               <p className="text-sm text-[#139ED4] dark:text-[#88D4E4]">{seal.desc}</p>
           </div>
           ))}

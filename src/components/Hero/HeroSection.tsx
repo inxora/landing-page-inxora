@@ -55,7 +55,10 @@ export const HeroSection = () => {
         <title>{t.seoTitle}</title>
         <meta name="description" content={t.seoDescription} />
       </Helmet>
-      <section className="relative w-full h-screen flex items-center justify-center overflow-hidden">
+      <section
+        className="relative w-full min-h-screen flex items-center justify-center overflow-hidden"
+        style={{ minHeight: '100dvh', paddingTop: '96px' }} // 96px = header alto + margen extra
+      >
         {/* Imagen de fondo que se extiende hasta cubrir el header */}
         <div className="absolute inset-0 w-full h-full z-0" style={{ top: '-100px', height: 'calc(100vh + 100px)' }}>
           {/* Imagen para móviles (dall-e2.webp) */}
@@ -76,21 +79,20 @@ export const HeroSection = () => {
           <div className="absolute inset-0 bg-black bg-opacity-10 dark:bg-black dark:bg-opacity-30"></div>
         </div>
         
-        <div className="relative z-10 w-full px-4 lg:px-8 flex flex-col lg:flex-row items-stretch justify-start h-screen pt-24">
+        <div
+          className="relative z-10 w-full px-4 lg:px-8 flex flex-col lg:flex-row items-stretch justify-start"
+          style={{ minHeight: 'calc(100dvh - 96px)', paddingTop: '0.5rem', paddingBottom: '2rem' }}
+        >
           {/* Columna izquierda: texto y botones - Ahora en el lado izquierdo en desktop */}
-          <div className="flex-1 lg:flex-none lg:w-[45%] xl:w-[40%] flex flex-col items-start justify-center text-left py-8 lg:py-0 lg:pl-8">
+          <div className="flex-1 lg:flex-none lg:w-[45%] xl:w-[40%] flex flex-col items-start justify-center text-left py-8 lg:py-0 lg:pl-8"
+            style={{ minHeight: '320px' }}
+          >
             <h1 className="font-orbitron text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-white mb-4 leading-snug md:leading-tight lg:leading-[1.1]" 
                 style={{
                   textShadow: '3px 3px 6px rgba(0,0,0,0.9), 0 0 20px rgba(255,255,255,0.3), 2px 2px 0 rgba(19,158,212,0.8)'
                 }}>
               {t.title}
             </h1>
-            <h2 className="font-montserrat text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-semibold text-white mb-6 leading-snug md:leading-normal lg:leading-relaxed"
-                style={{
-                  textShadow: '2px 2px 4px rgba(0,0,0,0.9), 0 0 15px rgba(0,0,0,0.5)'
-                }}>
-              {t.subtitle}
-            </h2>
             <div className="flex flex-col sm:flex-row flex-wrap gap-4 w-full sm:w-auto mt-6 sm:mt-8">
               <a href="#contacto" className="font-orbitron bg-[#139ED4] hover:bg-[#23B6E7] dark:bg-[#88D4E4] dark:hover:bg-[#139ED4] text-white px-6 py-3 rounded-md font-semibold text-lg transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-105 text-center h-12 flex items-center justify-center whitespace-nowrap">
                 {t.cta}

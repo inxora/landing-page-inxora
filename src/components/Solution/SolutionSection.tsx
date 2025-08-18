@@ -43,22 +43,22 @@ export const SolutionSection = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8 mt-6 md:mt-8">
           <div className="bg-white dark:bg-dark-surface rounded-xl p-6 flex flex-col items-center text-center shadow-md transition-all duration-200 hover:scale-105 hover:shadow-xl">
             <Clock size={48} className="text-[#D90E8C] mb-2 drop-shadow" />
-            <h4 className="font-orbitron font-bold text-[#171D4C] dark:text-dark-text mb-1 text-lg drop-shadow-sm">{t.benefits[0].title}</h4>
+            <h4 className="font-orbitron font-bold text-[#171D4C] dark:text-dark-text mb-3 text-lg drop-shadow-sm">{t.benefits[0].title}</h4>
             <p className="text-[#139ED4] dark:text-[#88D4E4] text-sm">{t.benefits[0].desc}</p>
           </div>
           <div className="bg-white dark:bg-dark-surface rounded-xl p-6 flex flex-col items-center text-center shadow-md transition-all duration-200 hover:scale-105 hover:shadow-xl">
             <DollarSign size={48} className="text-[#139ED4] mb-2 drop-shadow" />
-            <h4 className="font-orbitron font-bold text-[#171D4C] dark:text-dark-text mb-1 text-lg drop-shadow-sm">{t.benefits[1].title}</h4>
+            <h4 className="font-orbitron font-bold text-[#171D4C] dark:text-dark-text mb-3 text-lg drop-shadow-sm">{t.benefits[1].title}</h4>
             <p className="text-[#139ED4] dark:text-[#88D4E4] text-sm">{t.benefits[1].desc}</p>
           </div>
           <div className="bg-white dark:bg-dark-surface rounded-xl p-6 flex flex-col items-center text-center shadow-md transition-all duration-200 hover:scale-105 hover:shadow-xl">
             <CheckCircle size={48} className="text-[#88D4E4] mb-2 drop-shadow" />
-            <h4 className="font-orbitron font-bold text-[#171D4C] dark:text-dark-text mb-1 text-lg drop-shadow-sm">{t.benefits[2].title}</h4>
+            <h4 className="font-orbitron font-bold text-[#171D4C] dark:text-dark-text mb-3 text-lg drop-shadow-sm">{t.benefits[2].title}</h4>
             <p className="text-[#139ED4] dark:text-[#88D4E4] text-sm">{t.benefits[2].desc}</p>
           </div>
           <div className="bg-white dark:bg-dark-surface rounded-xl p-6 flex flex-col items-center text-center shadow-md transition-all duration-200 hover:scale-105 hover:shadow-xl">
             <Headphones size={48} className="text-[#771A53] mb-2 drop-shadow" />
-            <h4 className="font-orbitron font-bold text-[#171D4C] dark:text-dark-text mb-1 text-lg drop-shadow-sm">{t.benefits[3].title}</h4>
+            <h4 className="font-orbitron font-bold text-[#171D4C] dark:text-dark-text mb-3 text-lg drop-shadow-sm">{t.benefits[3].title}</h4>
             <p className="text-[#139ED4] dark:text-[#88D4E4] text-sm">{t.benefits[3].desc}</p>
           </div>
         </div>

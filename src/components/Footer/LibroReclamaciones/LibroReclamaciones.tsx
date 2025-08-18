@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet";
 import { useNavigate } from "react-router-dom";
 import { useLanguage } from '../../../context/LanguageContext';
 import { libroReclamacionesTranslation } from './libroReclamaciones';
+import { BackButton } from '../../common/BackButton';
 
 export default function ClaimsBook() {
   const navigate = useNavigate();
@@ -98,13 +99,12 @@ export default function ClaimsBook() {
 
   return (
     <section className="max-w-3xl mx-auto px-2 sm:px-4 lg:px-8 py-8 md:py-12 text-gray-800">
-      <button
+      <BackButton 
         onClick={() => navigate(-1)}
         className="mb-6 px-4 py-2 bg-[#139ED4] text-white rounded hover:bg-[#171D4C] transition-colors font-medium shadow"
-        aria-label={t?.atras || "← Atrás"}
-      >
-        {t?.atras || "← Atrás"}
-      </button>
+        variant="default"
+        customText={t?.atras || "Atrás"}
+      />
       <Helmet>
         <title>{t?.title || "Libro de Reclamaciones"} | INXORA</title>
         <meta name="description" content={t?.subtitle || "Libro de Reclamaciones Virtual de INXORA"} />

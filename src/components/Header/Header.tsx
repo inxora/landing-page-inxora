@@ -176,7 +176,7 @@ export const Header: React.FC = () => {
     <div className="flex items-center pl-4 sm:pl-6 md:pl-8 lg:pl-12 flex-shrink-0">
       <button
         onClick={handleLogoClick}
-        className={`focus:outline-none focus:ring-2 focus:ring-[#139ED4] rounded-lg ${
+        className={`focus:outline-none ${
           location.pathname !== '/' ? 'cursor-pointer' : 'cursor-default'
         }`}
         aria-label="Ir al inicio"
@@ -197,10 +197,12 @@ export const Header: React.FC = () => {
           <li key={item.key}>
             <button
               onClick={() => navigateToSection(item.sectionId)}
-              className={`font-bold text-lg xl:text-xl 2xl:text-2xl transition-all duration-300 hover:scale-105 focus:outline-none rounded-md px-3 py-2 ${
+              onMouseDown={(e) => e.preventDefault()}
+              onBlur={(e) => e.currentTarget.blur()}
+              className={`font-bold text-lg xl:text-xl 2xl:text-2xl transition-all duration-300 hover:scale-105 focus:outline-none focus-visible:ring-2 rounded-md px-3 py-2 ${
                 isScrolled
-                  ? 'text-[#139ED4] dark:text-[#88D4E4] hover:text-[#171D4C] dark:hover:text-[#139ED4] focus:ring-2 focus:ring-[#139ED4]'
-                  : 'text-white hover:text-[#88D4E4] focus:ring-2 focus:ring-[#88D4E4] font-extrabold'
+                  ? 'text-[#139ED4] dark:text-[#88D4E4] hover:text-[#171D4C] dark:hover:text-[#139ED4] focus-visible:ring-[#139ED4]'
+                  : 'text-white hover:text-[#88D4E4] focus-visible:ring-[#88D4E4] font-extrabold'
               }`}
               style={!isScrolled ? {
                 textShadow: '2px 2px 4px rgba(0,0,0,0.8), 0 0 10px rgba(255,255,255,0.3)'
@@ -219,15 +221,24 @@ export const Header: React.FC = () => {
       <button
         className={`flex items-center gap-2 px-3 py-2 h-10 sm:h-12 min-w-[70px] sm:min-w-[80px] 
                    rounded-md font-extrabold text-sm sm:text-base lg:text-lg transition-all duration-300 
-                   focus:outline-none ${
+                   focus:outline-none focus-visible:ring-2 ${
                      isScrolled
-                       ? 'border border-[#139ED4] dark:border-[#88D4E4] bg-transparent text-[#139ED4] dark:text-[#88D4E4] hover:bg-[#171D4C] dark:hover:bg-[#139ED4] hover:text-white focus:ring-2 focus:ring-[#139ED4]'
-                       : 'border-2 border-white bg-transparent text-white hover:bg-white hover:bg-opacity-20 hover:text-[#88D4E4] focus:ring-2 focus:ring-white font-extrabold'
+                       ? 'border border-[#139ED4] dark:border-[#88D4E4] bg-transparent text-[#139ED4] dark:text-[#88D4E4] hover:bg-[#171D4C] dark:hover:bg-[#139ED4] hover:text-white focus-visible:ring-[#139ED4]'
+                       : 'border-2 border-white bg-transparent text-white hover:bg-white hover:bg-opacity-20 hover:text-[#88D4E4] focus-visible:ring-white font-extrabold'
                    }`}
         style={!isScrolled ? {
           textShadow: '2px 2px 4px rgba(0,0,0,0.8)'
         } : {}}
         onClick={toggleLanguageMenu}
+        onMouseDown={(e) => e.preventDefault()}
+        onBlur={(e) => {
+          // Solo cerrar el menú si el foco se va fuera del componente completamente
+          setTimeout(() => {
+            if (!langMenuRef.current?.contains(document.activeElement)) {
+              setLangMenuOpen(false);
+            }
+          }, 0);
+        }}
         aria-haspopup="listbox"
         aria-expanded={langMenuOpen}
         aria-label="Seleccionar idioma"
@@ -245,8 +256,10 @@ export const Header: React.FC = () => {
                 <button
                   className={`w-full flex items-center justify-between px-3 py-2 text-left
                              hover:bg-[#171D4C] dark:hover:bg-[#139ED4] text-[#139ED4] dark:text-[#88D4E4] text-sm lg:text-base transition-colors
+                             focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#139ED4]
                              ${lang === option.value ? 'font-bold' : 'font-medium'}`}
                   onClick={() => handleLanguageChange(option.value)}
+                  onMouseDown={(e) => e.preventDefault()}
                   role="option"
                   aria-selected={lang === option.value}
                 >
@@ -271,13 +284,14 @@ export const Header: React.FC = () => {
       href={WHATSAPP_URL}
       target="_blank"
       rel="noopener noreferrer"
+      onMouseDown={(e) => e.preventDefault()}
       className={`hidden xl:flex font-orbitron px-4 py-2 h-10 lg:px-6 lg:py-3 lg:h-12 min-w-[140px] lg:min-w-[180px] 
                  rounded-md font-extrabold text-sm lg:text-base transition-all duration-300 
                  hover:shadow-xl hover:scale-105 items-center gap-2 justify-center
-                 focus:outline-none focus:ring-offset-2 ${
+                 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${
                    isScrolled
-                     ? 'bg-[#139ED4] hover:bg-[#171D4C] text-white shadow-sm hover:shadow-md focus:ring-2 focus:ring-[#139ED4]'
-                     : 'bg-[#88D4E4] hover:bg-[#139ED4] text-white shadow-lg focus:ring-2 focus:ring-white font-extrabold'
+                     ? 'bg-[#139ED4] hover:bg-[#171D4C] text-white shadow-sm hover:shadow-md focus-visible:ring-[#139ED4]'
+                     : 'bg-[#88D4E4] hover:bg-[#139ED4] text-white shadow-lg focus-visible:ring-white font-extrabold'
                  }`}
       style={!isScrolled ? {
         textShadow: '1px 1px 2px rgba(0,0,0,0.3)'
@@ -297,11 +311,12 @@ export const Header: React.FC = () => {
   const renderMobileMenuButton = () => (
     <button
       onClick={toggleMobileMenu}
+      onMouseDown={(e) => e.preventDefault()}
       aria-label={isMenuOpen ? "Cerrar menú" : "Abrir menú"}
       className={`lg:hidden p-2 transition-colors focus:outline-none rounded-md ${
         isScrolled
-          ? 'text-[#139ED4] dark:text-[#88D4E4] hover:text-[#171D4C] dark:hover:text-[#139ED4] focus:ring-2 focus:ring-[#139ED4]'
-          : 'text-white hover:text-[#88D4E4] focus:ring-2 focus:ring-white font-extrabold'
+          ? 'text-[#139ED4] dark:text-[#88D4E4] hover:text-[#171D4C] dark:hover:text-[#139ED4] focus-visible:ring-2 focus-visible:ring-[#139ED4]'
+          : 'text-white hover:text-[#88D4E4] focus-visible:ring-2 focus-visible:ring-white font-extrabold'
       }`}
       style={!isScrolled ? {
         filter: 'drop-shadow(2px 2px 4px rgba(0,0,0,0.8))'
@@ -319,9 +334,10 @@ export const Header: React.FC = () => {
             <li key={item.key}>
               <button
                 onClick={() => navigateToSection(item.sectionId)}
+                onMouseDown={(e) => e.preventDefault()}
                 className="w-full text-left text-[#139ED4] dark:text-[#88D4E4] hover:text-[#171D4C] dark:hover:text-[#139ED4] font-bold text-lg
                            py-4 px-3 transition-colors rounded-md hover:bg-[#f0f9ff] dark:hover:bg-dark-accent
-                           focus:outline-none focus:ring-2 focus:ring-[#139ED4]"
+                           focus:outline-none focus-visible:ring-2 focus-visible:ring-[#139ED4]"
               >
                 {t[item.label]}
               </button>
@@ -332,10 +348,11 @@ export const Header: React.FC = () => {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
+              onMouseDown={(e) => e.preventDefault()}
               className="w-full font-orbitron bg-[#139ED4] hover:bg-[#171D4C] text-white 
                          px-4 py-4 rounded-md font-bold text-base transition-all duration-200 
                          shadow-md hover:shadow-lg flex items-center gap-2 justify-center
-                         focus:outline-none focus:ring-2 focus:ring-[#139ED4] focus:ring-offset-2"
+                         focus:outline-none focus-visible:ring-2 focus-visible:ring-[#139ED4] focus-visible:ring-offset-2"
             >
               <img
                 src="logo_inxora/LOGO-22.png"

@@ -10,6 +10,25 @@ export const ctaSectionTranslation = {
     seguimiento: "Seguimiento personalizado de tu pedido",
     hablarDirecto: "¿Prefieres hablar directamente?",
     telefono: "+51 946 885 531",
+    // Nuevas traducciones para beneficios
+    beneficios: {
+      cotizacionesRapidas: {
+        titulo: "Cotizaciones Rápidas",
+        descripcion: "Recibe cotizaciones personalizadas al instante"
+      },
+      accesoPrioritario: {
+        titulo: "Acceso Prioritario", 
+        descripcion: "Sé de los primeros en acceder al marketplace"
+      },
+      productosCertificados: {
+        titulo: "Productos Certificados",
+        descripcion: "Productos industriales de calidad garantizada"
+      }
+    },
+    // Botón y textos de acción
+    registrarmeAhora: "🚀 Registrarme Ahora",
+    beneficiosGratis: "✅ Gratis • ✅ Sin compromiso • ✅ Acceso inmediato a cotizaciones",
+    cotizaProductos: "📋 Cotiza productos industriales al instante • 🛒 Accede al marketplace cuando esté disponible"
   },
   en: {
     titleMain: 'Contact us to',
@@ -22,6 +41,25 @@ export const ctaSectionTranslation = {
     seguimiento: "Personalized order tracking",
     hablarDirecto: "Prefer to talk directly?",
     telefono: "+51 946 885 531",
+    // Nuevas traducciones para beneficios
+    beneficios: {
+      cotizacionesRapidas: {
+        titulo: "Fast Quotes",
+        descripcion: "Receive personalized quotes instantly"
+      },
+      accesoPrioritario: {
+        titulo: "Priority Access",
+        descripcion: "Be among the first to access the marketplace"
+      },
+      productosCertificados: {
+        titulo: "Certified Products",
+        descripcion: "Guaranteed quality industrial products"
+      }
+    },
+    // Botón y textos de acción
+    registrarmeAhora: "🚀 Register Now",
+    beneficiosGratis: "✅ Free • ✅ No commitment • ✅ Immediate access to quotes",
+    cotizaProductos: "📋 Quote industrial products instantly • 🛒 Access marketplace when available"
   },
   pt: {
     titleMain: 'Fale conosco para',
@@ -34,5 +72,24 @@ export const ctaSectionTranslation = {
     seguimiento: "Acompanhamento personalizado do seu pedido",
     hablarDirecto: "Prefere falar diretamente?",
     telefono: "+51 946 885 531",
+    // Nuevas traducciones para beneficios
+    beneficios: {
+      cotizacionesRapidas: {
+        titulo: "Cotações Rápidas",
+        descripcion: "Receba cotações personalizadas instantaneamente"
+      },
+      accesoPrioritario: {
+        titulo: "Acesso Prioritário",
+        descripcion: "Seja um dos primeiros a acessar o marketplace"
+      },
+      productosCertificados: {
+        titulo: "Produtos Certificados",
+        descripcion: "Produtos industriais de qualidade garantida"
+      }
+    },
+    // Botón y textos de acción
+    registrarmeAhora: "🚀 Registrar Agora",
+    beneficiosGratis: "✅ Grátis • ✅ Sem compromisso • ✅ Acesso imediato a cotações",
+    cotizaProductos: "📋 Cotar produtos industriais instantaneamente • 🛒 Acessar marketplace quando disponível"
   }
 };

@@ -7,10 +7,12 @@ import { PersuasionSection } from '@/components/Persuasion/PersuasionSection';
 import { HowItWorksSection } from '@/components/HowItWorks/HowItWorksSection';
 import { ProvidersSection } from '@/components/Providers/ProvidersSection';
 import { CTASection } from '@/components/CTA/CTASection';
+import { InvestorPage } from '@/components/Footer/enlaces/Investor/InvestorPage';
+import { RegisterPage } from '@/components/Forms/RegisterPage';
 import { Footer } from '@/components/Footer/Footer';
-import { ProveedorForm } from '@/components/Providers/ProvidersForm';
+import { ProveedorForm } from '@/components/Forms/ProvidersForm';
 import { SaraXoraSection } from "@/components/Sara/SaraXoraSection";
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Loader from '@/components/Loader';
 import {ReconocimientosSection} from '@/components/Reconocimientos/ReconocimientosSection';
 import PrivacyPolicy from '@/components/Footer/enlaces/PoliticaPrivacidad/PrivacyPolicy';
@@ -18,8 +20,10 @@ import CookiesPolicy from '@/components/Footer/enlaces/Cookies/CookiesPolicy';
 import TermsAndConditions from '@/components/Footer/enlaces/TerminosCondiciones/TermsAndConditions';
 import LegalNotice from '@/components/Footer/enlaces/AvisoLegal/LegalNotice';
 import ClaimsBook from '@/components/Footer/LibroReclamaciones/LibroReclamaciones';
-import { LanguageProvider } from './context/LanguageContext';
-import { ThemeProvider } from './context/ThemeContext';
+import UpdatePassword from '@/components/Auth/UpdatePassword';
+import EmailConfirmed from '@/components/Auth/EmailConfirmed';
+import { EmailVerificationPage } from '@/components/Auth/EmailVerificationPage';
+import CareersPage from '@/components/Footer/enlaces/Careers/CareersPage';
 import NotFound404 from '@/components/NotFound404';
 import { routeSlugs } from '@/components/types/routes';
 import { useLanguage } from './context/LanguageContext';
@@ -85,6 +89,12 @@ export function App() {
             </>
           } />
           <Route path={routeSlugs.providersForm[lang]} element={<ProveedorForm />} />
+          <Route path={routeSlugs.investors[lang]} element={<InvestorPage />} />
+          <Route path={routeSlugs.register[lang]} element={<RegisterPage />} />
+          <Route path={routeSlugs.updatePassword[lang]} element={<UpdatePassword />} />
+          <Route path={routeSlugs.emailConfirmed[lang]} element={<EmailConfirmed />} />
+          <Route path={routeSlugs.emailVerification[lang]} element={<EmailVerificationPage />} />
+          <Route path={routeSlugs.careers[lang]} element={<CareersPage />} />
           <Route path={routeSlugs.privacy[lang]} element={<PrivacyPolicy />} />
           <Route path={routeSlugs.cookies[lang]} element={<CookiesPolicy />} />
           <Route path={routeSlugs.terms[lang]} element={<TermsAndConditions />} />

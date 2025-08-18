@@ -74,7 +74,7 @@ export const ProvidersSection = () => {
     'Logo_Proveedores/VAINSA.png',
   ];
 
-  return <section id="proveedores" className="py-16 bg-white dark:bg-dark-bg w-full scroll-mt-24 md:scroll-mt-32">
+  return <section id="proveedores" className="py-16 bg-white dark:bg-dark-accent w-full scroll-mt-24 md:scroll-mt-32">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-[#171D4C] dark:text-dark-text mb-4 line-clamp-2">

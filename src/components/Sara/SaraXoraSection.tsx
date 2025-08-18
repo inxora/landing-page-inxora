@@ -22,30 +22,30 @@ export const SaraXoraSection = () => {
 
   // Configuración responsiva mejorada con más espacio y mejor distribución
   let radius = 260; // desktop - radio aún más grande
-  let bubbleClass = "min-w-[120px] min-h-[90px] px-4 py-3 text-base";
+  let bubbleClass = "min-w-[140px] min-h-[110px] px-5 py-4 text-lg"; // Aumentado tamaño de burbujas para desktop
   let avatarClass = "w-32 h-32 md:w-40 md:h-40";
-  let iconClass = "text-2xl mb-2";
+  let iconClass = "text-4xl mb-3"; // Aumentado de text-2xl a text-4xl para desktop
   let containerHeight = "min-h-[650px] md:min-h-[750px]";
   
   if (windowWidth < 900) {
     radius = 190; // tablet - más espacio horizontal
     bubbleClass = "min-w-[100px] min-h-[75px] px-3 py-2 text-sm";
     avatarClass = "w-20 h-20 md:w-24 md:h-24";
-    iconClass = "text-xl mb-1";
+    iconClass = "text-3xl mb-2"; // Aumentado de text-xl a text-3xl para tablet
     containerHeight = "min-h-[500px]";
   }
   if (windowWidth < 600) {
     radius = 145; // móvil - más separación
     bubbleClass = "min-w-[85px] min-h-[65px] px-2 py-1.5 text-xs";
     avatarClass = "w-16 h-16";
-    iconClass = "text-lg mb-1";
+    iconClass = "text-lg mb-2"; // Aumentado de mb-1 a mb-2
     containerHeight = "min-h-[400px]";
   }
   if (windowWidth < 400) {
     radius = 115; // móvil pequeño - ajustado para evitar solapamiento
     bubbleClass = "min-w-[70px] min-h-[55px] px-2 py-1 text-xs";
     avatarClass = "w-14 h-14";
-    iconClass = "text-base mb-1";
+    iconClass = "text-base mb-2"; // Aumentado de mb-1 a mb-2
     containerHeight = "min-h-[350px]";
   }
 
@@ -57,9 +57,6 @@ export const SaraXoraSection = () => {
     { icon: <FaHeadset className={`text-[#D90E8C] ${iconClass}`} />, text: t.atencion },
     { icon: <FaFileInvoice className={`text-[#139ED4] ${iconClass}`} />, text: t.facturas },
   ];
-
-  // Mantener siempre el pentágono, nunca usar grid
-  const useGrid = false;
 
   return (
     <section className="relative w-full py-10 md:py-16 px-2 sm:px-4 lg:px-8 bg-[#f7fbfd] dark:bg-dark-surface flex flex-col items-center overflow-visible min-h-[400px] md:min-h-[520px] lg:min-h-[600px]">
@@ -149,9 +146,9 @@ export const SaraXoraSection = () => {
         href="https://wa.me/946885531?text=Hola%2C%20estoy%20interesado%20en%20cotizar%20productos%20industriales"
         target="_blank"
         rel="noopener noreferrer"
-        className="mt-8 bg-gradient-to-r from-[#139ED4] to-[#D90E8C] text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:scale-105 transition-all duration-300 text-lg flex items-center gap-2 z-20 relative"
+        className="mt-8 bg-gradient-to-r from-[#139ED4] to-[#D90E8C] text-white px-10 py-4 rounded-full font-semibold shadow-lg hover:scale-105 transition-all duration-300 text-xl flex items-center gap-3 z-20 relative"
       >
-        <FaWhatsapp className="text-2xl" />
+        <FaWhatsapp className="text-3xl" />
         {t.cta}
       </a>
       

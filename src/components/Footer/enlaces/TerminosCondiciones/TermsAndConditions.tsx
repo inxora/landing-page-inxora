@@ -1,8 +1,8 @@
-import React from "react";
 import { Helmet } from "react-helmet";
 import { useNavigate } from "react-router-dom";
 import { useLanguage } from '../../../../context/LanguageContext';
 import { termsAndConditionsTranslations } from './termsAndConditionsTranslations';
+import { BackButton } from '../../../common/BackButton';
 
 const TermsAndConditions = () => {
   const navigate = useNavigate();
@@ -10,13 +10,11 @@ const TermsAndConditions = () => {
   const t = termsAndConditionsTranslations[lang];
   return (
     <section className="max-w-3xl mx-auto px-4 py-12 text-gray-800">
-      <button
+      <BackButton 
         onClick={() => navigate(-1)}
         className="mb-6 px-4 py-2 bg-[#139ED4] text-white rounded hover:bg-[#171D4C] transition-colors font-medium shadow"
-        aria-label={t.title}
-      >
-        ← {lang === 'es' ? 'Atrás' : lang === 'en' ? 'Back' : 'Voltar'}
-      </button>
+        variant="default"
+      />
       <Helmet>
         <title>{t.title} | INXORA</title>
         <meta name="description" content={t.title + ' INXORA'} />

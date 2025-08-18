@@ -106,6 +106,16 @@ export const Footer = () => {
                 {t.terminos}
               </Link>
               </li>
+              <li>
+              <Link to={getRouteByLang('investors', lang)} className="text-[#88D4E4] hover:text-[#D90E8C] transition-colors">
+                {t.inversores}
+              </Link>
+              </li>
+              <li>
+              <Link to={getRouteByLang('careers', lang)} className="text-[#88D4E4] hover:text-[#D90E8C] transition-colors">
+                {t.trabajaConNosotros}
+              </Link>
+              </li>
             </ul>
           </div>
           <div>
