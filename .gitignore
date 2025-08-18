@@ -39,12 +39,17 @@ pids
 
 # Google Cloud & Firebase credentials
 service-account-key.json
-*-service-account.json
+*-service-account*.json
 google-credentials.json
 firebase-service-account.json
 firebase-adminsdk-*.json
+gcloud-service-key.json
+google-service-account.json
 .firebase/
 firebase-debug.log
+
+# Supabase
+.supabase/
 
 # AWS credentials
 .aws/
