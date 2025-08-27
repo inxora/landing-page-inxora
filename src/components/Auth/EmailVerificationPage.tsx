@@ -135,7 +135,7 @@ export const EmailVerificationPage = () => {
                 <div className="space-y-3">
                   <button
                     onClick={() => navigate(getRouteByLang('home', lang))}
-                    className="w-full px-6 py-3 bg-[#139ED4] hover:bg-[#0f7ba3] text-white rounded-lg transition-colors font-medium"
+                    className="w-full px-6 py-3 bg-primary hover:bg-[#0f7ba3] text-white rounded-lg transition-colors font-medium"
                   >
                     {t.goToHome}
                   </button>
@@ -173,7 +173,7 @@ export const EmailVerificationPage = () => {
                 <div className="space-y-3">
                   <button
                     onClick={() => navigate(getRouteByLang('home', lang))}
-                    className="w-full px-6 py-3 bg-[#139ED4] hover:bg-[#0f7ba3] text-white rounded-lg transition-colors font-medium"
+                    className="w-full px-6 py-3 bg-primary hover:bg-[#0f7ba3] text-white rounded-lg transition-colors font-medium"
                   >
                     {t.goToHome}
                   </button>

@@ -38,11 +38,11 @@ export const BackButton = ({
     }
   };
 
-  const baseClasses = 'group inline-flex items-center gap-2 font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#139ED4]/50 rounded-full';
+  const baseClasses = 'group inline-flex items-center gap-2 font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary/50 rounded-full';
   
   const variantClasses = {
-    default: 'bg-gray-800/90 text-white border-2 border-gray-600 hover:bg-[#139ED4] hover:border-[#139ED4] shadow-lg backdrop-blur-sm',
-    outline: 'bg-transparent border-2 border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-[#139ED4] hover:border-[#139ED4] hover:text-white',
+    default: 'bg-gray-800/90 text-white border-2 border-gray-600 hover:bg-primary hover:border-primary shadow-lg backdrop-blur-sm',
+    outline: 'bg-transparent border-2 border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-primary hover:border-primary hover:text-white',
     ghost: 'bg-transparent text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800'
   };
 

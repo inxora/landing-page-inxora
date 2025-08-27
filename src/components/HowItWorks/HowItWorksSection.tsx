@@ -7,21 +7,21 @@ export const HowItWorksSection = () => {
   return <section id="comoFunciona" className="py-8 md:py-12 lg:py-16 bg-white dark:bg-dark-bg w-full scroll-mt-20 md:scroll-mt-32">
     <div className="container mx-auto px-3 sm:px-4 lg:px-8">
       <div className="text-center mb-6 md:mb-10 lg:mb-12">
-        <h2 className="font-orbitron text-2xl md:text-4xl font-bold text-[#171D4C] dark:text-dark-text mb-2 md:mb-4 line-clamp-2 drop-shadow-sm">
-          <span className="font-orbitron text-[#171D4C] dark:text-dark-text">{t.titleMain} </span>
-          <span className="font-orbitron text-[#D90E8C]">{t.titleAccent}</span>
+        <h2 className="font-orbitron text-2xl md:text-4xl font-bold text-primary-dark dark:text-dark-text mb-2 md:mb-4 line-clamp-2 drop-shadow-sm">
+          <span className="font-orbitron text-primary-dark dark:text-dark-text">{t.titleMain} </span>
+          <span className="font-orbitron text-accent-bright">{t.titleAccent}</span>
         </h2>
-        <p className="font-montserrat text-base md:text-lg text-[#139ED4] dark:text-[#88D4E4] max-w-3xl mx-auto line-clamp-2 md:line-clamp-none">
+        <p className="font-montserrat text-base md:text-lg text-primary dark:text-primary-light max-w-3xl mx-auto line-clamp-2 md:line-clamp-none">
           {t.subtitle}
         </p>
       </div>
       {/* Colores para cada card: icono, borde y número */}
       {(() => {
         const colors = [
-          '#D90E8C', // Paso 1: Fucsia
-          '#139ED4', // Paso 2: Azul
-          '#88D4E4', // Paso 3
-          '#771A53', // Paso 4
+          'var(--color-accent-bright)', // Paso 1: Fucsia
+          'var(--color-primary)', // Paso 2: Azul
+          'var(--color-primary-light)', // Paso 3
+          'var(--color-accent)', // Paso 4
         ];
         return (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
@@ -43,10 +43,10 @@ export const HowItWorksSection = () => {
                   {idx === 2 && <TruckIcon size={44} className="drop-shadow" style={{ color: colors[2] }} />}
                   {idx === 3 && <HeadsetIcon size={44} className="drop-shadow" style={{ color: colors[3] }} />}
                 </div>
-                <h3 className="font-orbitron text-base md:text-lg font-semibold mb-2 text-[#171D4C] dark:text-dark-text line-clamp-2 drop-shadow-sm">
+                <h3 className="font-orbitron text-base md:text-lg font-semibold mb-2 text-primary-dark dark:text-dark-text line-clamp-2 drop-shadow-sm">
                   {step.title}
                 </h3>
-                <p className="text-[#139ED4] dark:text-[#88D4E4] text-sm md:text-base line-clamp-3 md:line-clamp-none flex-1">
+                <p className="text-primary dark:text-primary-light text-sm md:text-base line-clamp-3 md:line-clamp-none flex-1">
                   {step.desc}
                 </p>
               </div>
@@ -55,7 +55,7 @@ export const HowItWorksSection = () => {
         );
       })()}
       <div className="mt-8 md:mt-12 text-center">
-        <a href="#contacto" className="bg-[#139ED4] text-white px-4 md:px-6 py-2 md:py-3 rounded-md font-medium hover:bg-[#D90E8C] transition-all duration-200 inline-block shadow-md hover:shadow-lg text-sm md:text-base hover:scale-105">
+        <a href="#contacto" className="bg-primary text-white px-4 md:px-6 py-2 md:py-3 rounded-md font-medium hover:bg-[var(--color-accent-bright)] transition-all duration-200 inline-block shadow-md hover:shadow-lg text-sm md:text-base hover:scale-105">
           {t.cta}
         </a>
       </div>

@@ -1,0 +1,114 @@
+/* ===================================================
+   CARD COMPONENT - CSS MODULES
+   Cards con sistema de variables CSS INXORA
+   =================================================== */
+
+.card {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+  position: relative;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+/* === VARIANTES DE BORDE === */
+.primary {
+  border-top: 4px solid var(--color-primary);
+}
+
+.accent {
+  border-top: 4px solid var(--color-accent);
+}
+
+.accentBright {
+  border-top: 4px solid var(--color-accent-bright);
+}
+
+.success {
+  border-top: 4px solid var(--color-success);
+}
+
+.warning {
+  border-top: 4px solid var(--color-warning);
+}
+
+.error {
+  border-top: 4px solid var(--color-error);
+}
+
+/* === EFECTOS ESPECIALES === */
+.gradient {
+  background: linear-gradient(135deg, 
+    rgba(19, 158, 212, 0.05) 0%, 
+    rgba(217, 14, 140, 0.05) 100%);
+}
+
+.backdrop {
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--color-border);
+}
+
+.dark .backdrop {
+  background-color: rgba(22, 33, 62, 0.9);
+  border-color: var(--color-dark-border);
+}
+
+/* === ESTADOS INTERACTIVOS === */
+.interactive {
+  cursor: pointer;
+}
+
+.interactive:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.interactive:active {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+/* === TAMAÑOS === */
+.compact {
+  padding: var(--spacing-md);
+}
+
+.comfortable {
+  padding: var(--spacing-xl);
+}
+
+.spacious {
+  padding: var(--spacing-2xl);
+}
+
+/* === HEADER Y FOOTER === */
+.header {
+  margin-bottom: var(--spacing-lg);
+  padding-bottom: var(--spacing-md);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.footer {
+  margin-top: var(--spacing-lg);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid var(--color-border);
+}
+
+/* === DARK MODE === */
+.dark .card {
+  background-color: var(--color-dark-surface);
+  border-color: var(--color-dark-border);
+}
+
+.dark .header,
+.dark .footer {
+  border-color: var(--color-dark-border);
+}

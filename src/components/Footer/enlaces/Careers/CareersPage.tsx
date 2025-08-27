@@ -202,7 +202,7 @@ const CareersPage = () => {
                 </div>
 
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 bg-[#139ED4] rounded-lg flex items-center justify-center">
+                  <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
                     <Truck className="w-6 h-6 text-white" />
                   </div>
                   <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
@@ -218,21 +218,21 @@ const CareersPage = () => {
               {/* Cómo funciona */}
               <div className="bg-white dark:bg-dark-surface rounded-2xl shadow-xl p-6 border border-gray-200/50 dark:border-gray-700/50">
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
-                  <Package className="w-6 h-6 text-[#139ED4]" />
+                  <Package className="w-6 h-6 text-primary" />
                   {t.howItWorks}
                 </h3>
 
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
-                    <div className="w-8 h-8 bg-[#139ED4] text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-1">1</div>
+                    <div className="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-1">1</div>
                     <p className="text-gray-600 dark:text-gray-300">{t.step1}</p>
                   </div>
                   <div className="flex items-start gap-3">
-                    <div className="w-8 h-8 bg-[#139ED4] text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-1">2</div>
+                    <div className="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-1">2</div>
                     <p className="text-gray-600 dark:text-gray-300">{t.step2}</p>
                   </div>
                   <div className="flex items-start gap-3">
-                    <div className="w-8 h-8 bg-[#139ED4] text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-1">3</div>
+                    <div className="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-1">3</div>
                     <p className="text-gray-600 dark:text-gray-300">{t.step3}</p>
                   </div>
                 </div>
@@ -350,7 +350,7 @@ const CareersPage = () => {
                         value={formData.nombre}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-[#139ED4] focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                        className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
                         placeholder={t.namePlaceholder}
                       />
                       <input
@@ -359,7 +359,7 @@ const CareersPage = () => {
                         value={formData.apellidos}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-[#139ED4] focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                        className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
                         placeholder={t.lastnamePlaceholder}
                       />
                     </div>
@@ -370,7 +370,7 @@ const CareersPage = () => {
                       value={formData.correo}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-[#139ED4] focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
                       placeholder={t.emailPlaceholder}
                     />
 
@@ -380,7 +380,7 @@ const CareersPage = () => {
                       value={formData.telefono}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-[#139ED4] focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
                       placeholder={t.phonePlaceholder}
                     />
 
@@ -391,7 +391,7 @@ const CareersPage = () => {
                         value={formData.contrasena}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-[#139ED4] focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                        className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
                         placeholder={t.passwordPlaceholder}
                       />
                       <select
@@ -400,7 +400,7 @@ const CareersPage = () => {
                         onChange={handleInputChange}
                         required
                         disabled={isLoadingDistritos}
-                        className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-[#139ED4] focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white disabled:opacity-50 disabled:cursor-not-allowed"
+                        className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white disabled:opacity-50 disabled:cursor-not-allowed"
                       >
                         <option value="">
                           {isLoadingDistritos ? 'Cargando distritos...' : 'Selecciona tu distrito'}
@@ -417,7 +417,7 @@ const CareersPage = () => {
                         onChange={handleInputChange}
                         required
                         disabled={isLoadingVehiculos}
-                        className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-[#139ED4] focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white disabled:opacity-50 disabled:cursor-not-allowed"
+                        className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white disabled:opacity-50 disabled:cursor-not-allowed"
                       >
                         <option value="">
                           {isLoadingVehiculos ? t.loadingVehicles || 'Cargando vehículos...' : t.selectVehicle || 'Selecciona tu vehículo'}
@@ -434,14 +434,14 @@ const CareersPage = () => {
                       value={formData.experiencia}
                       onChange={handleInputChange}
                       rows={3}
-                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-[#139ED4] focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white resize-none"
+                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white resize-none"
                       placeholder={t.experiencePlaceholder}
                     />
 
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full bg-[#139ED4] hover:bg-[#0f7ba3] text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="w-full bg-primary hover:bg-[#0f7ba3] text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       {isSubmitting ? t.submitting : t.submitButton}
                     </button>
@@ -476,7 +476,7 @@ const CareersPage = () => {
                   </p>
                   <button
                     onClick={() => setShowVerificationMessage(false)}
-                    className="text-[#139ED4] hover:text-[#0f7ba3] font-medium"
+                    className="text-primary hover:text-[#0f7ba3] font-medium"
                   >
                     {t.registerAnother}
                   </button>

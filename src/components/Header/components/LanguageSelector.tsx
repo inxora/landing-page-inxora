@@ -40,8 +40,8 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({
                  rounded-md font-extrabold text-sm sm:text-base lg:text-lg transition-all duration-300 
                  focus:outline-none ${
                    isScrolled
-                     ? 'border border-[#139ED4] bg-transparent text-[#139ED4] hover:bg-[#171D4C] hover:text-white focus:ring-2 focus:ring-[#139ED4]'
-                     : 'border-2 border-white bg-transparent text-white hover:bg-white hover:bg-opacity-20 hover:text-[#88D4E4] focus:ring-2 focus:ring-white font-extrabold'
+                     ? 'border border-primary bg-transparent text-primary hover:bg-[var(--color-primary-dark)] hover:text-white focus:ring-2 focus:ring-[var(--color-primary)]'
+                     : 'border-2 border-white bg-transparent text-white hover:bg-white hover:bg-opacity-20 hover:text-primary-light focus:ring-2 focus:ring-white font-extrabold'
                  }`}
         style={
           !isScrolled
@@ -63,23 +63,23 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({
 
       {langMenuOpen && (
         <div className="absolute right-0 top-full mt-2 w-36 sm:w-40 lg:w-44 bg-gray-900 border-2 
-                      border-[#139ED4] rounded-lg shadow-xl z-50 animate-fade-in overflow-hidden">
+                      border-primary rounded-lg shadow-xl z-50 animate-fade-in overflow-hidden">
           <ul className="py-1" role="listbox">
             {LANGUAGE_OPTIONS.map((option) => (
               <li key={option.value}>
                 <button
                   className={`w-full flex items-center justify-between px-3 py-2 text-left
-                           hover:bg-[#171D4C] text-[#139ED4] text-sm lg:text-base transition-colors
+                           hover:bg-[var(--color-primary-dark)] text-primary text-sm lg:text-base transition-colors
                            ${lang === option.value ? 'font-bold' : 'font-medium'}`}
                   onClick={() => onLanguageChange(option.value)}
                   role="option"
                   aria-selected={lang === option.value}
                 >
                   <div className="flex items-center gap-3">
-                    <span className="font-mono text-[#139ED4] font-bold w-6">
+                    <span className="font-mono text-primary font-bold w-6">
                       {option.code}
                     </span>
-                    <span className="text-[#139ED4]">{option.label}</span>
+                    <span className="text-primary">{option.label}</span>
                   </div>
                   {lang === option.value && <span className="text-[#23B6E7] font-bold">✓</span>}
                 </button>

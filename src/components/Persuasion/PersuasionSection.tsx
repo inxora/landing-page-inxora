@@ -24,8 +24,8 @@ export const PersuasionSection = () => {
   ];
   // Colores para bordes/hover dinámicos
   const borderColors = [
-    '#139ED4', '#88D4E4', '#171D4C', '#771A53', '#D90E8C',
-    '#139ED4', '#88D4E4', '#171D4C', '#771A53', '#D90E8C', '#139ED4'
+    'var(--color-primary)', 'var(--color-primary-light)', 'var(--color-primary-dark)', 'var(--color-accent)', 'var(--color-accent-bright)',
+    'var(--color-primary)', 'var(--color-primary-light)', 'var(--color-primary-dark)', 'var(--color-accent)', 'var(--color-accent-bright)', 'var(--color-primary)'
   ];
   // Slider para móvil
   const [current, setCurrent] = React.useState(0);
@@ -74,28 +74,28 @@ export const PersuasionSection = () => {
     loop: true,
     drag: true,
   }, [autoplay({ delay: 3000, stopOnInteraction: false, pauseOnMouseEnter: true })]);
-  return <section id="beneficios" className="py-8 md:py-12 lg:py-16 bg-gradient-to-br from-gray-50 to-[#e9f6fc] dark:from-dark-bg dark:to-dark-accent w-full scroll-mt-20 md:scroll-mt-32">
+  return <section id="beneficios" className="py-8 md:py-12 lg:py-16 bg-gradient-to-br from-gray-50 to-blue-50 w-full scroll-mt-20 md:scroll-mt-32">
       <div className="container mx-auto px-3 sm:px-4 lg:px-8 pb-10 md:pb-8">
         <div className="text-center mb-8 md:mb-12">
           <h2 className="font-orbitron text-3xl md:text-4xl font-bold mb-4 line-clamp-2 drop-shadow-sm text-center">
-            <span className="font-orbitron text-[#171D4C] dark:text-dark-text">{t.titleMain} </span>
-            <span className="font-orbitron text-[#D90E8C]">{t.titleAccent}</span>
+            <span className="font-orbitron text-primary-dark dark:text-dark-text">{t.titleMain} </span>
+            <span className="font-orbitron text-accent-bright">{t.titleAccent}</span>
           </h2>
-          <p className="font-montserrat text-lg text-[#139ED4] dark:text-[#88D4E4] max-w-3xl mx-auto line-clamp-2 md:line-clamp-none">
+          <p className="font-montserrat text-lg text-primary dark:text-primary-light max-w-3xl mx-auto line-clamp-2 md:line-clamp-none">
             {t.subtitle}
           </p>
         </div>
         {/* Slider responsive de clientes con keen-slider (una sola fila, sin repetición) */}
         <div className="relative mb-8 md:mb-12">
           <button
-            className="absolute -left-4 md:-left-12 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center bg-gradient-to-r from-[#139ED4] to-[#D90E8C] text-white rounded-full z-10 transition-all duration-300 hover:scale-110 shadow-lg"
+            className="absolute -left-4 md:-left-12 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-accent-bright)] text-white rounded-full z-10 transition-all duration-300 hover:scale-110 shadow-lg"
             onClick={() => slider && slider.current && slider.current.prev()}
             aria-label="Anterior"
           >
             <ChevronLeft size={28} />
           </button>
           <button
-            className="absolute -right-4 md:-right-12 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center bg-gradient-to-r from-[#139ED4] to-[#D90E8C] text-white rounded-full z-10 transition-all duration-300 hover:scale-110 shadow-lg"
+            className="absolute -right-4 md:-right-12 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-accent-bright)] text-white rounded-full z-10 transition-all duration-300 hover:scale-110 shadow-lg"
             onClick={() => slider && slider.current && slider.current.next()}
             aria-label="Siguiente"
           >
@@ -121,12 +121,12 @@ export const PersuasionSection = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {t.seals.map((seal, idx) => (
             <div key={seal.title} className="bg-white dark:bg-dark-accent p-6 rounded-xl shadow-md flex flex-col items-center text-center hover:shadow-xl transition-all duration-200 hover:scale-105">
-              {idx === 0 && <Shield className="text-[#139ED4] mb-2 drop-shadow" size={40} />}
-              {idx === 1 && <Award className="text-[#139ED4] mb-2 drop-shadow" size={40} />}
-              {idx === 2 && <TrendingUp className="text-[#139ED4] mb-2 drop-shadow" size={40} />}
-              {idx === 3 && <Clock className="text-[#139ED4] mb-2 drop-shadow" size={40} />}
-              <h4 className="font-semibold mb-3 text-[#171D4C] dark:text-dark-text drop-shadow-sm">{seal.title}</h4>
-              <p className="text-sm text-[#139ED4] dark:text-[#88D4E4]">{seal.desc}</p>
+              {idx === 0 && <Shield className="text-primary mb-2 drop-shadow" size={40} />}
+              {idx === 1 && <Award className="text-primary mb-2 drop-shadow" size={40} />}
+              {idx === 2 && <TrendingUp className="text-primary mb-2 drop-shadow" size={40} />}
+              {idx === 3 && <Clock className="text-primary mb-2 drop-shadow" size={40} />}
+              <h4 className="font-semibold mb-3 text-primary-dark dark:text-dark-text drop-shadow-sm">{seal.title}</h4>
+              <p className="text-sm text-primary dark:text-primary-light">{seal.desc}</p>
           </div>
           ))}
         </div>

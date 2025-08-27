@@ -104,24 +104,24 @@ export const ProductsSection = () => {
       <div className="container mx-auto px-3 sm:px-4 lg:px-8">
         <div className="text-center mb-8 md:mb-12">
           <h2 className="font-orbitron text-3xl md:text-4xl font-bold mb-4 line-clamp-2">
-            <span className="font-orbitron text-[#171D4C] dark:text-dark-text">{t.titleMain} </span>
-            <span className="font-orbitron text-[#D90E8C]">{t.titleAccent}</span>
+            <span className="font-orbitron text-primary-dark dark:text-dark-text">{t.titleMain} </span>
+            <span className="font-orbitron text-accent-bright">{t.titleAccent}</span>
           </h2>
-          <p className="font-montserrat text-lg text-gray-600 dark:text-dark-muted max-w-3xl mx-auto line-clamp-2 md:line-clamp-none">
+          <p className="font-montserrat text-lg text-foreground-secondary max-w-3xl mx-auto line-clamp-2 md:line-clamp-none">
             {t.subtitle}
           </p>
         </div>
         {/* Slider responsive con keen-slider */}
         <div className="relative mb-6 md:mb-10 lg:mb-12">
           <button
-            className="absolute -left-4 md:-left-12 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center bg-gradient-to-r from-[#139ED4] to-[#D90E8C] text-white rounded-full z-10 transition-all duration-300 hover:scale-110 shadow-lg"
+            className="absolute -left-4 md:-left-12 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-accent-bright)] text-white rounded-full z-10 transition-all duration-300 hover:scale-110 shadow-lg"
             onClick={() => slider && slider.current && slider.current.prev()}
             aria-label="Anterior"
           >
             <ChevronLeft size={28} />
           </button>
           <button
-            className="absolute -right-4 md:-right-12 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center bg-gradient-to-r from-[#139ED4] to-[#D90E8C] text-white rounded-full z-10 transition-all duration-300 hover:scale-110 shadow-lg"
+            className="absolute -right-4 md:-right-12 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-accent-bright)] text-white rounded-full z-10 transition-all duration-300 hover:scale-110 shadow-lg"
             onClick={() => slider && slider.current && slider.current.next()}
             aria-label="Siguiente"
           >
@@ -130,7 +130,7 @@ export const ProductsSection = () => {
           <div ref={sliderRef} className="keen-slider transition-all duration-500 ease-in-out" key={lang}>
             {displayCategories.map((cat, idx) => (
               <div key={cat.name + idx} className="keen-slider__slide flex flex-col transition-all duration-200">
-                <div className="bg-white/80 dark:bg-dark-surface/80 backdrop-blur-md rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all border-t-4 border-[#771A53] hover:border-[#D90E8C] flex flex-col h-full">
+                <div className="bg-white/80 dark:bg-dark-surface/80 backdrop-blur-md rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all border-t-4 border-[var(--color-accent)] hover:border-[var(--color-accent-bright)] flex flex-col h-full">
                   <div className="aspect-square overflow-hidden flex items-center justify-center">
                     <img 
                       src={cat.imageUrl} 
@@ -140,7 +140,7 @@ export const ProductsSection = () => {
                     />
                   </div>
                   <div className="p-4">
-                    <h3 className="font-orbitron text-sm md:text-2xl font-bold text-center text-[#171D4C] dark:text-dark-text break-words break-keep whitespace-normal drop-shadow-sm max-w-[12ch] mx-auto">
+                    <h3 className="font-orbitron text-sm md:text-2xl font-bold text-center text-primary-dark dark:text-dark-text break-words break-keep whitespace-normal drop-shadow-sm max-w-[12ch] mx-auto">
                       {cat.name}
                     </h3>
                   </div>
@@ -149,7 +149,7 @@ export const ProductsSection = () => {
                       href="/Folleto INXORA.pdf" 
                       target="_blank" 
                       rel="noopener noreferrer" 
-                      className="font-orbitron text-[#771A53] dark:text-[#88D4E4] hover:text-[#D90E8C] font-medium flex items-center justify-center transition-all duration-200 hover:scale-105 text-xs md:text-base px-2 py-1 md:px-6 md:py-3"
+                      className="font-orbitron text-accent dark:text-primary-light hover:text-accent-bright font-medium flex items-center justify-center transition-all duration-200 hover:scale-105 text-xs md:text-base px-2 py-1 md:px-6 md:py-3"
                     >
                       {t.verProductos} <ChevronRight size={16} className="ml-1" />
                     </a>
@@ -160,7 +160,7 @@ export const ProductsSection = () => {
           </div>
         </div>
         <div className="text-center mt-8">
-          <a href="/Folleto INXORA.pdf" target="_blank" rel="noopener noreferrer" className="bg-[#139ED4] text-white px-6 py-3 rounded-md font-medium hover:bg-[#171D4C] transition-all duration-200 inline-flex items-center shadow-lg hover:shadow-xl hover:scale-105">
+          <a href="/Folleto INXORA.pdf" target="_blank" rel="noopener noreferrer" className="bg-primary text-white px-6 py-3 rounded-md font-medium hover:bg-[var(--color-primary-dark)] transition-all duration-200 inline-flex items-center shadow-lg hover:shadow-xl hover:scale-105">
             {t.verCatalogo} <ChevronRight size={20} className="ml-2" />
           </a>
         </div>

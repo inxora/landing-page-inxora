@@ -1,33 +1,34 @@
 import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
-import { Header } from '@/components/Header/Header';
-import { HeroSection } from '@/components/Hero/HeroSection';
-import { SolutionSection } from '@/components/Solution/SolutionSection';
-import { ProductsSection } from '@/components/Products/ProductsSection';
-import { PersuasionSection } from '@/components/Persuasion/PersuasionSection';
-import { HowItWorksSection } from '@/components/HowItWorks/HowItWorksSection';
-import { ProvidersSection } from '@/components/Providers/ProvidersSection';
-import { CTASection } from '@/components/CTA/CTASection';
-import { InvestorPage } from '@/components/Footer/enlaces/Investor/InvestorPage';
-import { RegisterPage } from '@/components/Forms/RegisterPage';
-import { Footer } from '@/components/Footer/Footer';
-import { ProveedorForm } from '@/components/Forms/ProvidersForm';
-import { SaraXoraSection } from "@/components/Sara/SaraXoraSection";
+import { Header } from './components/Header/Header';
+import { HeroSection } from './components/Hero/HeroSection';
+import { SolutionSection } from './components/Solution/SolutionSection';
+import { ProductsSection } from './components/Products/ProductsSection';
+import { PersuasionSection } from './components/Persuasion/PersuasionSection';
+import { HowItWorksSection } from './components/HowItWorks/HowItWorksSection';
+import { ProvidersSection } from './components/Providers/ProvidersSection';
+import { CTASection } from './components/CTA/CTASection';
+import { InvestorPage } from './components/Footer/enlaces/Investor/InvestorPage';
+import { RegisterPage } from './components/Forms/RegisterPage';
+import { Footer } from './components/Footer/Footer';
+import { ProveedorForm } from './components/Forms/ProvidersForm';
+import { SaraXoraSection } from "./components/Sara/SaraXoraSection";
 import { useEffect, useState } from 'react';
-import Loader from '@/components/Loader';
-import {ReconocimientosSection} from '@/components/Reconocimientos/ReconocimientosSection';
-import PrivacyPolicy from '@/components/Footer/enlaces/PoliticaPrivacidad/PrivacyPolicy';
-import CookiesPolicy from '@/components/Footer/enlaces/Cookies/CookiesPolicy';
-import TermsAndConditions from '@/components/Footer/enlaces/TerminosCondiciones/TermsAndConditions';
-import LegalNotice from '@/components/Footer/enlaces/AvisoLegal/LegalNotice';
-import ClaimsBook from '@/components/Footer/LibroReclamaciones/LibroReclamaciones';
-import UpdatePassword from '@/components/Auth/UpdatePassword';
-import EmailConfirmed from '@/components/Auth/EmailConfirmed';
-import { EmailVerificationPage } from '@/components/Auth/EmailVerificationPage';
-import CareersPage from '@/components/Footer/enlaces/Careers/CareersPage';
-import NotFound404 from '@/components/NotFound404';
-import { routeSlugs } from '@/components/types/routes';
+import Loader from './components/Loader';
+import {ReconocimientosSection} from './components/Reconocimientos/ReconocimientosSection';
+import PrivacyPolicy from './components/Footer/enlaces/PoliticaPrivacidad/PrivacyPolicy';
+import CookiesPolicy from './components/Footer/enlaces/Cookies/CookiesPolicy';
+import TermsAndConditions from './components/Footer/enlaces/TerminosCondiciones/TermsAndConditions';
+import LegalNotice from './components/Footer/enlaces/AvisoLegal/LegalNotice';
+import ClaimsBook from './components/Footer/LibroReclamaciones/LibroReclamaciones';
+// import UpdatePassword from './components/Auth/UpdatePassword';
+import EmailConfirmed from './components/Auth/EmailConfirmed';
+import { EmailVerificationPage } from './components/Auth/EmailVerificationPage';
+import CareersPage from './components/Footer/enlaces/Careers/CareersPage';
+import NotFound404 from './components/NotFound404';
+import { routeSlugs } from './components/types/routes';
 import { useLanguage } from './context/LanguageContext';
-import { getRouteKeyByPath, getRouteByLang } from '@/components/types/routes';
+import { getRouteKeyByPath, getRouteByLang } from './components/types/routes';
+// import { ThemeToggle } from './components/common/ThemeToggle';
 
 function ScrollToTopButton() {
   const [visible, setVisible] = useState(false);
@@ -41,7 +42,7 @@ function ScrollToTopButton() {
     <button
       onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
       aria-label="Volver arriba"
-      className="fixed bottom-6 left-6 z-50 bg-[#139ED4] hover:bg-[#171D4C] dark:bg-[#88D4E4] dark:hover:bg-[#139ED4] text-white p-3 rounded-full shadow-lg transition-colors focus:outline-none focus:ring-2 focus:ring-[#88D4E4]"
+      className="scroll-to-top"
     >
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
         <path strokeLinecap="round" strokeLinejoin="round" d="M5 15l7-7 7 7" />
@@ -70,10 +71,11 @@ export function App() {
   }, []);
 
   return (
-    <div className="w-full min-h-screen bg-white dark:bg-dark-bg transition-colors duration-300">
+    <div className="w-full min-h-screen bg-background text-foreground transition-colors duration-300">
       {loading && <Loader />}
       <Header />
-      <main className="dark:bg-dark-bg transition-colors duration-300">
+      {/* <ThemeToggle /> */}
+      <main className="transition-colors duration-300">
         <Routes>
           <Route path={routeSlugs.home[lang]} element={
             <>
@@ -91,7 +93,7 @@ export function App() {
           <Route path={routeSlugs.providersForm[lang]} element={<ProveedorForm />} />
           <Route path={routeSlugs.investors[lang]} element={<InvestorPage />} />
           <Route path={routeSlugs.register[lang]} element={<RegisterPage />} />
-          <Route path={routeSlugs.updatePassword[lang]} element={<UpdatePassword />} />
+          {/* <Route path={routeSlugs.updatePassword[lang]} element={<UpdatePassword />} /> */}
           <Route path={routeSlugs.emailConfirmed[lang]} element={<EmailConfirmed />} />
           <Route path={routeSlugs.emailVerification[lang]} element={<EmailVerificationPage />} />
           <Route path={routeSlugs.careers[lang]} element={<CareersPage />} />

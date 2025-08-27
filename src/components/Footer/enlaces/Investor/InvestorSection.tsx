@@ -107,8 +107,8 @@ export const InvestorSection = () => {
           {/* Header */}
           <div className="text-center mb-12">
             <h2 className="font-orbitron text-3xl md:text-4xl font-bold mb-4">
-              <span className="text-[#139ED4]">{t.title} </span>
-              <span className="text-[#D90E8C]">{t.titleAccent}</span>
+              <span className="text-primary">{t.title} </span>
+              <span className="text-accent-bright">{t.titleAccent}</span>
             </h2>
             <p className="text-lg text-gray-600 dark:text-dark-muted max-w-3xl mx-auto">
               {t.subtitle}
@@ -121,8 +121,8 @@ export const InvestorSection = () => {
               {/* Propuesta de valor principal */}
               <div className="bg-white/90 dark:bg-dark-surface/90 backdrop-blur-md p-6 rounded-xl shadow-xl border border-gray-100 dark:border-dark-accent">
                 <div className="flex items-center mb-4">
-                  <TrendingUp className="w-8 h-8 text-[#139ED4] mr-3" />
-                  <h3 className="font-orbitron font-semibold text-xl text-[#171D4C] dark:text-dark-text">
+                  <TrendingUp className="w-8 h-8 text-primary mr-3" />
+                  <h3 className="font-orbitron font-semibold text-xl text-primary-dark dark:text-dark-text">
                     {t.howItWorks}
                   </h3>
                 </div>
@@ -132,12 +132,12 @@ export const InvestorSection = () => {
                 
                 {/* Métricas clave */}
                 <div className="grid grid-cols-2 gap-4 mb-6">
-                  <div className="text-center p-4 bg-[#139ED4]/5 rounded-lg border border-[#139ED4]/20">
-                    <div className="text-2xl font-bold text-[#139ED4]">1.5% - 3%</div>
+                  <div className="text-center p-4 bg-primary/5 rounded-lg border border-primary/20">
+                    <div className="text-2xl font-bold text-primary">1.5% - 3%</div>
                     <div className="text-sm text-gray-600 dark:text-dark-muted">{t.returns}</div>
                   </div>
-                  <div className="text-center p-4 bg-[#D90E8C]/5 rounded-lg border border-[#D90E8C]/20">
-                    <div className="text-2xl font-bold text-[#D90E8C]">30-90</div>
+                  <div className="text-center p-4 bg-[var(--color-accent-bright)]/5 rounded-lg border border-[var(--color-accent-bright)]/20">
+                    <div className="text-2xl font-bold text-accent-bright">30-90</div>
                     <div className="text-sm text-gray-600 dark:text-dark-muted">Días promedio</div>
                   </div>
                 </div>
@@ -145,11 +145,11 @@ export const InvestorSection = () => {
                 {/* Beneficios clave */}
                 <div className="space-y-3">
                   <div className="flex items-center gap-3">
-                    <Shield className="w-5 h-5 text-[#D90E8C]" />
+                    <Shield className="w-5 h-5 text-accent-bright" />
                     <span className="text-sm text-gray-700 dark:text-dark-muted">{t.securedDesc}</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <FileText className="w-5 h-5 text-[#88D4E4]" />
+                    <FileText className="w-5 h-5 text-primary-light" />
                     <span className="text-sm text-gray-700 dark:text-dark-muted">{t.flexibleDesc}</span>
                   </div>
                   <div className="flex items-center gap-3">
@@ -160,18 +160,18 @@ export const InvestorSection = () => {
               </div>
 
               {/* Proceso simplificado */}
-              <div className="bg-gradient-to-r from-[#139ED4]/5 to-[#D90E8C]/5 p-6 rounded-xl border border-gray-100 dark:border-dark-accent">
-                <h4 className="font-semibold text-[#171D4C] dark:text-dark-text mb-4 flex items-center">
-                  <Eye className="w-5 h-5 text-[#139ED4] mr-2" />
+              <div className="bg-gradient-to-r from-[var(--color-primary)]/5 to-[var(--color-accent-bright)]/5 p-6 rounded-xl border border-gray-100 dark:border-dark-accent">
+                <h4 className="font-semibold text-primary-dark dark:text-dark-text mb-4 flex items-center">
+                  <Eye className="w-5 h-5 text-primary mr-2" />
                   {t.processTitle}
                 </h4>
                 <div className="space-y-3">
                   <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 bg-[#139ED4] text-white rounded-full flex items-center justify-center text-sm font-bold">1</div>
+                    <div className="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold">1</div>
                     <span className="text-sm text-gray-700 dark:text-dark-muted">{t.step1Desc}</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 bg-[#D90E8C] text-white rounded-full flex items-center justify-center text-sm font-bold">2</div>
+                    <div className="w-8 h-8 bg-[var(--color-accent-bright)] text-white rounded-full flex items-center justify-center text-sm font-bold">2</div>
                     <span className="text-sm text-gray-700 dark:text-dark-muted">{t.step2Desc}</span>
                   </div>
                   <div className="flex items-center gap-3">
@@ -187,7 +187,7 @@ export const InvestorSection = () => {
               {!isSubmitted ? (
                 <>
                   <div className="text-center mb-6">
-                    <h3 className="font-orbitron font-semibold text-xl text-[#171D4C] dark:text-dark-text mb-2">
+                    <h3 className="font-orbitron font-semibold text-xl text-primary-dark dark:text-dark-text mb-2">
                       {t.formTitle}
                     </h3>
                     <p className="text-gray-600 dark:text-dark-muted text-sm">
@@ -223,7 +223,7 @@ export const InvestorSection = () => {
                         value={formData.nombre}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 dark:border-dark-accent rounded-lg focus:ring-2 focus:ring-[#139ED4] focus:border-transparent bg-white dark:bg-dark-bg text-gray-900 dark:text-dark-text placeholder-gray-500 dark:placeholder-dark-muted transition-colors"
+                        className="w-full px-4 py-3 border border-gray-300 dark:border-dark-accent rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent bg-white dark:bg-dark-bg text-gray-900 dark:text-dark-text placeholder-gray-500 dark:placeholder-dark-muted transition-colors"
                         placeholder={t.namePlaceholder}
                       />
                       <input
@@ -232,7 +232,7 @@ export const InvestorSection = () => {
                         value={formData.apellidos}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 dark:border-dark-accent rounded-lg focus:ring-2 focus:ring-[#139ED4] focus:border-transparent bg-white dark:bg-dark-bg text-gray-900 dark:text-dark-text placeholder-gray-500 dark:placeholder-dark-muted transition-colors"
+                        className="w-full px-4 py-3 border border-gray-300 dark:border-dark-accent rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent bg-white dark:bg-dark-bg text-gray-900 dark:text-dark-text placeholder-gray-500 dark:placeholder-dark-muted transition-colors"
                         placeholder="Apellidos"
                       />
                     </div>
@@ -243,7 +243,7 @@ export const InvestorSection = () => {
                       value={formData.correo}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 dark:border-dark-accent rounded-lg focus:ring-2 focus:ring-[#139ED4] focus:border-transparent bg-white dark:bg-dark-bg text-gray-900 dark:text-dark-text placeholder-gray-500 dark:placeholder-dark-muted transition-colors"
+                      className="w-full px-4 py-3 border border-gray-300 dark:border-dark-accent rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent bg-white dark:bg-dark-bg text-gray-900 dark:text-dark-text placeholder-gray-500 dark:placeholder-dark-muted transition-colors"
                       placeholder={t.emailPlaceholder}
                     />
 
@@ -253,7 +253,7 @@ export const InvestorSection = () => {
                       value={formData.telefono_directo}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 dark:border-dark-accent rounded-lg focus:ring-2 focus:ring-[#139ED4] focus:border-transparent bg-white dark:bg-dark-bg text-gray-900 dark:text-dark-text placeholder-gray-500 dark:placeholder-dark-muted transition-colors"
+                      className="w-full px-4 py-3 border border-gray-300 dark:border-dark-accent rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent bg-white dark:bg-dark-bg text-gray-900 dark:text-dark-text placeholder-gray-500 dark:placeholder-dark-muted transition-colors"
                       placeholder={t.phonePlaceholder || "Teléfono"}
                     />
 
@@ -264,7 +264,7 @@ export const InvestorSection = () => {
                         value={formData.contrasena}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 dark:border-dark-accent rounded-lg focus:ring-2 focus:ring-[#139ED4] focus:border-transparent bg-white dark:bg-dark-bg text-gray-900 dark:text-dark-text placeholder-gray-500 dark:placeholder-dark-muted transition-colors"
+                        className="w-full px-4 py-3 border border-gray-300 dark:border-dark-accent rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent bg-white dark:bg-dark-bg text-gray-900 dark:text-dark-text placeholder-gray-500 dark:placeholder-dark-muted transition-colors"
                         placeholder={t.passwordPlaceholder || "Contraseña"}
                       />
                       <input
@@ -273,7 +273,7 @@ export const InvestorSection = () => {
                         value={formData.confirmarContrasena}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 dark:border-dark-accent rounded-lg focus:ring-2 focus:ring-[#139ED4] focus:border-transparent bg-white dark:bg-dark-bg text-gray-900 dark:text-dark-text placeholder-gray-500 dark:placeholder-dark-muted transition-colors"
+                        className="w-full px-4 py-3 border border-gray-300 dark:border-dark-accent rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent bg-white dark:bg-dark-bg text-gray-900 dark:text-dark-text placeholder-gray-500 dark:placeholder-dark-muted transition-colors"
                         placeholder={t.confirmPasswordPlaceholder || "Confirmar contraseña"}
                       />
                     </div>
@@ -281,7 +281,7 @@ export const InvestorSection = () => {
                     <button
                       type="submit"
                       disabled={!isFormValid || isSubmitting}
-                      className="w-full bg-gradient-to-r from-[#139ED4] to-[#88D4E4] hover:from-[#D90E8C] hover:to-[#139ED4] text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed transform hover:scale-105 shadow-lg"
+                      className="w-full bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-primary-light)] hover:from-[var(--color-accent-bright)] hover:to-[var(--color-primary)] text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed transform hover:scale-105 shadow-lg"
                     >
                       {isSubmitting ? (
                         <div className="flex items-center justify-center space-x-2">
@@ -301,7 +301,7 @@ export const InvestorSection = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
                   </div>
-                  <h3 className="font-semibold text-lg text-[#171D4C] dark:text-dark-text mb-2">
+                  <h3 className="font-semibold text-lg text-primary-dark dark:text-dark-text mb-2">
                     {t.confirmationTitle}
                   </h3>
                   <p className="text-gray-600 dark:text-dark-muted text-sm mb-4">
@@ -310,14 +310,14 @@ export const InvestorSection = () => {
                   
                   {/* Pasos siguientes */}
                   <div className="bg-gray-50 dark:bg-dark-bg rounded-lg p-4 text-left">
-                    <h4 className="font-medium text-sm text-[#171D4C] dark:text-dark-text mb-2">Próximos pasos:</h4>
+                    <h4 className="font-medium text-sm text-primary-dark dark:text-dark-text mb-2">Próximos pasos:</h4>
                     <ol className="text-xs text-gray-600 dark:text-dark-muted space-y-1">
                       <li className="flex items-center space-x-2">
-                        <span className="w-4 h-4 bg-[#139ED4] text-white rounded-full flex items-center justify-center text-xs">1</span>
+                        <span className="w-4 h-4 bg-primary text-white rounded-full flex items-center justify-center text-xs">1</span>
                         <span>Revisa tu bandeja de entrada (y spam) - recibirás 2 emails</span>
                       </li>
                       <li className="flex items-center space-x-2">
-                        <span className="w-4 h-4 bg-[#D90E8C] text-white rounded-full flex items-center justify-center text-xs">2</span>
+                        <span className="w-4 h-4 bg-[var(--color-accent-bright)] text-white rounded-full flex items-center justify-center text-xs">2</span>
                         <span>Haz clic en el enlace de confirmación de cuenta</span>
                       </li>
                       <li className="flex items-center space-x-2">

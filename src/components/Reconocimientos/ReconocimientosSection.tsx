@@ -10,37 +10,38 @@ export const ReconocimientosSection = () => {
   const t = reconocimientosSectionTranslation[lang];
 
   // Slider para móvil
-  const [sliderRef, slider] = useKeenSlider({
+  const [sliderRef, instanceRef] = useKeenSlider({
     slides: { perView: 1.2, spacing: 16 },
     loop: true,
     drag: true,
   });
+
+  const prevSlide = () => instanceRef.current?.prev();
+  const nextSlide = () => instanceRef.current?.next();
 
   return (
     <section className="py-8 md:py-12 lg:py-16 bg-white dark:bg-dark-bg w-full">
       <div className="container mx-auto px-3 sm:px-4 lg:px-8">
         <div className="text-center mb-6 md:mb-10 lg:mb-12">
           <h2 className="font-orbitron text-3xl md:text-4xl font-bold mb-4 drop-shadow-sm">
-            <span className="font-orbitron text-[#171D4C] dark:text-dark-text">{t.titleMain} </span>
-            <span className="font-orbitron text-[#D90E8C]">{t.titleAccent}</span>
+            <span className="font-orbitron text-primary-dark dark:text-dark-text">{t.titleMain} </span>
+            <span className="font-orbitron text-accent-bright">{t.titleAccent}</span>
           </h2>
-          <p className="font-montserrat text-lg text-[#139ED4] dark:text-[#88D4E4] max-w-3xl mx-auto">
+          <p className="font-montserrat text-lg text-primary dark:text-primary-light max-w-3xl mx-auto">
             {t.subtitle}
           </p>
         </div>
         {/* Slider móvil */}
         <div className="md:hidden relative mb-12">
           <button
-            className="absolute -left-4 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center bg-gradient-to-r from-[#139ED4] to-[#D90E8C] text-white rounded-full z-10 transition-all duration-300 hover:scale-110 shadow-lg"
-            onClick={() => slider && slider.current && slider.current.prev()}
-            aria-label="Anterior"
+            className="nav-arrow nav-arrow--left"
+            onClick={prevSlide}
           >
-            <ChevronLeft size={28} />
+            <ChevronLeft size={20} />
           </button>
           <button
-            className="absolute -right-4 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center bg-gradient-to-r from-[#139ED4] to-[#D90E8C] text-white rounded-full z-10 transition-all duration-300 hover:scale-110 shadow-lg"
-            onClick={() => slider && slider.current && slider.current.next()}
-            aria-label="Siguiente"
+            className="nav-arrow nav-arrow--right"
+            onClick={nextSlide}
           >
             <ChevronRight size={28} />
           </button>

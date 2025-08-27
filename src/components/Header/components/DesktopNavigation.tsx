@@ -24,8 +24,8 @@ export const DesktopNavigation: React.FC<DesktopNavigationProps> = ({
               onClick={() => onNavigateToSection(item.sectionId)}
               className={`font-bold text-lg xl:text-xl 2xl:text-2xl transition-all duration-300 hover:scale-105 focus:outline-none rounded-md px-3 py-2 ${
                 isScrolled
-                  ? 'text-[#139ED4] hover:text-[#171D4C] focus:ring-2 focus:ring-[#139ED4]'
-                  : 'text-white hover:text-[#88D4E4] focus:ring-2 focus:ring-[#88D4E4] font-extrabold text-shadow-lg'
+                  ? 'text-primary hover:text-primary-dark focus:ring-2 focus:ring-[var(--color-primary)]'
+                  : 'text-white hover:text-primary-light focus:ring-2 focus:ring-[var(--color-primary-light)] font-extrabold text-shadow-lg'
               }`}
               style={
                 !isScrolled

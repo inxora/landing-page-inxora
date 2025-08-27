@@ -101,7 +101,7 @@ export default function ClaimsBook() {
     <section className="max-w-3xl mx-auto px-2 sm:px-4 lg:px-8 py-8 md:py-12 text-gray-800">
       <BackButton 
         onClick={() => navigate(-1)}
-        className="mb-6 px-4 py-2 bg-[#139ED4] text-white rounded hover:bg-[#171D4C] transition-colors font-medium shadow"
+        className="mb-6 px-4 py-2 bg-primary text-white rounded hover:bg-[var(--color-primary-dark)] transition-colors font-medium shadow"
         variant="default"
         customText={t?.atras || "Atrás"}
       />
@@ -114,7 +114,7 @@ export default function ClaimsBook() {
         <meta property="og:locale" content={lang === 'es' ? 'es_PE' : lang === 'en' ? 'en_US' : 'pt_BR'} />
         <meta property="og:locale:alternate" content={lang === 'es' ? 'en_US' : 'es_PE'} />
       </Helmet>
-      <h1 className="text-3xl md:text-4xl font-bold text-[#171D4C] mb-6 text-center">{t?.title || "Libro de Reclamaciones"}</h1>
+      <h1 className="text-3xl md:text-4xl font-bold text-primary-dark mb-6 text-center">{t?.title || "Libro de Reclamaciones"}</h1>
       <p className="mb-6 text-justify">{t?.subtitle || "Conforme a la Ley N° 29571, ponemos a tu disposición nuestro Libro de Reclamaciones Virtual."}</p>
       {enviado ? (
         <div className="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mb-6 rounded text-center text-base md:text-lg">
@@ -122,8 +122,8 @@ export default function ClaimsBook() {
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
-          <fieldset className="border border-[#88D4E4] rounded p-3 sm:p-4">
-            <legend className="font-semibold text-[#139ED4]">{t?.datosConsumidor || "Datos del consumidor reclamante"}</legend>
+          <fieldset className="border border-[var(--color-primary-light)] rounded p-3 sm:p-4">
+            <legend className="font-semibold text-primary">{t?.datosConsumidor || "Datos del consumidor reclamante"}</legend>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
               <div>
                 <label className="block font-medium mb-1">{t?.nombre || "Nombre *"}</label>
@@ -131,7 +131,7 @@ export default function ClaimsBook() {
                   name="nombre" 
                   value={form.nombre} 
                   onChange={handleChange} 
-                  className="w-full border border-[#88D4E4] rounded px-3 py-2" 
+                  className="w-full border border-[var(--color-primary-light)] rounded px-3 py-2" 
                   required 
                   autoComplete="given-name"
                 />
@@ -142,7 +142,7 @@ export default function ClaimsBook() {
                   name="apellido1" 
                   value={form.apellido1} 
                   onChange={handleChange} 
-                  className="w-full border border-[#88D4E4] rounded px-3 py-2" 
+                  className="w-full border border-[var(--color-primary-light)] rounded px-3 py-2" 
                   required 
                   autoComplete="family-name"
                 />
@@ -153,13 +153,13 @@ export default function ClaimsBook() {
                   name="apellido2" 
                   value={form.apellido2} 
                   onChange={handleChange} 
-                  className="w-full border border-[#88D4E4] rounded px-3 py-2" 
+                  className="w-full border border-[var(--color-primary-light)] rounded px-3 py-2" 
                   autoComplete="family-name"
                 />
               </div>
               <div>
                 <label className="block font-medium mb-1">{t?.tipoDocumento || "Tipo de Documento *"}</label>
-                <select name="tipoDoc" value={form.tipoDoc} onChange={handleChange} className="w-full border border-[#88D4E4] rounded px-3 py-2" autoComplete="off">
+                <select name="tipoDoc" value={form.tipoDoc} onChange={handleChange} className="w-full border border-[var(--color-primary-light)] rounded px-3 py-2" autoComplete="off">
                   <option>{t?.dni || "DNI"}</option>
                   <option>{t?.ce || "CE"}</option>
                   <option>{t?.pasaporte || "Pasaporte"}</option>
@@ -172,7 +172,7 @@ export default function ClaimsBook() {
                   name="numDoc" 
                   value={form.numDoc} 
                   onChange={handleChange} 
-                  className="w-full border border-[#88D4E4] rounded px-3 py-2" 
+                  className="w-full border border-[var(--color-primary-light)] rounded px-3 py-2" 
                   required 
                   autoComplete="off"
                   maxLength={11}
@@ -185,7 +185,7 @@ export default function ClaimsBook() {
                   name="celular" 
                   value={form.celular} 
                   onChange={handleChange} 
-                  className="w-full border border-[#88D4E4] rounded px-3 py-2" 
+                  className="w-full border border-[var(--color-primary-light)] rounded px-3 py-2" 
                   required 
                   autoComplete="tel"
                   maxLength={9}
@@ -194,7 +194,7 @@ export default function ClaimsBook() {
               </div>
               <div>
                 <label className="block font-medium mb-1">{t?.departamento || "Departamento *"}</label>
-                <select name="departamento" value={form.departamento} onChange={handleChange} className="w-full border border-[#88D4E4] rounded px-3 py-2" required autoComplete="off">
+                <select name="departamento" value={form.departamento} onChange={handleChange} className="w-full border border-[var(--color-primary-light)] rounded px-3 py-2" required autoComplete="off">
                   <option value="">{t?.selecciona || "Selecciona"}</option>
                   {(t?.departamentos || ["Amazonas", "Áncash", "Apurímac", "Arequipa", "Ayacucho", "Cajamarca", "Callao", "Cusco", "Huancavelica", "Huánuco", "Ica", "Junín", "La Libertad", "Lambayeque", "Lima", "Loreto", "Madre de Dios", "Moquegua", "Pasco", "Piura", "Puno", "San Martín", "Tacna", "Tumbes", "Ucayali"]).map((dep: string) => <option key={dep}>{dep}</option>)}
                 </select>
@@ -205,7 +205,7 @@ export default function ClaimsBook() {
                   name="provincia" 
                   value={form.provincia} 
                   onChange={handleChange} 
-                  className="w-full border border-[#88D4E4] rounded px-3 py-2" 
+                  className="w-full border border-[var(--color-primary-light)] rounded px-3 py-2" 
                   autoComplete="address-level1"
                 />
               </div>
@@ -215,7 +215,7 @@ export default function ClaimsBook() {
                   name="distrito" 
                   value={form.distrito} 
                   onChange={handleChange} 
-                  className="w-full border border-[#88D4E4] rounded px-3 py-2" 
+                  className="w-full border border-[var(--color-primary-light)] rounded px-3 py-2" 
                   autoComplete="address-level2"
                 />
               </div>
@@ -225,7 +225,7 @@ export default function ClaimsBook() {
                   name="direccion" 
                   value={form.direccion} 
                   onChange={handleChange} 
-                  className="w-full border border-[#88D4E4] rounded px-3 py-2" 
+                  className="w-full border border-[var(--color-primary-light)] rounded px-3 py-2" 
                   required 
                   autoComplete="street-address"
                 />
@@ -236,7 +236,7 @@ export default function ClaimsBook() {
                   name="referencia" 
                   value={form.referencia} 
                   onChange={handleChange} 
-                  className="w-full border border-[#88D4E4] rounded px-3 py-2" 
+                  className="w-full border border-[var(--color-primary-light)] rounded px-3 py-2" 
                   autoComplete="off"
                 />
               </div>
@@ -247,14 +247,14 @@ export default function ClaimsBook() {
                   type="email" 
                   value={form.email} 
                   onChange={handleChange} 
-                  className="w-full border border-[#88D4E4] rounded px-3 py-2" 
+                  className="w-full border border-[var(--color-primary-light)] rounded px-3 py-2" 
                   required 
                   autoComplete="email"
                 />
               </div>
               <div className="md:col-span-2">
                 <label className="block font-medium mb-1">{t?.menorEdad || "¿Eres menor de edad?"}</label>
-                <select name="menorEdad" value={form.menorEdad} onChange={handleChange} className="w-full border border-[#88D4E4] rounded px-3 py-2" autoComplete="off">
+                <select name="menorEdad" value={form.menorEdad} onChange={handleChange} className="w-full border border-[var(--color-primary-light)] rounded px-3 py-2" autoComplete="off">
                   <option value="no">{t?.no || "No"}</option>
                   <option value="si">{t?.si || "Sí"}</option>
                 </select>
@@ -267,7 +267,7 @@ export default function ClaimsBook() {
                       name="tutorNombre" 
                       value={form.tutorNombre} 
                       onChange={handleChange} 
-                      className="w-full border border-[#88D4E4] rounded px-3 py-2" 
+                      className="w-full border border-[var(--color-primary-light)] rounded px-3 py-2" 
                       autoComplete="name"
                     />
                   </div>
@@ -278,13 +278,13 @@ export default function ClaimsBook() {
                       type="email" 
                       value={form.tutorEmail} 
                       onChange={handleChange} 
-                      className="w-full border border-[#88D4E4] rounded px-3 py-2" 
+                      className="w-full border border-[var(--color-primary-light)] rounded px-3 py-2" 
                       autoComplete="email"
                     />
                   </div>
                   <div>
                     <label className="block font-medium mb-1">{t?.tipoDocumentoTutor || "Tipo de Documento del Tutor"}</label>
-                    <select name="tutorTipoDoc" value={form.tutorTipoDoc} onChange={handleChange} className="w-full border border-[#88D4E4] rounded px-3 py-2" autoComplete="off">
+                    <select name="tutorTipoDoc" value={form.tutorTipoDoc} onChange={handleChange} className="w-full border border-[var(--color-primary-light)] rounded px-3 py-2" autoComplete="off">
                       <option>{t?.dni || "DNI"}</option>
                       <option>{t?.ce || "CE"}</option>
                       <option>{t?.pasaporte || "Pasaporte"}</option>
@@ -297,7 +297,7 @@ export default function ClaimsBook() {
                       name="tutorNumDoc" 
                       value={form.tutorNumDoc} 
                       onChange={handleChange} 
-                      className="w-full border border-[#88D4E4] rounded px-3 py-2" 
+                      className="w-full border border-[var(--color-primary-light)] rounded px-3 py-2" 
                       autoComplete="off"
                       maxLength={11}
                       pattern="[0-9]{8,11}"
@@ -307,19 +307,19 @@ export default function ClaimsBook() {
               )}
             </div>
           </fieldset>
-          <fieldset className="border border-[#88D4E4] rounded p-3 sm:p-4">
-            <legend className="font-semibold text-[#139ED4]">{t?.detalleReclamo || "Detalle del reclamo"}</legend>
+          <fieldset className="border border-[var(--color-primary-light)] rounded p-3 sm:p-4">
+            <legend className="font-semibold text-primary">{t?.detalleReclamo || "Detalle del reclamo"}</legend>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
               <div>
                 <label className="block font-medium mb-1">{t?.tipoReclamo || "Tipo de reclamo *"}</label>
-                <select name="tipoReclamo" value={form.tipoReclamo} onChange={handleChange} className="w-full border border-[#88D4E4] rounded px-3 py-2" autoComplete="off">
+                <select name="tipoReclamo" value={form.tipoReclamo} onChange={handleChange} className="w-full border border-[var(--color-primary-light)] rounded px-3 py-2" autoComplete="off">
                   <option>{t?.reclamacion || "Reclamación"}</option>
                   <option>{t?.queja || "Queja"}</option>
                 </select>
               </div>
               <div>
                 <label className="block font-medium mb-1">{t?.tipoConsumo || "Tipo de consumo *"}</label>
-                <select name="tipoConsumo" value={form.tipoConsumo} onChange={handleChange} className="w-full border border-[#88D4E4] rounded px-3 py-2" autoComplete="off">
+                <select name="tipoConsumo" value={form.tipoConsumo} onChange={handleChange} className="w-full border border-[var(--color-primary-light)] rounded px-3 py-2" autoComplete="off">
                   <option>{t?.producto || "Producto"}</option>
                   <option>{t?.servicio || "Servicio"}</option>
                 </select>
@@ -330,7 +330,7 @@ export default function ClaimsBook() {
                   name="numPedido" 
                   value={form.numPedido} 
                   onChange={handleChange} 
-                  className="w-full border border-[#88D4E4] rounded px-3 py-2" 
+                  className="w-full border border-[var(--color-primary-light)] rounded px-3 py-2" 
                   autoComplete="off"
                 />
               </div>
@@ -341,7 +341,7 @@ export default function ClaimsBook() {
                   type="date" 
                   value={form.fechaReclamo} 
                   onChange={handleChange} 
-                  className="w-full border border-[#88D4E4] rounded px-3 py-2" 
+                  className="w-full border border-[var(--color-primary-light)] rounded px-3 py-2" 
                   autoComplete="off"
                 />
               </div>
@@ -351,7 +351,7 @@ export default function ClaimsBook() {
                   name="proveedor" 
                   value={form.proveedor} 
                   onChange={handleChange} 
-                  className="w-full border border-[#88D4E4] rounded px-3 py-2" 
+                  className="w-full border border-[var(--color-primary-light)] rounded px-3 py-2" 
                   readOnly 
                   autoComplete="off"
                 />
@@ -362,7 +362,7 @@ export default function ClaimsBook() {
                   name="monto" 
                   value={form.monto} 
                   onChange={handleChange} 
-                  className="w-full border border-[#88D4E4] rounded px-3 py-2" 
+                  className="w-full border border-[var(--color-primary-light)] rounded px-3 py-2" 
                   autoComplete="off"
                   type="number"
                   step="0.01"
@@ -375,7 +375,7 @@ export default function ClaimsBook() {
                   name="descripcion" 
                   value={form.descripcion} 
                   onChange={handleChange} 
-                  className="w-full border border-[#88D4E4] rounded px-3 py-2" 
+                  className="w-full border border-[var(--color-primary-light)] rounded px-3 py-2" 
                   required 
                   rows={2} 
                   autoComplete="off"
@@ -388,7 +388,7 @@ export default function ClaimsBook() {
                   type="date" 
                   value={form.fechaCompra} 
                   onChange={handleChange} 
-                  className="w-full border border-[#88D4E4] rounded px-3 py-2" 
+                  className="w-full border border-[var(--color-primary-light)] rounded px-3 py-2" 
                   autoComplete="off"
                 />
               </div>
@@ -399,7 +399,7 @@ export default function ClaimsBook() {
                   type="date" 
                   value={form.fechaConsumo} 
                   onChange={handleChange} 
-                  className="w-full border border-[#88D4E4] rounded px-3 py-2" 
+                  className="w-full border border-[var(--color-primary-light)] rounded px-3 py-2" 
                   autoComplete="off"
                 />
               </div>
@@ -410,7 +410,7 @@ export default function ClaimsBook() {
                   type="date" 
                   value={form.fechaCaducidad} 
                   onChange={handleChange} 
-                  className="w-full border border-[#88D4E4] rounded px-3 py-2" 
+                  className="w-full border border-[var(--color-primary-light)] rounded px-3 py-2" 
                   autoComplete="off"
                 />
               </div>
@@ -420,7 +420,7 @@ export default function ClaimsBook() {
                   name="detalle" 
                   value={form.detalle} 
                   onChange={handleChange} 
-                  className="w-full border border-[#88D4E4] rounded px-3 py-2" 
+                  className="w-full border border-[var(--color-primary-light)] rounded px-3 py-2" 
                   required 
                   rows={2} 
                   autoComplete="off"
@@ -432,7 +432,7 @@ export default function ClaimsBook() {
                   name="pedidoCliente" 
                   value={form.pedidoCliente} 
                   onChange={handleChange} 
-                  className="w-full border border-[#88D4E4] rounded px-3 py-2" 
+                  className="w-full border border-[var(--color-primary-light)] rounded px-3 py-2" 
                   required 
                   rows={2} 
                   autoComplete="off"
@@ -450,7 +450,7 @@ export default function ClaimsBook() {
             <span className="text-sm">{t?.politicaPrivacidad || "He leído y acepto la Política de Privacidad y la Política de Cookies."}</span>
           </div>
           {error && <div className="text-red-600 font-medium mb-2">{error}</div>}
-          <button type="submit" className="w-full bg-[#139ED4] hover:bg-[#171D4C] text-white px-4 py-2 md:py-3 rounded font-semibold shadow transition-colors flex items-center justify-center text-base md:text-lg disabled:opacity-60" disabled={submitting}>
+          <button type="submit" className="w-full bg-primary hover:bg-[var(--color-primary-dark)] text-white px-4 py-2 md:py-3 rounded font-semibold shadow transition-colors flex items-center justify-center text-base md:text-lg disabled:opacity-60" disabled={submitting}>
             {submitting ? (
               <>
                 <svg className="animate-spin h-5 w-5 mr-2 text-white" viewBox="0 0 24 24" fill="none">

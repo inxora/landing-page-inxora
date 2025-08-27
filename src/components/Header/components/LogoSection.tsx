@@ -12,7 +12,7 @@ export const LogoSection: React.FC<LogoSectionProps> = ({ onLogoClick }) => {
     <div className="flex items-center pl-4 sm:pl-6 md:pl-8 lg:pl-12 flex-shrink-0">
       <button
         onClick={onLogoClick}
-        className={`focus:outline-none focus:ring-2 focus:ring-[#139ED4] rounded-lg ${
+        className={`focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] rounded-lg ${
           location.pathname !== '/' ? 'cursor-pointer' : 'cursor-default'
         }`}
         aria-label="Ir al inicio"

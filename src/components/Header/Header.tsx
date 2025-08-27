@@ -173,7 +173,7 @@ export const Header: React.FC = () => {
 
   // ============ RENDER HELPERS ============
   const renderLogo = () => (
-    <div className="flex items-center pl-4 sm:pl-6 md:pl-8 lg:pl-12 flex-shrink-0">
+    <div className="flex items-center pl-2 sm:pl-4 md:pl-6 lg:pl-8 flex-shrink-0">
       <button
         onClick={handleLogoClick}
         className={`focus:outline-none ${
@@ -182,9 +182,9 @@ export const Header: React.FC = () => {
         aria-label="Ir al inicio"
       >
         <img
-          src="logo_inxora/LOGO-35.png"
+          src={isScrolled ? "logo_inxora/LOGO-35.png" : "logo_inxora/LOGO-30.png"}
           alt="INXORA - Marketplace de suministros industriales"
-          className="h-16 sm:h-20 md:h-22 lg:h-24 w-auto transition-transform duration-200 hover:scale-105"
+          className="h-10 sm:h-12 md:h-14 lg:h-16 w-auto transition-transform duration-200 hover:scale-105"
         />
       </button>
     </div>
@@ -201,8 +201,8 @@ export const Header: React.FC = () => {
               onBlur={(e) => e.currentTarget.blur()}
               className={`font-bold text-lg xl:text-xl 2xl:text-2xl transition-all duration-300 hover:scale-105 focus:outline-none focus-visible:ring-2 rounded-md px-3 py-2 ${
                 isScrolled
-                  ? 'text-[#139ED4] dark:text-[#88D4E4] hover:text-[#171D4C] dark:hover:text-[#139ED4] focus-visible:ring-[#139ED4]'
-                  : 'text-white hover:text-[#88D4E4] focus-visible:ring-[#88D4E4] font-extrabold'
+                  ? 'text-primary dark:text-primary-light hover:text-primary-dark dark:hover:text-primary focus-visible:ring-[var(--color-primary)]'
+                  : 'text-white hover:text-primary-light focus-visible:ring-[var(--color-primary-light)] font-extrabold'
               }`}
               style={!isScrolled ? {
                 textShadow: '2px 2px 4px rgba(0,0,0,0.8), 0 0 10px rgba(255,255,255,0.3)'
@@ -223,8 +223,8 @@ export const Header: React.FC = () => {
                    rounded-md font-extrabold text-sm sm:text-base lg:text-lg transition-all duration-300 
                    focus:outline-none focus-visible:ring-2 ${
                      isScrolled
-                       ? 'border border-[#139ED4] dark:border-[#88D4E4] bg-transparent text-[#139ED4] dark:text-[#88D4E4] hover:bg-[#171D4C] dark:hover:bg-[#139ED4] hover:text-white focus-visible:ring-[#139ED4]'
-                       : 'border-2 border-white bg-transparent text-white hover:bg-white hover:bg-opacity-20 hover:text-[#88D4E4] focus-visible:ring-white font-extrabold'
+                       ? 'border border-primary dark:border-[var(--color-primary-light)] bg-[var(--color-primary-light)] text-primary dark:text-primary-light hover:bg-[var(--color-primary-dark)] dark:hover:bg-primary hover:text-white focus-visible:ring-[var(--color-primary)]'
+                       : 'border-2 border-white bg-transparent text-white hover:bg-white hover:bg-opacity-20 hover:text-primary-light focus-visible:ring-white font-extrabold'
                    }`}
         style={!isScrolled ? {
           textShadow: '2px 2px 4px rgba(0,0,0,0.8)'
@@ -249,14 +249,14 @@ export const Header: React.FC = () => {
 
       {langMenuOpen && (
         <div className="absolute right-0 top-full mt-2 w-36 sm:w-40 lg:w-44 bg-gray-900 dark:bg-gray-800 border-2 
-                        border-[#139ED4] dark:border-[#88D4E4] rounded-lg shadow-xl z-50 animate-fade-in overflow-hidden">
+                        border-primary dark:border-[var(--color-primary-light)] rounded-lg shadow-xl z-50 animate-fade-in overflow-hidden">
           <ul className="py-1" role="listbox">
             {LANGUAGE_OPTIONS.map((option) => (
               <li key={option.value}>
                 <button
                   className={`w-full flex items-center justify-between px-3 py-2 text-left
-                             hover:bg-[#171D4C] dark:hover:bg-[#139ED4] text-[#139ED4] dark:text-[#88D4E4] text-sm lg:text-base transition-colors
-                             focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#139ED4]
+                             hover:bg-[var(--color-primary-dark)] dark:hover:bg-primary text-primary dark:text-primary-light text-sm lg:text-base transition-colors
+                             focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[var(--color-primary)]
                              ${lang === option.value ? 'font-bold' : 'font-medium'}`}
                   onClick={() => handleLanguageChange(option.value)}
                   onMouseDown={(e) => e.preventDefault()}
@@ -264,10 +264,10 @@ export const Header: React.FC = () => {
                   aria-selected={lang === option.value}
                 >
                   <div className="flex items-center gap-3">
-                    <span className="font-mono text-[#139ED4] dark:text-[#88D4E4] font-bold w-6">
+                    <span className="font-mono text-primary dark:text-primary-light font-bold w-6">
                       {option.code}
                     </span>
-                    <span className="text-[#139ED4] dark:text-[#88D4E4]">{option.label}</span>
+                    <span className="text-primary dark:text-primary-light">{option.label}</span>
                   </div>
                   {lang === option.value && <span className="text-[#23B6E7] font-bold">✓</span>}
                 </button>
@@ -290,8 +290,8 @@ export const Header: React.FC = () => {
                  hover:shadow-xl hover:scale-105 items-center gap-2 justify-center
                  focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${
                    isScrolled
-                     ? 'bg-[#139ED4] hover:bg-[#171D4C] text-white shadow-sm hover:shadow-md focus-visible:ring-[#139ED4]'
-                     : 'bg-[#88D4E4] hover:bg-[#139ED4] text-white shadow-lg focus-visible:ring-white font-extrabold'
+                     ? 'bg-primary hover:bg-[var(--color-primary-dark)] text-white shadow-sm hover:shadow-md focus-visible:ring-[var(--color-primary)]'
+                     : 'bg-primary-light hover:bg-primary text-white shadow-lg focus-visible:ring-white font-extrabold'
                  }`}
       style={!isScrolled ? {
         textShadow: '1px 1px 2px rgba(0,0,0,0.3)'
@@ -315,8 +315,8 @@ export const Header: React.FC = () => {
       aria-label={isMenuOpen ? "Cerrar menú" : "Abrir menú"}
       className={`lg:hidden p-2 transition-colors focus:outline-none rounded-md ${
         isScrolled
-          ? 'text-[#139ED4] dark:text-[#88D4E4] hover:text-[#171D4C] dark:hover:text-[#139ED4] focus-visible:ring-2 focus-visible:ring-[#139ED4]'
-          : 'text-white hover:text-[#88D4E4] focus-visible:ring-2 focus-visible:ring-white font-extrabold'
+          ? 'text-primary dark:text-primary-light hover:text-primary-dark dark:hover:text-primary focus-visible:ring-2 focus-visible:ring-[var(--color-primary)]'
+          : 'text-white hover:text-primary-light focus-visible:ring-2 focus-visible:ring-white font-extrabold'
       }`}
       style={!isScrolled ? {
         filter: 'drop-shadow(2px 2px 4px rgba(0,0,0,0.8))'
@@ -327,7 +327,7 @@ export const Header: React.FC = () => {
   );
 
   const renderMobileMenu = () => (
-    <div className="lg:hidden bg-white dark:bg-dark-surface border-t-2 border-[#139ED4] dark:border-[#88D4E4] w-full shadow-xl mobile-menu">
+    <div className="lg:hidden bg-white dark:bg-dark-surface border-t-2 border-primary dark:border-[var(--color-primary-light)] w-full shadow-xl mobile-menu">
       <nav className="px-4 py-6 bg-white dark:bg-dark-surface">
         <ul className="flex flex-col space-y-4">
           {NAVIGATION_ITEMS.map((item) => (
@@ -335,9 +335,9 @@ export const Header: React.FC = () => {
               <button
                 onClick={() => navigateToSection(item.sectionId)}
                 onMouseDown={(e) => e.preventDefault()}
-                className="w-full text-left text-[#139ED4] dark:text-[#88D4E4] hover:text-[#171D4C] dark:hover:text-[#139ED4] font-bold text-lg
+                className="w-full text-left text-primary dark:text-primary-light hover:text-primary-dark dark:hover:text-primary font-bold text-lg
                            py-4 px-3 transition-colors rounded-md hover:bg-[#f0f9ff] dark:hover:bg-dark-accent
-                           focus:outline-none focus-visible:ring-2 focus-visible:ring-[#139ED4]"
+                           focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)]"
               >
                 {t[item.label]}
               </button>
@@ -349,10 +349,10 @@ export const Header: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               onMouseDown={(e) => e.preventDefault()}
-              className="w-full font-orbitron bg-[#139ED4] hover:bg-[#171D4C] text-white 
+              className="w-full font-orbitron bg-primary hover:bg-[var(--color-primary-dark)] text-white 
                          px-4 py-4 rounded-md font-bold text-base transition-all duration-200 
                          shadow-md hover:shadow-lg flex items-center gap-2 justify-center
-                         focus:outline-none focus-visible:ring-2 focus-visible:ring-[#139ED4] focus-visible:ring-offset-2"
+                         focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] focus-visible:ring-offset-2"
             >
               <img
                 src="logo_inxora/LOGO-22.png"
@@ -389,18 +389,20 @@ export const Header: React.FC = () => {
         <link rel="alternate" hrefLang="pt" href="https://inxora.com/pt" />
       </Helmet>
 
-      <header 
+      <header
         className={`fixed top-0 z-50 w-full transition-all duration-300 ${
-          isScrolled || isMenuOpen || isProvidersForm
-            ? 'bg-white dark:bg-dark-surface shadow-sm border-b-2 border-[#139ED4] dark:border-[#88D4E4] scrolled'
-            : ''
+          (isScrolled || isMenuOpen)
+            ? 'bg-white shadow-sm border-b-2 border-primary scrolled'
+            : isProvidersForm
+              ? 'bg-white shadow-sm border-b-2 border-primary scrolled'
+              : 'bg-[#13A0D8]'
         }`}
       >
-        <div className="w-full py-2 sm:py-3 flex items-center justify-between max-w-none">
+        <div className="w-full py-1.5 sm:py-2 md:py-2.5 flex items-center justify-between max-w-none border-b border-white/30 px-2 sm:px-4 md:px-6 lg:px-8">
           {renderLogo()}
           {renderDesktopNavigation()}
 
-          <div className="flex items-center gap-2 sm:gap-3 lg:gap-4 ml-auto pr-4 sm:pr-6 md:pr-8 lg:pr-12">
+          <div className="flex items-center gap-2 sm:gap-3 lg:gap-4 ml-auto pr-2 sm:pr-4 md:pr-6 lg:pr-8">
             {renderLanguageSelector()}
             {renderCTAButton()}
             {renderMobileMenuButton()}
@@ -409,48 +411,6 @@ export const Header: React.FC = () => {
 
         {isMenuOpen && renderMobileMenu()}
       </header>
-
-      <style>{`
-        .animate-fade-in {
-          animation: fadeIn 0.2s ease-out;
-        }
-        
-        @keyframes fadeIn {
-          from {
-            opacity: 0;
-            transform: translateY(-10px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        
-        /* Header completamente transparente cuando no está scrolled */
-        header:not(.scrolled) {
-          background: transparent !important;
-          background-color: transparent !important;
-        }
-        
-        header:not(.scrolled) > div:first-child {
-          background: transparent !important;
-          background-color: transparent !important;
-        }
-        
-        /* Eliminar cualquier backdrop filter del header */
-        header:not(.scrolled) * {
-          backdrop-filter: none !important;
-          -webkit-backdrop-filter: none !important;
-        }
-        
-        .mobile-menu {
-          background-color: white !important;
-        }
-        
-        .dark .mobile-menu {
-          background-color: #16213e !important;
-        }
-      `}</style>
     </>
   );
 };

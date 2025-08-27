@@ -15,37 +15,24 @@ interface ThemeProviderProps {
 }
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
-  const [theme, setTheme] = useState<Theme>('dark'); // Modo oscuro por defecto
+  const [theme, setTheme] = useState<Theme>('light'); // Modo claro por defecto
 
   useEffect(() => {
-    // Verificar si hay preferencia guardada
-    const savedTheme = localStorage.getItem('inxora-theme') as Theme;
-    if (savedTheme) {
-      setTheme(savedTheme);
-    } else {
-      // Por defecto usar modo oscuro
-      setTheme('dark');
-    }
+    // Siempre usar modo claro
+    setTheme('light');
+    document.documentElement.classList.remove('dark'); // Asegurarse de que la clase 'dark' no esté presente
+    localStorage.setItem('inxora-theme', 'light');
   }, []);
 
-  useEffect(() => {
-    // Aplicar clase al html
-    if (theme === 'dark') {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-    localStorage.setItem('inxora-theme', theme);
-  }, [theme]);
-
   const toggleTheme = () => {
-    setTheme(prev => prev === 'light' ? 'dark' : 'light');
+    // No permitir cambiar el tema, siempre será 'light'
+    console.warn("Dark mode has been removed. Theme is always 'light'.");
   };
 
   const value = {
     theme,
     toggleTheme,
-    isDark: theme === 'dark'
+    isDark: false // Siempre es falso ya que el modo oscuro ha sido eliminado
   };
 
   return (

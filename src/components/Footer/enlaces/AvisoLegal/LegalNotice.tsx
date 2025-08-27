@@ -12,7 +12,7 @@ const LegalNotice = () => {
     <section className="max-w-3xl mx-auto px-4 py-12 text-gray-800">
       <BackButton 
         onClick={() => navigate(-1)}
-        className="mb-6 px-4 py-2 bg-[#139ED4] text-white rounded hover:bg-[#171D4C] transition-colors font-medium shadow"
+        className="mb-6 px-4 py-2 bg-primary text-white rounded hover:bg-[var(--color-primary-dark)] transition-colors font-medium shadow"
         variant="default"
       />
       <Helmet>
@@ -23,7 +23,7 @@ const LegalNotice = () => {
         <meta property="og:type" content="website" />
         <meta property="og:locale" content={lang === 'es' ? 'es_PE' : lang === 'en' ? 'en_US' : 'pt_BR'} />
       </Helmet>
-      <h1 className="text-3xl md:text-4xl font-bold text-[#171D4C] mb-6 text-center">{t.title}</h1>
+      <h1 className="text-3xl md:text-4xl font-bold text-primary-dark mb-6 text-center">{t.title}</h1>
       <div className="prose prose-sm sm:prose lg:prose-lg max-w-none text-justify" dangerouslySetInnerHTML={{ __html: t.content }} />
 
     </section>

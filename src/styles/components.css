@@ -1,0 +1,605 @@
+/* ===================================================
+   INXORA - COMPONENTES PROFESIONALES REUTILIZABLES
+   Sistema de componentes con variables CSS para B2B
+   =================================================== */
+
+@layer components {
+  /* Botones Principales */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    background-color: var(--color-cta-primary);
+    border: none;
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-normal);
+    cursor: pointer;
+  }
+
+  .btn-primary:hover {
+    background-color: var(--color-cta-primary-hover);
+    box-shadow: var(--shadow-md);
+  }
+
+  .btn-primary:focus {
+    outline: none;
+    box-shadow: var(--shadow-sm), 0 0 0 3px var(--color-primary-light);
+  }
+
+  .btn-primary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .btn-primary:active {
+    transform: scale(0.95);
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    background-color: var(--color-cta-secondary);
+    border: 1px solid var(--color-primary);
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-normal);
+    cursor: pointer;
+  }
+
+  .btn-secondary:hover {
+    background-color: var(--color-cta-secondary-hover);
+    border-color: var(--color-primary-dark);
+    box-shadow: var(--shadow-md);
+  }
+
+  .btn-secondary:focus {
+    outline: none;
+    box-shadow: var(--shadow-sm), 0 0 0 3px var(--color-primary-light);
+  }
+
+  .btn-secondary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .btn-secondary:active {
+    transform: scale(0.95);
+  }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-foreground);
+    background-color: transparent;
+    border: 1px solid var(--color-border);
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-normal);
+    cursor: pointer;
+  }
+
+  .btn-outline:hover {
+    background-color: var(--color-surface-elevated);
+    border-color: var(--color-border-strong);
+    box-shadow: var(--shadow-md);
+  }
+
+  .btn-outline:focus {
+    outline: none;
+    box-shadow: var(--shadow-sm), 0 0 0 3px var(--color-primary-light);
+  }
+
+  .btn-outline:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .btn-outline:active {
+    transform: scale(0.95);
+  }
+
+  /* Tarjetas Profesionales */
+  .card {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow var(--transition-normal);
+  }
+
+  .card:hover {
+    box-shadow: var(--shadow-md);
+  }
+
+  .card-interactive {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-normal);
+    cursor: pointer;
+  }
+
+  .card-interactive:hover {
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-border-strong);
+  }
+
+  .card-interactive:active {
+    transform: scale(0.98);
+  }
+
+  /* Scroll to Top Button */
+  .scroll-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 50;
+    width: 3rem;
+    height: 3rem;
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-normal);
+    opacity: 0.9;
+    cursor: pointer;
+  }
+
+  .scroll-to-top:hover {
+    background-color: var(--color-primary-dark);
+    box-shadow: var(--shadow-xl);
+    opacity: 1;
+  }
+
+  .scroll-to-top:focus {
+    outline: none;
+    box-shadow: var(--shadow-lg), 0 0 0 3px var(--color-primary-light);
+  }
+
+  /* Theme Toggle */
+  .theme-toggle {
+    position: fixed;
+    top: 6rem;
+    right: 1rem;
+    z-index: 40;
+    width: 3rem;
+    height: 3rem;
+    background-color: var(--color-surface-elevated);
+    color: var(--color-foreground);
+    border: 1px solid var(--color-border);
+    border-radius: 50%;
+    box-shadow: var(--shadow-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-normal);
+    cursor: pointer;
+  }
+
+  .theme-toggle:hover {
+    background-color: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .theme-toggle:focus {
+    outline: none;
+    box-shadow: var(--shadow-md), 0 0 0 3px var(--color-primary-light);
+  }
+
+  @media (max-width: 768px) {
+    .theme-toggle {
+      top: 5rem;
+      right: 1rem;
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+    
+    .scroll-to-top {
+      bottom: 1.5rem;
+      right: 1.5rem;
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+  }
+}
+
+/* ===================================================
+   REACT SELECT - COMPONENTE PERSONALIZADO
+   =================================================== */
+
+/* React Select Custom Styles */
+.react-select-container .react-select__control {
+  min-height: 48px;
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  background-color: var(--color-surface);
+}
+
+.react-select-container .react-select__control:hover {
+  border-color: var(--color-primary);
+}
+
+.react-select-container .react-select__control--is-focused {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(19, 158, 212, 0.2);
+  outline: none;
+}
+
+.react-select-container .react-select__value-container {
+  padding: var(--spacing-sm) var(--spacing-md);
+}
+
+.react-select-container .react-select__placeholder {
+  color: var(--color-muted-foreground);
+  font-weight: 400;
+}
+
+.react-select-container .react-select__single-value {
+  color: var(--color-foreground);
+  font-weight: 500;
+}
+
+.react-select-container .react-select__dropdown-indicator {
+  color: var(--color-muted);
+  padding: var(--spacing-sm);
+}
+
+.react-select-container .react-select__indicator-separator {
+  background-color: var(--color-border);
+}
+
+.react-select-container .react-select__menu {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-xl);
+  z-index: 9999;
+}
+
+.react-select-container .react-select__menu-list {
+  padding: var(--spacing-xs);
+  max-height: 200px;
+}
+
+.react-select-container .react-select__option {
+  padding: 10px var(--spacing-md);
+  border-radius: var(--radius-sm);
+  margin: 2px 0;
+  cursor: pointer;
+  color: var(--color-foreground);
+  font-weight: 400;
+  transition: all var(--transition-fast);
+}
+
+.react-select-container .react-select__option:hover {
+  background-color: var(--color-border-light);
+  color: var(--color-primary);
+}
+
+.react-select-container .react-select__option--is-focused {
+  background-color: var(--color-info-light);
+  color: var(--color-primary);
+}
+
+.react-select-container .react-select__option--is-selected {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.react-select-container .react-select__option--is-selected:hover {
+  background-color: var(--color-primary-dark);
+}
+
+/* Dark mode styles for react-select */
+.dark .react-select-container .react-select__control {
+  background-color: var(--color-dark-surface);
+  border-color: var(--color-dark-border);
+}
+
+.dark .react-select-container .react-select__control:hover {
+  border-color: var(--color-primary);
+}
+
+.dark .react-select-container .react-select__control--is-focused {
+  border-color: var(--color-primary);
+  background-color: var(--color-dark-surface);
+}
+
+.dark .react-select-container .react-select__single-value {
+  color: var(--color-dark-text);
+}
+
+.dark .react-select-container .react-select__placeholder {
+  color: var(--color-dark-muted);
+}
+
+.dark .react-select-container .react-select__dropdown-indicator {
+  color: var(--color-dark-muted);
+}
+
+.dark .react-select-container .react-select__indicator-separator {
+  background-color: var(--color-dark-border);
+}
+
+.dark .react-select-container .react-select__menu {
+  background-color: var(--color-dark-surface);
+  border-color: var(--color-dark-border);
+}
+
+.dark .react-select-container .react-select__option {
+  color: var(--color-dark-text);
+}
+
+.dark .react-select-container .react-select__option:hover {
+  background-color: var(--color-dark-border);
+  color: var(--color-primary);
+}
+
+.dark .react-select-container .react-select__option--is-focused {
+  background-color: var(--color-dark-border);
+  color: var(--color-primary);
+}
+
+.dark .react-select-container .react-select__option--is-selected {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.dark .react-select-container .react-select__option--is-selected:hover {
+  background-color: var(--color-primary-dark);
+}
+
+/* Multi-select specific styles */
+.react-select-container .react-select__multi-value {
+  background-color: var(--color-primary);
+  border-radius: var(--radius-sm);
+  margin: 2px;
+}
+
+.react-select-container .react-select__multi-value__label {
+  color: white;
+  font-weight: 500;
+  padding: 4px var(--spacing-sm);
+}
+
+.react-select-container .react-select__multi-value__remove {
+  color: white;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: 0 var(--spacing-sm);
+  transition: all var(--transition-fast);
+}
+
+.react-select-container .react-select__multi-value__remove:hover {
+  background-color: var(--color-primary-dark);
+  color: white;
+}
+
+.dark .react-select-container .react-select__multi-value {
+  background-color: var(--color-primary);
+}
+
+.dark .react-select-container .react-select__multi-value__label {
+  color: white;
+}
+
+.dark .react-select-container .react-select__multi-value__remove {
+  color: white;
+}
+
+.dark .react-select-container .react-select__multi-value__remove:hover {
+  background-color: var(--color-primary-dark);
+}
+
+/* ===================================================
+   LOADER COMPONENT
+   =================================================== */
+.loader-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  gap: var(--spacing-md);
+}
+
+.loader-bar {
+  height: 8px;
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-sm);
+}
+
+.loader-bar--primary {
+  width: 96px;
+  background-color: var(--color-primary);
+}
+
+.loader-bar--light {
+  width: 64px;
+  background-color: var(--color-primary-light);
+}
+
+.loader-bar--accent {
+  width: 40px;
+  background-color: var(--color-accent-bright);
+}
+
+/* ===================================================
+   SCROLL TO TOP BUTTON
+   =================================================== */
+.scroll-to-top {
+  position: fixed;
+  bottom: var(--spacing-lg);
+  left: var(--spacing-lg);
+  z-index: 50;
+  background: var(--gradient-primary);
+  color: white;
+  padding: var(--spacing-md);
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-lg);
+  transition: all var(--transition-slow);
+  border: none;
+  cursor: pointer;
+}
+
+.scroll-to-top:hover {
+  background: var(--gradient-accent);
+  transform: scale(1.05);
+  box-shadow: var(--shadow-xl);
+}
+
+.scroll-to-top:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--color-primary-light);
+}
+
+/* Dark mode */
+.dark .scroll-to-top {
+  background: var(--color-primary-light);
+}
+
+.dark .scroll-to-top:hover {
+  background: var(--color-primary);
+}
+
+/* ===================================================
+   NAVIGATION ARROWS (CAROUSELS)
+   =================================================== */
+.nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gradient-hero);
+  color: white;
+  border-radius: var(--radius-full);
+  z-index: 10;
+  transition: all var(--transition-slow);
+  cursor: pointer;
+  border: none;
+  box-shadow: var(--shadow-lg);
+}
+
+.nav-arrow:hover {
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: var(--shadow-xl);
+}
+
+.nav-arrow--left {
+  left: -16px;
+}
+
+.nav-arrow--right {
+  right: -16px;
+}
+
+@media (min-width: 768px) {
+  .nav-arrow--left {
+    left: -48px;
+  }
+  
+  .nav-arrow--right {
+    right: -48px;
+  }
+}
+
+/* ===================================================
+   RESPONSIVE UTILITIES
+   =================================================== */
+.responsive-text-sm {
+  font-size: 0.75rem;
+}
+
+.responsive-text-base {
+  font-size: 0.875rem;
+}
+
+@media (min-width: 768px) {
+  .responsive-text-sm {
+    font-size: 0.875rem;
+  }
+  
+  .responsive-text-base {
+    font-size: 1rem;
+  }
+}
+
+/* ===================================================
+   BACKDROP BLUR EFFECTS
+   =================================================== */
+.backdrop-surface {
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--color-border);
+}
+
+.dark .backdrop-surface {
+  background-color: rgba(22, 33, 62, 0.9);
+  border-color: var(--color-dark-border);
+}
+
+/* ===================================================
+   GRADIENT TEXT
+   =================================================== */
+.gradient-text {
+  background: var(--gradient-hero);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 200%;
+  animation: gradientShift 3s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ===================================================
+   BRAND BORDERS
+   =================================================== */
+.border-gradient {
+  position: relative;
+  background: var(--color-surface);
+}
+
+.border-gradient::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 2px;
+  background: var(--gradient-hero);
+  border-radius: inherit;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: xor;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+}

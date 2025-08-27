@@ -77,9 +77,9 @@ export const ProvidersSection = () => {
   return <section id="proveedores" className="py-16 bg-white dark:bg-dark-accent w-full scroll-mt-24 md:scroll-mt-32">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#171D4C] dark:text-dark-text mb-4 line-clamp-2">
-            <span className="text-[#171D4C] dark:text-dark-text">{t.titleMain} </span>
-            <span className="text-[#D90E8C]">{t.titleAccent}</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-primary-dark dark:text-dark-text mb-4 line-clamp-2">
+            <span className="text-primary-dark dark:text-dark-text">{t.titleMain} </span>
+            <span className="text-accent-bright">{t.titleAccent}</span>
           </h2>
           <p className="text-lg text-gray-600 dark:text-dark-muted max-w-3xl mx-auto line-clamp-2 md:line-clamp-none">
             {t.subtitle}
@@ -88,14 +88,14 @@ export const ProvidersSection = () => {
         {/* Slider responsive de proveedores con keen-slider */}
         <div className="relative mb-12">
           <button
-            className="absolute -left-4 md:-left-12 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center bg-gradient-to-r from-[#139ED4] to-[#D90E8C] text-white rounded-full z-10 transition-all duration-300 hover:scale-110 shadow-lg"
+            className="absolute -left-4 md:-left-12 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-accent-bright)] text-white rounded-full z-10 transition-all duration-300 hover:scale-110 shadow-lg"
             onClick={() => slider && slider.current && slider.current.prev()}
             aria-label="Anterior"
           >
             <ChevronLeft size={28} />
           </button>
           <button
-            className="absolute -right-4 md:-right-12 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center bg-gradient-to-r from-[#139ED4] to-[#D90E8C] text-white rounded-full z-10 transition-all duration-300 hover:scale-110 shadow-lg"
+            className="absolute -right-4 md:-right-12 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-accent-bright)] text-white rounded-full z-10 transition-all duration-300 hover:scale-110 shadow-lg"
             onClick={() => slider && slider.current && slider.current.next()}
             aria-label="Siguiente"
           >
@@ -113,7 +113,7 @@ export const ProvidersSection = () => {
           <p className="text-lg text-gray-600 dark:text-dark-muted max-w-3xl mx-auto mb-6">
             {t.join}
           </p>
-          <Link to={getRouteByLang('providersForm', lang)} className="border-2 border-[#D90E8C] text-[#D90E8C] px-6 py-3 rounded-md font-medium hover:bg-[#139ED4] hover:text-white transition-all duration-200 inline-block shadow-sm hover:shadow-md hover:scale-105">
+          <Link to={getRouteByLang('providersForm', lang)} className="border-2 border-[var(--color-accent-bright)] text-accent-bright px-6 py-3 rounded-md font-medium hover:bg-primary hover:text-white transition-all duration-200 inline-block shadow-sm hover:shadow-md hover:scale-105">
             {t.cta}
           </Link>
         </div>

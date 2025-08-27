@@ -91,7 +91,7 @@ const UpdatePassword = () => {
           
           {/* Header */}
           <div className="text-center mb-8">
-            <div className="w-16 h-16 bg-[#139ED4] rounded-full flex items-center justify-center mx-auto mb-4">
+            <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
               <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
               </svg>
@@ -117,7 +117,7 @@ const UpdatePassword = () => {
                   type={showPassword ? 'text' : 'password'}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-[#139ED4] focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
                   placeholder="Ingresa tu nueva contraseña"
                   required
                 />
@@ -153,7 +153,7 @@ const UpdatePassword = () => {
                   type={showConfirmPassword ? 'text' : 'password'}
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
-                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-[#139ED4] focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
                   placeholder="Confirma tu nueva contraseña"
                   required
                 />
@@ -195,7 +195,7 @@ const UpdatePassword = () => {
             <button
               type="submit"
               disabled={loading || !isPasswordValid || !passwordsMatch}
-              className="w-full py-3 px-4 bg-[#139ED4] hover:bg-[#0f7ba3] disabled:bg-gray-300 disabled:cursor-not-allowed text-white font-semibold rounded-lg transition-colors duration-200"
+              className="w-full py-3 px-4 bg-primary hover:bg-[#0f7ba3] disabled:bg-gray-300 disabled:cursor-not-allowed text-white font-semibold rounded-lg transition-colors duration-200"
             >
               {loading ? (
                 <div className="flex items-center justify-center gap-2">
@@ -212,7 +212,7 @@ const UpdatePassword = () => {
           <div className="mt-6 text-center">
             <button
               onClick={() => navigate('/')}
-              className="text-[#139ED4] hover:text-[#0f7ba3] text-sm font-medium"
+              className="text-primary hover:text-[#0f7ba3] text-sm font-medium"
             >
               Volver al inicio
             </button>

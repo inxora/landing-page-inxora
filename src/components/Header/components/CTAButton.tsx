@@ -21,8 +21,8 @@ export const CTAButton: React.FC<CTAButtonProps> = ({ isScrolled }) => {
                hover:shadow-xl hover:scale-105 items-center gap-2 justify-center
                focus:outline-none focus:ring-offset-2 ${
                  isScrolled
-                   ? 'bg-[#139ED4] hover:bg-[#171D4C] text-white shadow-sm hover:shadow-md focus:ring-2 focus:ring-[#139ED4]'
-                   : 'bg-[#88D4E4] hover:bg-[#139ED4] text-white shadow-lg focus:ring-2 focus:ring-white font-extrabold'
+                   ? 'bg-primary hover:bg-[var(--color-primary-dark)] text-white shadow-sm hover:shadow-md focus:ring-2 focus:ring-[var(--color-primary)]'
+                   : 'bg-primary-light hover:bg-primary text-white shadow-lg focus:ring-2 focus:ring-white font-extrabold'
                }`}
       style={
         !isScrolled

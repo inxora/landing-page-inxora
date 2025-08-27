@@ -35,19 +35,19 @@ const EmailConfirmed = () => {
             </h3>
             <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-300">
               <li className="flex items-center gap-2">
-                <div className="w-1.5 h-1.5 bg-[#139ED4] rounded-full"></div>
+                <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
                 Recibir notificaciones importantes
               </li>
               <li className="flex items-center gap-2">
-                <div className="w-1.5 h-1.5 bg-[#139ED4] rounded-full"></div>
+                <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
                 Acceder a ofertas exclusivas
               </li>
               <li className="flex items-center gap-2">
-                <div className="w-1.5 h-1.5 bg-[#139ED4] rounded-full"></div>
+                <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
                 Participar en oportunidades de inversión
               </li>
               <li className="flex items-center gap-2">
-                <div className="w-1.5 h-1.5 bg-[#139ED4] rounded-full"></div>
+                <div className="w-1.5 h-1.5 bg-primary rounded-full"></div>
                 Conectar con nuestra red de proveedores
               </li>
             </ul>
@@ -57,14 +57,14 @@ const EmailConfirmed = () => {
           <div className="space-y-3">
             <button
               onClick={() => navigate('/')}
-              className="w-full py-3 px-4 bg-[#139ED4] hover:bg-[#0f7ba3] text-white font-semibold rounded-lg transition-colors duration-200"
+              className="w-full py-3 px-4 bg-primary hover:bg-[#0f7ba3] text-white font-semibold rounded-lg transition-colors duration-200"
             >
               Explorar INXORA
             </button>
             
             <button
               onClick={() => navigate('/inversores')}
-              className="w-full py-3 px-4 border-2 border-[#139ED4] text-[#139ED4] hover:bg-[#139ED4] hover:text-white font-semibold rounded-lg transition-colors duration-200"
+              className="w-full py-3 px-4 border-2 border-primary text-primary hover:bg-primary hover:text-white font-semibold rounded-lg transition-colors duration-200"
             >
               Ver Oportunidades de Inversión
             </button>
