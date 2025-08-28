@@ -182,7 +182,7 @@ export const Header: React.FC = () => {
         aria-label="Ir al inicio"
       >
         <img
-          src={(isScrolled || isMenuOpen) ? "logo_inxora/LOGO-35.png" : "logo_inxora/LOGO-30.png"}
+          src={(isScrolled || isMenuOpen) ? "/logo_inxora/LOGO-35.png" : "/logo_inxora/LOGO-30.png"}
           alt="INXORA - Marketplace de suministros industriales"
           className="h-10 sm:h-12 md:h-14 lg:h-16 w-auto transition-transform duration-200 hover:scale-105"
         />
@@ -302,7 +302,7 @@ export const Header: React.FC = () => {
       aria-label="Solicitar cotización por WhatsApp"
     >
       <img
-        src="logo_inxora/LOGO-22.png"
+        src="/logo_inxora/LOGO-22.png"
         alt=""
         className="w-4 h-4 lg:w-5 lg:h-5 object-contain"
         aria-hidden="true"
@@ -358,7 +358,7 @@ export const Header: React.FC = () => {
                          focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] focus-visible:ring-offset-2"
             >
               <img
-                src="logo_inxora/LOGO-22.png"
+                src="/logo_inxora/LOGO-22.png"
                 alt=""
                 className="w-4 h-4 object-contain"
                 aria-hidden="true"

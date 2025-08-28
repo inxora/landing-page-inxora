@@ -38,7 +38,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ onNavigateToSection }) =
                        focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] focus:ring-offset-2"
             >
               <img
-                src="logo_inxora/LOGO-22.png"
+                src="/logo_inxora/LOGO-22.png"
                 alt=""
                 className="w-4 h-4 object-contain"
                 aria-hidden="true"

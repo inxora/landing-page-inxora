@@ -18,7 +18,7 @@ export const LogoSection: React.FC<LogoSectionProps> = ({ onLogoClick }) => {
         aria-label="Ir al inicio"
       >
         <img
-          src="logo_inxora/LOGO-30.png"
+          src="/logo_inxora/LOGO-30.png"
           alt="INXORA - Marketplace de suministros industriales"
           className="h-16 sm:h-20 md:h-22 lg:h-24 w-auto transition-transform duration-200 hover:scale-105"
         />

@@ -246,7 +246,7 @@ export const SaraXoraSection = () => {
         aria-label="Hablar con Sara por WhatsApp"
       >
         <img
-          src="./logo_inxora/LOGO-07.png"
+          src="/logo_inxora/LOGO-07.png"
           alt="Logo de Inxora - Sara el conejo asistente"
           className="w-14 h-14 md:w-16 md:h-16 rounded-full object-contain transition-transform duration-300 group-hover:scale-110"
           style={{ pointerEvents: 'none' }}
