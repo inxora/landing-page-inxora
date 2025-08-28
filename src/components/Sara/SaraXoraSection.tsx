@@ -230,18 +230,18 @@ export const SaraXoraSection = () => {
         href="https://wa.me/946885531?text=Hola%2C%20quiero%20hablar%20con%20Sara%20Xora%2C%20el%20asistente%20virtual%20de%20INXORA"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-32 md:bottom-24 right-6 md:right-8 z-50 bg-gradient-to-r from-[#D90E8C] to-[#0A7FA4] shadow-2xl rounded-full p-4 md:p-5 border-3 border-white hover:shadow-3xl hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-[#139ED4]/40 group chat-button animate-hop inline-flex items-center justify-center"
+        className="fixed bottom-16 sm:bottom-20 md:bottom-24 right-4 sm:right-6 md:right-8 z-50 bg-gradient-to-r from-[#D90E8C] to-[#0A7FA4] shadow-2xl rounded-full p-3 sm:p-4 md:p-5 border-3 border-white hover:shadow-3xl hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-[#139ED4]/40 group chat-button animate-hop inline-flex items-center justify-center"
         aria-label="Hablar con Sara por WhatsApp"
       >
         <img
           src="/logo_inxora/LOGO-03.png"
           alt="Logo de Inxora - Sara el conejo asistente"
-          className="w-14 h-14 md:w-16 md:h-16 rounded-full object-contain transition-transform duration-300 group-hover:scale-110"
+          className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full object-contain transition-transform duration-300 group-hover:scale-110"
           style={{ pointerEvents: 'none' }}
         />
         
         {/* Indicador de disponibilidad */}
-        <div className="absolute -top-1 -right-1 w-5 h-5 bg-[#25D366] rounded-full border-2 border-white animate-pulse shadow-lg"></div>
+        <div className="absolute -top-1 -right-1 w-4 h-4 sm:w-5 sm:h-5 bg-[#25D366] rounded-full border-2 border-white animate-pulse shadow-lg"></div>
       </a>
     </section>
   );

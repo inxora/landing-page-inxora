@@ -24,32 +24,32 @@ export const HowItWorksSection = () => {
           'var(--color-accent)', // Paso 4
         ];
         return (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 overflow-hidden px-2 pt-4">
             {t.steps.map((step, idx) => (
               <div
                 key={step.title}
-                className={`bg-white/80 backdrop-blur-md p-6 rounded-xl shadow-md border border-b-4 relative transition-all duration-200 min-h-[220px] flex flex-col hover:scale-105 hover:shadow-xl`}
+                className={`bg-white/80 backdrop-blur-md p-4 md:p-5 rounded-xl shadow-md border border-b-4 relative transition-all duration-200 min-h-[180px] md:min-h-[200px] flex flex-col hover:shadow-xl`}
                 style={{ 
                   borderColor: colors[idx],        // Color sólido para borde perimetral
                   borderBottomColor: colors[idx]   // Color sólido para borde inferior
                 }}
               >
                 <div
-                  className="absolute -top-3 -left-3 text-white h-8 w-8 md:h-10 md:w-10 rounded-full flex items-center justify-center font-bold text-base md:text-lg shadow-md"
+                  className="absolute -top-2 -left-2 text-white h-7 w-7 md:h-8 md:w-8 rounded-full flex items-center justify-center font-bold text-sm md:text-base shadow-md"
                   style={{ background: colors[idx] }}
                 >
                   {idx + 1}
                 </div>
-                <div className="mb-4 pt-6 flex items-center justify-center">
-                  {idx === 0 && <ClipboardList size={44} className="drop-shadow" style={{ color: colors[0] }} />}
-                  {idx === 1 && <FileText size={44} className="drop-shadow" style={{ color: colors[1] }} />}
-                  {idx === 2 && <TruckIcon size={44} className="drop-shadow" style={{ color: colors[2] }} />}
-                  {idx === 3 && <HeadsetIcon size={44} className="drop-shadow" style={{ color: colors[3] }} />}
+                <div className="mb-3 pt-4 flex items-center justify-center">
+                  {idx === 0 && <ClipboardList size={36} className="drop-shadow" style={{ color: colors[0] }} />}
+                  {idx === 1 && <FileText size={36} className="drop-shadow" style={{ color: colors[1] }} />}
+                  {idx === 2 && <TruckIcon size={36} className="drop-shadow" style={{ color: colors[2] }} />}
+                  {idx === 3 && <HeadsetIcon size={36} className="drop-shadow" style={{ color: colors[3] }} />}
                 </div>
-                <h3 className="font-orbitron text-base md:text-lg font-semibold mb-2 text-primary-dark line-clamp-2 drop-shadow-sm">
+                <h3 className="font-orbitron text-sm md:text-base font-semibold mb-2 text-primary-dark line-clamp-2 drop-shadow-sm">
                   {step.title}
                 </h3>
-                <p className="text-primary text-sm md:text-base line-clamp-3 md:line-clamp-none flex-1">
+                <p className="text-primary text-xs md:text-sm line-clamp-3 md:line-clamp-none flex-1">
                   {step.desc}
                 </p>
               </div>
@@ -58,7 +58,7 @@ export const HowItWorksSection = () => {
         );
       })()}
       <div className="mt-8 md:mt-12 text-center">
-        <a href="#contacto" className="bg-primary text-white px-4 md:px-6 py-2 md:py-3 rounded-md font-medium hover:bg-[var(--color-accent-bright)] transition-all duration-200 inline-block shadow-md hover:shadow-lg text-sm md:text-base hover:scale-105">
+        <a href="#contacto" className="bg-primary text-white px-4 md:px-6 py-2 md:py-3 rounded-md font-medium hover:bg-[var(--color-accent-bright)] transition-all duration-200 inline-block shadow-md hover:shadow-lg text-sm md:text-base">
           {t.cta}
         </a>
       </div>
