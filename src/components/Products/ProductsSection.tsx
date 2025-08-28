@@ -45,13 +45,14 @@ export const ProductsSection = () => {
     },
   ];
 
+  // Triple duplicación para loop infinito suave
   let displayCategories = categories;
   if (categories.length <= 8) {
-    displayCategories = [...categories, ...categories];
+    displayCategories = [...categories, ...categories, ...categories];
   }
 
-  // Autoplay plugin para keen-slider
-  const autoplay = (options = { delay: 3000, stopOnInteraction: false, pauseOnMouseEnter: true }) => (slider: any) => {
+  // Autoplay plugin para keen-slider mejorado y más rápido
+  const autoplay = (options = { delay: 2000, stopOnInteraction: false, pauseOnMouseEnter: true, disableOnInteraction: false }) => (slider: any) => {
     let timeout: ReturnType<typeof setTimeout>;
     let mouseOver = false;
     function clearNextTimeout() {
@@ -89,7 +90,8 @@ export const ProductsSection = () => {
     },
     loop: true,
     drag: true,
-  }, [autoplay({ delay: 3000, stopOnInteraction: false, pauseOnMouseEnter: true })]);
+    mode: "snap",
+  }, [autoplay({ delay: 2000, stopOnInteraction: false, pauseOnMouseEnter: true, disableOnInteraction: false })]);
 
   // Reinicializa el slider cuando cambie el idioma
   useEffect(() => {
@@ -100,11 +102,11 @@ export const ProductsSection = () => {
   }, [lang]);
 
   return (
-    <section id="productos" className="py-8 md:py-12 lg:py-16 bg-gray-50 dark:bg-dark-surface w-full scroll-mt-20 md:scroll-mt-32">
+    <section id="productos" className="py-8 md:py-12 lg:py-16 bg-gray-50 w-full scroll-mt-20 md:scroll-mt-32">
       <div className="container mx-auto px-3 sm:px-4 lg:px-8">
         <div className="text-center mb-8 md:mb-12">
           <h2 className="font-orbitron text-3xl md:text-4xl font-bold mb-4 line-clamp-2">
-            <span className="font-orbitron text-primary-dark dark:text-dark-text">{t.titleMain} </span>
+            <span className="font-orbitron text-primary-dark">{t.titleMain} </span>
             <span className="font-orbitron text-accent-bright">{t.titleAccent}</span>
           </h2>
           <p className="font-montserrat text-lg text-foreground-secondary max-w-3xl mx-auto line-clamp-2 md:line-clamp-none">
@@ -112,25 +114,26 @@ export const ProductsSection = () => {
           </p>
         </div>
         {/* Slider responsive con keen-slider */}
-        <div className="relative mb-6 md:mb-10 lg:mb-12">
+        <div className="relative mb-6 md:mb-10 lg:mb-12 overflow-hidden">
+          {/* Botones solo visibles en desktop */}
           <button
-            className="absolute -left-4 md:-left-12 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-accent-bright)] text-white rounded-full z-10 transition-all duration-300 hover:scale-110 shadow-lg"
+            className="hidden lg:flex absolute -left-12 top-1/2 -translate-y-1/2 w-12 h-12 items-center justify-center bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-accent-bright)] text-white rounded-full z-20 transition-all duration-200 hover:scale-110 shadow-lg hover:shadow-xl"
             onClick={() => slider && slider.current && slider.current.prev()}
             aria-label="Anterior"
           >
-            <ChevronLeft size={28} />
+            <ChevronLeft size={24} />
           </button>
           <button
-            className="absolute -right-4 md:-right-12 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-accent-bright)] text-white rounded-full z-10 transition-all duration-300 hover:scale-110 shadow-lg"
+            className="hidden lg:flex absolute -right-12 top-1/2 -translate-y-1/2 w-12 h-12 items-center justify-center bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-accent-bright)] text-white rounded-full z-20 transition-all duration-200 hover:scale-110 shadow-lg hover:shadow-xl"
             onClick={() => slider && slider.current && slider.current.next()}
             aria-label="Siguiente"
           >
-            <ChevronRight size={28} />
+            <ChevronRight size={24} />
           </button>
           <div ref={sliderRef} className="keen-slider transition-all duration-500 ease-in-out" key={lang}>
             {displayCategories.map((cat, idx) => (
-              <div key={cat.name + idx} className="keen-slider__slide flex flex-col transition-all duration-200">
-                <div className="bg-white/80 dark:bg-dark-surface/80 backdrop-blur-md rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all border-t-4 border-[var(--color-accent)] hover:border-[var(--color-accent-bright)] flex flex-col h-full">
+              <div key={cat.name + idx} className="keen-slider__slide flex flex-col">
+                <div className="bg-white/80 backdrop-blur-md rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 border-t-4 border-[var(--color-accent)] hover:border-[var(--color-accent-bright)] flex flex-col h-full transform hover:scale-105">
                   <div className="aspect-square overflow-hidden flex items-center justify-center">
                     <img 
                       src={cat.imageUrl} 
@@ -140,16 +143,16 @@ export const ProductsSection = () => {
                     />
                   </div>
                   <div className="p-4">
-                    <h3 className="font-orbitron text-sm md:text-2xl font-bold text-center text-primary-dark dark:text-dark-text break-words break-keep whitespace-normal drop-shadow-sm max-w-[12ch] mx-auto">
+                    <h3 className="font-orbitron text-sm md:text-2xl font-bold text-center text-primary-dark break-words break-keep whitespace-normal drop-shadow-sm max-w-[12ch] mx-auto">
                       {cat.name}
                     </h3>
                   </div>
-                  <div className="bg-gray-50 dark:bg-dark-accent px-6 py-3 mt-auto">
+                  <div className="bg-gray-50 px-6 py-3 mt-auto">
                     <a 
                       href="/Folleto INXORA.pdf" 
                       target="_blank" 
                       rel="noopener noreferrer" 
-                      className="font-orbitron text-accent dark:text-primary-light hover:text-accent-bright font-medium flex items-center justify-center transition-all duration-200 hover:scale-105 text-xs md:text-base px-2 py-1 md:px-6 md:py-3"
+                      className="font-orbitron text-accent hover:text-accent-bright font-medium flex items-center justify-center transition-all duration-200 hover:scale-105 text-xs md:text-base px-2 py-1 md:px-6 md:py-3"
                     >
                       {t.verProductos} <ChevronRight size={16} className="ml-1" />
                     </a>

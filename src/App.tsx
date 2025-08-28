@@ -28,7 +28,6 @@ import NotFound404 from './components/NotFound404';
 import { routeSlugs } from './components/types/routes';
 import { useLanguage } from './context/LanguageContext';
 import { getRouteKeyByPath, getRouteByLang } from './components/types/routes';
-// import { ThemeToggle } from './components/common/ThemeToggle';
 
 function ScrollToTopButton() {
   const [visible, setVisible] = useState(false);
@@ -74,7 +73,6 @@ export function App() {
     <div className="w-full min-h-screen bg-background text-foreground transition-colors duration-300">
       {loading && <Loader />}
       <Header />
-      {/* <ThemeToggle /> */}
       <main className="transition-colors duration-300">
         <Routes>
           <Route path={routeSlugs.home[lang]} element={

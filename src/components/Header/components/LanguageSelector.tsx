@@ -38,10 +38,10 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({
       <button
         className={`flex items-center gap-2 px-3 py-2 h-10 sm:h-12 min-w-[70px] sm:min-w-[80px] 
                  rounded-md font-extrabold text-sm sm:text-base lg:text-lg transition-all duration-300 
-                 focus:outline-none ${
+                 focus:outline-none bg-transparent hover:bg-[#88D4E4]/20 ${
                    isScrolled
-                     ? 'border border-primary bg-transparent text-primary hover:bg-[var(--color-primary-dark)] hover:text-white focus:ring-2 focus:ring-[var(--color-primary)]'
-                     : 'border-2 border-white bg-transparent text-white hover:bg-white hover:bg-opacity-20 hover:text-primary-light focus:ring-2 focus:ring-white font-extrabold'
+                     ? 'border border-primary text-primary hover:text-primary focus:ring-2 focus:ring-[var(--color-primary)]'
+                     : 'border-2 border-white text-white hover:text-white focus:ring-2 focus:ring-white font-extrabold'
                  }`}
         style={
           !isScrolled
@@ -62,15 +62,15 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({
       </button>
 
       {langMenuOpen && (
-        <div className="absolute right-0 top-full mt-2 w-36 sm:w-40 lg:w-44 bg-gray-900 border-2 
+        <div className="absolute right-0 top-full mt-2 w-36 sm:w-40 lg:w-44 bg-white border-2 
                       border-primary rounded-lg shadow-xl z-50 animate-fade-in overflow-hidden">
           <ul className="py-1" role="listbox">
             {LANGUAGE_OPTIONS.map((option) => (
               <li key={option.value}>
                 <button
                   className={`w-full flex items-center justify-between px-3 py-2 text-left
-                           hover:bg-[var(--color-primary-dark)] text-primary text-sm lg:text-base transition-colors
-                           ${lang === option.value ? 'font-bold' : 'font-medium'}`}
+                           hover:bg-[#88D4E4]/20 text-white text-sm lg:text-base transition-colors
+                           ${lang === option.value ? 'font-bold bg-[#88D4E4]/10' : 'font-medium'}`}
                   onClick={() => onLanguageChange(option.value)}
                   role="option"
                   aria-selected={lang === option.value}

@@ -242,11 +242,11 @@ export const SaraXoraSection = () => {
         href="https://wa.me/946885531?text=Hola%2C%20quiero%20hablar%20con%20Sara%20Xora%2C%20el%20asistente%20virtual%20de%20INXORA"
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-20 md:bottom-6 right-6 z-50 bg-[#139ED4] shadow-2xl rounded-full p-4 border-2 border-white hover:shadow-3xl transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-[#139ED4]/30 group chat-button animate-hop inline-flex items-center justify-center"
+        className="fixed bottom-32 md:bottom-24 right-6 md:right-8 z-50 bg-gradient-to-r from-[#139ED4] to-[#0A7FA4] shadow-2xl rounded-full p-4 md:p-5 border-3 border-white hover:shadow-3xl hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-[#139ED4]/40 group chat-button animate-hop inline-flex items-center justify-center"
         aria-label="Hablar con Sara por WhatsApp"
       >
         <img
-          src="./logo_inxora/LOGO-03.png"
+          src="./logo_inxora/LOGO-07.png"
           alt="Logo de Inxora - Sara el conejo asistente"
           className="w-14 h-14 md:w-16 md:h-16 rounded-full object-contain transition-transform duration-300 group-hover:scale-110"
           style={{ pointerEvents: 'none' }}

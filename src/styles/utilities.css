@@ -345,33 +345,6 @@
 }
 
 /* ===================================================
-   DARK MODE OVERRIDES
-   =================================================== */
-.dark .card-inxora {
-  background-color: var(--color-dark-surface);
-  border-color: var(--color-dark-border);
-}
-
-.dark .btn-ghost-inxora {
-  color: var(--color-primary-light);
-}
-
-.dark .btn-ghost-inxora:hover {
-  background-color: var(--color-dark-border);
-  color: var(--color-primary);
-}
-
-.dark .btn-outline-inxora {
-  color: var(--color-primary-light);
-  border-color: var(--color-primary-light);
-}
-
-.dark .btn-outline-inxora:hover {
-  background-color: var(--color-primary-light);
-  color: var(--color-dark-bg);
-}
-
-/* ===================================================
    ACCESSIBILITY
    =================================================== */
 .focus-visible-inxora:focus-visible {

@@ -14,23 +14,15 @@ export const PersuasionSection = () => {
     'Logo_Clientes/FERREYROS.png',
     'Logo_Clientes/ALQUIMODUL.png',
     'Logo_Clientes/TUBOPLAST.png',
-    // 'Logo_Clientes/VISTONY.png',
-    // 'Logo_Clientes/AUPEU.png',
     'Logo_Clientes/CLOROX.png',
     'Logo_Clientes/MOLITALIA.png',
     'Logo_Clientes/LIMA IMPORT.png',
     'Logo_Clientes/PSA MARINE.png',
     'Logo_Clientes/TAMSHI.png',
   ];
-  // Colores para bordes/hover dinámicos
-  const borderColors = [
-    'var(--color-primary)', 'var(--color-primary-light)', 'var(--color-primary-dark)', 'var(--color-accent)', 'var(--color-accent-bright)',
-    'var(--color-primary)', 'var(--color-primary-light)', 'var(--color-primary-dark)', 'var(--color-accent)', 'var(--color-accent-bright)', 'var(--color-primary)'
-  ];
-  // Slider para móvil
-  const [current, setCurrent] = React.useState(0);
+  
   // Autoplay plugin para keen-slider
-  const autoplay = (options = { delay: 3000, stopOnInteraction: false, pauseOnMouseEnter: true }) => (slider: any) => {
+  const autoplay = (options = { delay: 3000, stopOnInteraction: false, pauseOnMouseEnter: true, disableOnInteraction: false }) => (slider: any) => {
     let timeout: ReturnType<typeof setTimeout>;
     let mouseOver = false;
     function clearNextTimeout() {
@@ -61,7 +53,7 @@ export const PersuasionSection = () => {
 
   let displayClientes = clientes;
   if (clientes.length <= 10) {
-    displayClientes = [...clientes, ...clientes];
+    displayClientes = [...clientes, ...clientes, ...clientes];
   }
 
   const [sliderRef, slider] = useKeenSlider({
@@ -73,35 +65,38 @@ export const PersuasionSection = () => {
     },
     loop: true,
     drag: true,
-  }, [autoplay({ delay: 3000, stopOnInteraction: false, pauseOnMouseEnter: true })]);
+    mode: "snap",
+  }, [autoplay({ delay: 3000, stopOnInteraction: false, pauseOnMouseEnter: true, disableOnInteraction: false })]);
+  
   return <section id="beneficios" className="py-8 md:py-12 lg:py-16 bg-gradient-to-br from-gray-50 to-blue-50 w-full scroll-mt-20 md:scroll-mt-32">
       <div className="container mx-auto px-3 sm:px-4 lg:px-8 pb-10 md:pb-8">
         <div className="text-center mb-8 md:mb-12">
           <h2 className="font-orbitron text-3xl md:text-4xl font-bold mb-4 line-clamp-2 drop-shadow-sm text-center">
-            <span className="font-orbitron text-primary-dark dark:text-dark-text">{t.titleMain} </span>
+            <span className="font-orbitron text-primary-dark">{t.titleMain} </span>
             <span className="font-orbitron text-accent-bright">{t.titleAccent}</span>
           </h2>
-          <p className="font-montserrat text-lg text-primary dark:text-primary-light max-w-3xl mx-auto line-clamp-2 md:line-clamp-none">
+          <p className="font-montserrat text-lg text-primary max-w-3xl mx-auto line-clamp-2 md:line-clamp-none">
             {t.subtitle}
           </p>
         </div>
-        {/* Slider responsive de clientes con keen-slider (una sola fila, sin repetición) */}
-        <div className="relative mb-8 md:mb-12">
+        {/* Slider responsive de clientes con keen-slider */}
+        <div className="relative mb-8 md:mb-12 overflow-hidden">
+          {/* Botones solo visibles en desktop */}
           <button
-            className="absolute -left-4 md:-left-12 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-accent-bright)] text-white rounded-full z-10 transition-all duration-300 hover:scale-110 shadow-lg"
+            className="hidden lg:flex absolute -left-16 top-1/2 -translate-y-1/2 w-12 h-12 items-center justify-center bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-accent-bright)] text-white rounded-full z-10 transition-all duration-300 hover:scale-110 shadow-lg"
             onClick={() => slider && slider.current && slider.current.prev()}
             aria-label="Anterior"
           >
             <ChevronLeft size={28} />
           </button>
           <button
-            className="absolute -right-4 md:-right-12 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-accent-bright)] text-white rounded-full z-10 transition-all duration-300 hover:scale-110 shadow-lg"
+            className="hidden lg:flex absolute -right-16 top-1/2 -translate-y-1/2 w-12 h-12 items-center justify-center bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-accent-bright)] text-white rounded-full z-10 transition-all duration-300 hover:scale-110 shadow-lg"
             onClick={() => slider && slider.current && slider.current.next()}
             aria-label="Siguiente"
           >
             <ChevronRight size={28} />
           </button>
-          <div ref={sliderRef} className="keen-slider transition-all duration-500 ease-in-out">
+          <div ref={sliderRef} className="keen-slider transition-all duration-700 ease-in-out">
             {displayClientes.map((src, idx) => (
               <div
                 key={src + idx}
@@ -120,13 +115,13 @@ export const PersuasionSection = () => {
         {/* Sellos de garantía */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {t.seals.map((seal, idx) => (
-            <div key={seal.title} className="bg-white dark:bg-dark-accent p-6 rounded-xl shadow-md flex flex-col items-center text-center hover:shadow-xl transition-all duration-200 hover:scale-105">
+            <div key={seal.title} className="bg-white p-6 rounded-xl shadow-md flex flex-col items-center text-center hover:shadow-xl transition-all duration-200 hover:scale-105">
               {idx === 0 && <Shield className="text-primary mb-2 drop-shadow" size={40} />}
               {idx === 1 && <Award className="text-primary mb-2 drop-shadow" size={40} />}
               {idx === 2 && <TrendingUp className="text-primary mb-2 drop-shadow" size={40} />}
               {idx === 3 && <Clock className="text-primary mb-2 drop-shadow" size={40} />}
-              <h4 className="font-semibold mb-3 text-primary-dark dark:text-dark-text drop-shadow-sm">{seal.title}</h4>
-              <p className="text-sm text-primary dark:text-primary-light">{seal.desc}</p>
+              <h4 className="font-semibold mb-3 text-primary-dark drop-shadow-sm">{seal.title}</h4>
+              <p className="text-sm text-primary">{seal.desc}</p>
           </div>
           ))}
         </div>

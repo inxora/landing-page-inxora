@@ -10,8 +10,9 @@ import { getRouteByLang } from '../types/routes';
 export const ProvidersSection = () => {
   const { lang } = useLanguage();
   const t = providersSectionTranslation[lang];
-  // Autoplay plugin para keen-slider
-  const autoplay = (options = { delay: 3000, stopOnInteraction: false, pauseOnMouseEnter: true }) => (slider: any) => {
+  
+  // Autoplay plugin para keen-slider mejorado
+  const autoplay = (options = { delay: 3000, stopOnInteraction: false, pauseOnMouseEnter: true, disableOnInteraction: false }) => (slider: any) => {
     let timeout: ReturnType<typeof setTimeout>;
     let mouseOver = false;
     function clearNextTimeout() {
@@ -49,13 +50,14 @@ export const ProvidersSection = () => {
     },
     loop: true,
     drag: true,
-  }, [autoplay({ delay: 3000, stopOnInteraction: false, pauseOnMouseEnter: true })]);
+    mode: "snap",
+  }, [autoplay({ delay: 3000, stopOnInteraction: false, pauseOnMouseEnter: true, disableOnInteraction: false })]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  // Lista de nombres de imágenes (ajusta según tus archivos reales)
+  // Lista de nombres de imágenes
   const logos = [
     'Logo_Proveedores/KARCHER.png',
     'Logo_Proveedores/MILWAUKEE.png',
@@ -74,43 +76,50 @@ export const ProvidersSection = () => {
     'Logo_Proveedores/VAINSA.png',
   ];
 
-  return <section id="proveedores" className="py-16 bg-white dark:bg-dark-accent w-full scroll-mt-24 md:scroll-mt-32">
+  // Triple duplicación para loop infinito suave
+  let displayLogos = logos;
+  if (logos.length <= 15) {
+    displayLogos = [...logos, ...logos, ...logos];
+  }
+
+  return <section id="proveedores" className="py-16 bg-white w-full scroll-mt-24 md:scroll-mt-32">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary-dark dark:text-dark-text mb-4 line-clamp-2">
-            <span className="text-primary-dark dark:text-dark-text">{t.titleMain} </span>
+          <h2 className="text-3xl md:text-4xl font-bold text-primary-dark mb-4 line-clamp-2">
+            <span className="text-primary-dark">{t.titleMain} </span>
             <span className="text-accent-bright">{t.titleAccent}</span>
           </h2>
-          <p className="text-lg text-gray-600 dark:text-dark-muted max-w-3xl mx-auto line-clamp-2 md:line-clamp-none">
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto line-clamp-2 md:line-clamp-none">
             {t.subtitle}
           </p>
         </div>
         {/* Slider responsive de proveedores con keen-slider */}
-        <div className="relative mb-12">
+        <div className="relative mb-12 overflow-hidden">
+          {/* Botones solo visibles en desktop y bien posicionados */}
           <button
-            className="absolute -left-4 md:-left-12 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-accent-bright)] text-white rounded-full z-10 transition-all duration-300 hover:scale-110 shadow-lg"
+            className="hidden lg:flex absolute -left-16 top-1/2 -translate-y-1/2 w-12 h-12 items-center justify-center bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-accent-bright)] text-white rounded-full z-10 transition-all duration-300 hover:scale-110 shadow-lg"
             onClick={() => slider && slider.current && slider.current.prev()}
             aria-label="Anterior"
           >
             <ChevronLeft size={28} />
           </button>
           <button
-            className="absolute -right-4 md:-right-12 top-1/2 -translate-y-1/2 w-10 h-10 flex items-center justify-center bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-accent-bright)] text-white rounded-full z-10 transition-all duration-300 hover:scale-110 shadow-lg"
+            className="hidden lg:flex absolute -right-16 top-1/2 -translate-y-1/2 w-12 h-12 items-center justify-center bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-accent-bright)] text-white rounded-full z-10 transition-all duration-300 hover:scale-110 shadow-lg"
             onClick={() => slider && slider.current && slider.current.next()}
             aria-label="Siguiente"
           >
             <ChevronRight size={28} />
           </button>
-          <div ref={sliderRef} className="keen-slider transition-all duration-500 ease-in-out">
-            {logos.map((src, idx) => (
-              <div key={src} className="keen-slider__slide flex items-center justify-center">
-                <img src={`/${src}`} alt={`Proveedor ${idx+1}`} className="object-contain w-full h-32" style={{ maxHeight: '120px' }} />
+          <div ref={sliderRef} className="keen-slider transition-all duration-700 ease-in-out">
+            {displayLogos.map((src, idx) => (
+              <div key={src + idx} className="keen-slider__slide flex items-center justify-center">
+                <img src={`/${src}`} alt={`Proveedor ${(idx % logos.length) + 1}`} className="object-contain w-full h-32" style={{ maxHeight: '120px' }} />
               </div>
             ))}
           </div>
         </div>
         <div className="mt-12 text-center">
-          <p className="text-lg text-gray-600 dark:text-dark-muted max-w-3xl mx-auto mb-6">
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-6">
             {t.join}
           </p>
           <Link to={getRouteByLang('providersForm', lang)} className="border-2 border-[var(--color-accent-bright)] text-accent-bright px-6 py-3 rounded-md font-medium hover:bg-primary hover:text-white transition-all duration-200 inline-block shadow-sm hover:shadow-md hover:scale-105">

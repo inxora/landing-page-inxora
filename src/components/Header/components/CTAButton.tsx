@@ -34,7 +34,7 @@ export const CTAButton: React.FC<CTAButtonProps> = ({ isScrolled }) => {
       aria-label="Solicitar cotización por WhatsApp"
     >
       <img
-        src="logo_inxora/LOGO-22.png"
+        src="logo_inxora/LOGO-18.png"
         alt=""
         className="w-4 h-4 lg:w-5 lg:h-5 object-contain"
         aria-hidden="true"

@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 
-type Theme = 'light' | 'dark';
+type Theme = 'light';
 
 interface ThemeContextType {
   theme: Theme;
@@ -15,24 +15,25 @@ interface ThemeProviderProps {
 }
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
-  const [theme, setTheme] = useState<Theme>('light'); // Modo claro por defecto
+  const [theme, setTheme] = useState<Theme>('light');
 
   useEffect(() => {
     // Siempre usar modo claro
     setTheme('light');
-    document.documentElement.classList.remove('dark'); // Asegurarse de que la clase 'dark' no esté presente
-    localStorage.setItem('inxora-theme', 'light');
+    document.documentElement.classList.remove('dark');
+    document.documentElement.removeAttribute('data-theme');
+    localStorage.removeItem('inxora-theme');
   }, []);
 
   const toggleTheme = () => {
-    // No permitir cambiar el tema, siempre será 'light'
-    console.warn("Dark mode has been removed. Theme is always 'light'.");
+    // Modo oscuro eliminado - no hacer nada
+    return;
   };
 
   const value = {
     theme,
     toggleTheme,
-    isDark: false // Siempre es falso ya que el modo oscuro ha sido eliminado
+    isDark: false
   };
 
   return (

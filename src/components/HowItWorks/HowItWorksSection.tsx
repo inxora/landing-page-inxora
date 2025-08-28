@@ -43,10 +43,10 @@ export const HowItWorksSection = () => {
                   {idx === 2 && <TruckIcon size={44} className="drop-shadow" style={{ color: colors[2] }} />}
                   {idx === 3 && <HeadsetIcon size={44} className="drop-shadow" style={{ color: colors[3] }} />}
                 </div>
-                <h3 className="font-orbitron text-base md:text-lg font-semibold mb-2 text-primary-dark dark:text-dark-text line-clamp-2 drop-shadow-sm">
+                <h3 className="font-orbitron text-base md:text-lg font-semibold mb-2 text-primary-dark line-clamp-2 drop-shadow-sm">
                   {step.title}
                 </h3>
-                <p className="text-primary dark:text-primary-light text-sm md:text-base line-clamp-3 md:line-clamp-none flex-1">
+                <p className="text-primary text-sm md:text-base line-clamp-3 md:line-clamp-none flex-1">
                   {step.desc}
                 </p>
               </div>

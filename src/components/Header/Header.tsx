@@ -182,7 +182,7 @@ export const Header: React.FC = () => {
         aria-label="Ir al inicio"
       >
         <img
-          src={isScrolled ? "logo_inxora/LOGO-35.png" : "logo_inxora/LOGO-30.png"}
+          src={(isScrolled || isMenuOpen) ? "logo_inxora/LOGO-35.png" : "logo_inxora/LOGO-30.png"}
           alt="INXORA - Marketplace de suministros industriales"
           className="h-10 sm:h-12 md:h-14 lg:h-16 w-auto transition-transform duration-200 hover:scale-105"
         />
@@ -201,7 +201,7 @@ export const Header: React.FC = () => {
               onBlur={(e) => e.currentTarget.blur()}
               className={`font-bold text-lg xl:text-xl 2xl:text-2xl transition-all duration-300 hover:scale-105 focus:outline-none focus-visible:ring-2 rounded-md px-3 py-2 ${
                 isScrolled
-                  ? 'text-primary dark:text-primary-light hover:text-primary-dark dark:hover:text-primary focus-visible:ring-[var(--color-primary)]'
+                  ? 'text-primary hover:text-primary-dark focus-visible:ring-[var(--color-primary)]'
                   : 'text-white hover:text-primary-light focus-visible:ring-[var(--color-primary-light)] font-extrabold'
               }`}
               style={!isScrolled ? {
@@ -217,67 +217,70 @@ export const Header: React.FC = () => {
   );
 
   const renderLanguageSelector = () => (
-    <div className="relative flex items-center" ref={langMenuRef}>
-      <button
-        className={`flex items-center gap-2 px-3 py-2 h-10 sm:h-12 min-w-[70px] sm:min-w-[80px] 
-                   rounded-md font-extrabold text-sm sm:text-base lg:text-lg transition-all duration-300 
-                   focus:outline-none focus-visible:ring-2 ${
-                     isScrolled
-                       ? 'border border-primary dark:border-[var(--color-primary-light)] bg-[var(--color-primary-light)] text-primary dark:text-primary-light hover:bg-[var(--color-primary-dark)] dark:hover:bg-primary hover:text-white focus-visible:ring-[var(--color-primary)]'
-                       : 'border-2 border-white bg-transparent text-white hover:bg-white hover:bg-opacity-20 hover:text-primary-light focus-visible:ring-white font-extrabold'
-                   }`}
-        style={!isScrolled ? {
-          textShadow: '2px 2px 4px rgba(0,0,0,0.8)'
-        } : {}}
-        onClick={toggleLanguageMenu}
-        onMouseDown={(e) => e.preventDefault()}
-        onBlur={(e) => {
-          // Solo cerrar el menú si el foco se va fuera del componente completamente
-          setTimeout(() => {
-            if (!langMenuRef.current?.contains(document.activeElement)) {
-              setLangMenuOpen(false);
-            }
-          }, 0);
-        }}
-        aria-haspopup="listbox"
-        aria-expanded={langMenuOpen}
-        aria-label="Seleccionar idioma"
-      >
-        <Globe className="w-4 h-4 sm:w-5 sm:h-5" />
-        <span className="font-mono text-xs sm:text-sm lg:text-base font-bold">{lang.toUpperCase()}</span>
-      </button>
+  <div className="relative flex items-center" ref={langMenuRef}>
+    <button
+      className={`header-button flex items-center gap-2 px-3 py-2 h-10 sm:h-12 min-w-[70px] sm:min-w-[80px] 
+                 rounded-md font-extrabold text-sm sm:text-base lg:text-lg transition-all duration-300 
+                 focus:outline-none focus-visible:ring-2 border-2 bg-transparent hover:bg-[#88D4E4]/20 ${
+                   (isScrolled || isMenuOpen)
+                     ? 'border-primary text-primary hover:text-primary focus-visible:ring-[var(--color-primary)]'
+                     : 'border-white text-white hover:text-white focus-visible:ring-white font-extrabold'
+                 }`}
+      style={!isScrolled ? {
+        textShadow: '2px 2px 4px rgba(0,0,0,0.8)'
+      } : {}}
+      onClick={toggleLanguageMenu}
+      onMouseDown={(e) => e.preventDefault()}
+      onBlur={(e) => {
+        setTimeout(() => {
+          if (!langMenuRef.current?.contains(document.activeElement)) {
+            setLangMenuOpen(false);
+          }
+        }, 0);
+      }}
+      aria-haspopup="listbox"
+      aria-expanded={langMenuOpen}
+      aria-label="Seleccionar idioma"
+    >
+      <Globe className="w-4 h-4 sm:w-5 sm:h-5" />
+      <span className="font-mono text-xs sm:text-sm lg:text-base font-bold">{lang.toUpperCase()}</span>
+    </button>
 
-      {langMenuOpen && (
-        <div className="absolute right-0 top-full mt-2 w-36 sm:w-40 lg:w-44 bg-gray-900 dark:bg-gray-800 border-2 
-                        border-primary dark:border-[var(--color-primary-light)] rounded-lg shadow-xl z-50 animate-fade-in overflow-hidden">
-          <ul className="py-1" role="listbox">
-            {LANGUAGE_OPTIONS.map((option) => (
-              <li key={option.value}>
-                <button
-                  className={`w-full flex items-center justify-between px-3 py-2 text-left
-                             hover:bg-[var(--color-primary-dark)] dark:hover:bg-primary text-primary dark:text-primary-light text-sm lg:text-base transition-colors
-                             focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[var(--color-primary)]
-                             ${lang === option.value ? 'font-bold' : 'font-medium'}`}
-                  onClick={() => handleLanguageChange(option.value)}
-                  onMouseDown={(e) => e.preventDefault()}
-                  role="option"
-                  aria-selected={lang === option.value}
-                >
-                  <div className="flex items-center gap-3">
-                    <span className="font-mono text-primary dark:text-primary-light font-bold w-6">
-                      {option.code}
-                    </span>
-                    <span className="text-primary dark:text-primary-light">{option.label}</span>
-                  </div>
-                  {lang === option.value && <span className="text-[#23B6E7] font-bold">✓</span>}
-                </button>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
-    </div>
-  );
+    {langMenuOpen && (
+      <div className={`absolute right-0 top-full mt-2 w-36 sm:w-40 lg:w-44 border-2 
+                      rounded-lg shadow-xl z-50 animate-fade-in overflow-hidden bg-white ${
+                        (isScrolled || isMenuOpen)
+                          ? 'border-primary' 
+                          : 'border-white'
+                      }`}>
+        <ul className="py-1" role="listbox">
+          {LANGUAGE_OPTIONS.map((option) => (
+            <li key={option.value}>
+              <button
+                className={`header-dropdown-item w-full flex items-center justify-between px-3 py-2 text-left
+                           hover:bg-[#88D4E4]/20 text-primary text-sm lg:text-base transition-colors
+                           focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[var(--color-primary)]
+                           ${lang === option.value ? 'font-bold bg-[#88D4E4]/10' : 'font-medium'}`}
+                onClick={() => handleLanguageChange(option.value)}
+                onMouseDown={(e) => e.preventDefault()}
+                role="option"
+                aria-selected={lang === option.value}
+              >
+                <div className="flex items-center gap-3">
+                  <span className="font-mono text-primary font-bold w-6">
+                    {option.code}
+                  </span>
+                  <span className="text-primary">{option.label}</span>
+                </div>
+                {lang === option.value && <span className="text-[#139ED4] font-bold">✓</span>}
+              </button>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )}
+  </div>
+);
 
   const renderCTAButton = () => (
     <a
@@ -291,10 +294,10 @@ export const Header: React.FC = () => {
                  focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${
                    isScrolled
                      ? 'bg-primary hover:bg-[var(--color-primary-dark)] text-white shadow-sm hover:shadow-md focus-visible:ring-[var(--color-primary)]'
-                     : 'bg-primary-light hover:bg-primary text-white shadow-lg focus-visible:ring-white font-extrabold'
+                     : 'bg-white bg-opacity-90 hover:bg-white hover:bg-opacity-100 text-primary hover:text-primary-dark shadow-lg focus-visible:ring-white font-extrabold border-2 border-white'
                  }`}
       style={!isScrolled ? {
-        textShadow: '1px 1px 2px rgba(0,0,0,0.3)'
+        textShadow: 'none'
       } : {}}
       aria-label="Solicitar cotización por WhatsApp"
     >
@@ -315,7 +318,7 @@ export const Header: React.FC = () => {
       aria-label={isMenuOpen ? "Cerrar menú" : "Abrir menú"}
       className={`lg:hidden p-2 transition-colors focus:outline-none rounded-md ${
         isScrolled
-          ? 'text-primary dark:text-primary-light hover:text-primary-dark dark:hover:text-primary focus-visible:ring-2 focus-visible:ring-[var(--color-primary)]'
+          ? 'text-primary hover:text-primary-dark focus-visible:ring-2 focus-visible:ring-[var(--color-primary)]'
           : 'text-white hover:text-primary-light focus-visible:ring-2 focus-visible:ring-white font-extrabold'
       }`}
       style={!isScrolled ? {
@@ -327,16 +330,16 @@ export const Header: React.FC = () => {
   );
 
   const renderMobileMenu = () => (
-    <div className="lg:hidden bg-white dark:bg-dark-surface border-t-2 border-primary dark:border-[var(--color-primary-light)] w-full shadow-xl mobile-menu">
-      <nav className="px-4 py-6 bg-white dark:bg-dark-surface">
+    <div className="lg:hidden bg-white border-t-2 border-primary w-full shadow-xl mobile-menu">
+      <nav className="px-4 py-6 bg-white">
         <ul className="flex flex-col space-y-4">
           {NAVIGATION_ITEMS.map((item) => (
             <li key={item.key}>
               <button
                 onClick={() => navigateToSection(item.sectionId)}
                 onMouseDown={(e) => e.preventDefault()}
-                className="w-full text-left text-primary dark:text-primary-light hover:text-primary-dark dark:hover:text-primary font-bold text-lg
-                           py-4 px-3 transition-colors rounded-md hover:bg-[#f0f9ff] dark:hover:bg-dark-accent
+                className="w-full text-left text-primary hover:text-primary-dark font-bold text-lg
+                           py-4 px-3 transition-colors rounded-md hover:bg-[#f0f9ff]
                            focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)]"
               >
                 {t[item.label]}

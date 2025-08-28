@@ -168,7 +168,7 @@ const CareersPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#f8fcff] via-[#e9f6fc] to-[#daf2f9] dark:from-dark-bg dark:via-dark-surface dark:to-dark-accent">
+    <div className="min-h-screen bg-gradient-to-br from-[#f8fcff] via-[#e9f6fc] to-[#daf2f9]">
       {/* Contenedor principal con padding superior */}
       <div className="pt-32 pb-10 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
@@ -180,10 +180,10 @@ const CareersPage = () => {
 
           {/* Header */}
           <div className="text-center mb-12">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
               {t.title}
             </h1>
-            <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
+            <p className="text-lg sm:text-xl text-gray-700 mb-8 max-w-3xl mx-auto">
               {t.subtitle}
             </p>
           </div>
@@ -195,8 +195,8 @@ const CareersPage = () => {
             <div className="space-y-6">
 
               {/* Posición destacada */}
-              <div className="bg-white dark:bg-dark-surface rounded-2xl shadow-xl p-6 border border-gray-200/50 dark:border-gray-700/50">
-                <div className="inline-flex items-center gap-2 bg-green-100 dark:bg-green-900/20 text-green-700 dark:text-green-400 px-4 py-2 rounded-full text-sm font-medium mb-6">
+              <div className="bg-white rounded-2xl shadow-xl p-6 border border-gray-200/50">
+                <div className="inline-flex items-center gap-2 bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-medium mb-6">
                   <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
                   {t.joinTeam}
                 </div>
@@ -205,19 +205,19 @@ const CareersPage = () => {
                   <div className="w-12 h-12 bg-primary rounded-lg flex items-center justify-center">
                     <Truck className="w-6 h-6 text-white" />
                   </div>
-                  <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+                  <h2 className="text-2xl font-bold text-gray-900">
                     {t.position}
                   </h2>
                 </div>
 
-                <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                <p className="text-gray-700 leading-relaxed">
                   {t.description}
                 </p>
               </div>
 
               {/* Cómo funciona */}
-              <div className="bg-white dark:bg-dark-surface rounded-2xl shadow-xl p-6 border border-gray-200/50 dark:border-gray-700/50">
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+              <div className="bg-white rounded-2xl shadow-xl p-6 border border-gray-200/50">
+                <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
                   <Package className="w-6 h-6 text-primary" />
                   {t.howItWorks}
                 </h3>
@@ -225,22 +225,22 @@ const CareersPage = () => {
                 <div className="space-y-4">
                   <div className="flex items-start gap-3">
                     <div className="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-1">1</div>
-                    <p className="text-gray-600 dark:text-gray-300">{t.step1}</p>
+                    <p className="text-gray-700">{t.step1}</p>
                   </div>
                   <div className="flex items-start gap-3">
                     <div className="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-1">2</div>
-                    <p className="text-gray-600 dark:text-gray-300">{t.step2}</p>
+                    <p className="text-gray-700">{t.step2}</p>
                   </div>
                   <div className="flex items-start gap-3">
                     <div className="w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 mt-1">3</div>
-                    <p className="text-gray-600 dark:text-gray-300">{t.step3}</p>
+                    <p className="text-gray-700">{t.step3}</p>
                   </div>
                 </div>
               </div>
 
               {/* Beneficios */}
-              <div className="bg-white dark:bg-dark-surface rounded-2xl shadow-xl p-6 border border-gray-200/50 dark:border-gray-700/50">
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+              <div className="bg-white rounded-2xl shadow-xl p-6 border border-gray-200/50">
+                <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
                   <DollarSign className="w-6 h-6 text-green-600" />
                   {t.benefits}
                 </h3>
@@ -248,30 +248,30 @@ const CareersPage = () => {
                 <div className="space-y-3">
                   <div className="flex items-center gap-3">
                     <DollarSign className="w-5 h-5 text-green-600" />
-                    <span className="text-gray-600 dark:text-gray-300 text-sm">{t.benefit1}</span>
+                    <span className="text-gray-700 text-sm">{t.benefit1}</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <Clock className="w-5 h-5 text-blue-600" />
-                    <span className="text-gray-600 dark:text-gray-300 text-sm">{t.benefit2}</span>
+                    <span className="text-gray-700 text-sm">{t.benefit2}</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <Smartphone className="w-5 h-5 text-purple-600" />
-                    <span className="text-gray-600 dark:text-gray-300 text-sm">{t.benefit3}</span>
+                    <span className="text-gray-700 text-sm">{t.benefit3}</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <Package className="w-5 h-5 text-orange-600" />
-                    <span className="text-gray-600 dark:text-gray-300 text-sm">{t.benefit4}</span>
+                    <span className="text-gray-700 text-sm">{t.benefit4}</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <Users className="w-5 h-5 text-teal-600" />
-                    <span className="text-gray-600 dark:text-gray-300 text-sm">{t.benefit5}</span>
+                    <span className="text-gray-700 text-sm">{t.benefit5}</span>
                   </div>
                 </div>
               </div>
 
               {/* Zonas */}
-              <div className="bg-white dark:bg-dark-surface rounded-2xl shadow-xl p-6 border border-gray-200/50 dark:border-gray-700/50">
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+              <div className="bg-white rounded-2xl shadow-xl p-6 border border-gray-200/50">
+                <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
                   <MapPin className="w-6 h-6 text-red-600" />
                   {t.zones}
                 </h3>
@@ -279,64 +279,64 @@ const CareersPage = () => {
                 <div className="space-y-3">
                   <div className="flex items-start gap-2">
                     <span className="inline-block w-3 h-3 bg-green-500 rounded-full mt-2 flex-shrink-0"></span>
-                    <span className="text-gray-600 dark:text-gray-300 text-sm">{t.zone1}</span>
+                    <span className="text-gray-700 text-sm">{t.zone1}</span>
                   </div>
                   <div className="flex items-start gap-2">
                     <span className="inline-block w-3 h-3 bg-yellow-500 rounded-full mt-2 flex-shrink-0"></span>
-                    <span className="text-gray-600 dark:text-gray-300 text-sm">{t.zone2}</span>
+                    <span className="text-gray-700 text-sm">{t.zone2}</span>
                   </div>
                   <div className="flex items-start gap-2">
                     <span className="inline-block w-3 h-3 bg-blue-500 rounded-full mt-2 flex-shrink-0"></span>
-                    <span className="text-gray-600 dark:text-gray-300 text-sm">{t.zone3}</span>
+                    <span className="text-gray-700 text-sm">{t.zone3}</span>
                   </div>
                 </div>
               </div>
 
               {/* Requisitos */}
-              <div className="bg-white dark:bg-dark-surface rounded-2xl shadow-xl p-6 border border-gray-200/50 dark:border-gray-700/50">
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
+              <div className="bg-white rounded-2xl shadow-xl p-6 border border-gray-200/50">
+                <h3 className="text-xl font-bold text-gray-900 mb-4">
                   {t.requirements}
                 </h3>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-2">
                     <span className="text-green-500 mt-1">•</span>
-                    <span className="text-gray-600 dark:text-gray-300">{t.requirement1}</span>
+                    <span className="text-gray-700">{t.requirement1}</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-green-500 mt-1">•</span>
-                    <span className="text-gray-600 dark:text-gray-300">{t.requirement2}</span>
+                    <span className="text-gray-700">{t.requirement2}</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-green-500 mt-1">•</span>
-                    <span className="text-gray-600 dark:text-gray-300">{t.requirement3}</span>
+                    <span className="text-gray-700">{t.requirement3}</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-green-500 mt-1">•</span>
-                    <span className="text-gray-600 dark:text-gray-300">{t.requirement4}</span>
+                    <span className="text-gray-700">{t.requirement4}</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-green-500 mt-1">•</span>
-                    <span className="text-gray-600 dark:text-gray-300">{t.requirement5}</span>
+                    <span className="text-gray-700">{t.requirement5}</span>
                   </li>
                 </ul>
               </div>
             </div>
 
             {/* Columna derecha: Formulario */}
-            <div className="bg-white dark:bg-dark-surface rounded-2xl shadow-xl p-6 border border-gray-200/50 dark:border-gray-700/50 h-fit">
+            <div className="bg-white rounded-2xl shadow-xl p-6 border border-gray-200/50 h-fit">
               {!showVerificationMessage ? (
                 <>
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">
                     {t.formTitle}
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-300 mb-6">
+                  <p className="text-gray-700 mb-6">
                     {t.formSubtitle}
                   </p>
 
                   {feedback && (
                     <div className={`mb-4 p-3 rounded-lg ${feedback.type === 'success'
-                      ? 'bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 text-green-700 dark:text-green-400'
-                      : 'bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 text-red-700 dark:text-red-400'
+                      ? 'bg-green-50 border border-green-200 text-green-700'
+                      : 'bg-red-50 border border-red-200 text-red-700'
                       }`}>
                       {feedback.message}
                     </div>
@@ -350,7 +350,7 @@ const CareersPage = () => {
                         value={formData.nombre}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary bg-white text-gray-900 placeholder-gray-500 transition-colors"
                         placeholder={t.namePlaceholder}
                       />
                       <input
@@ -359,7 +359,7 @@ const CareersPage = () => {
                         value={formData.apellidos}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary bg-white text-gray-900 placeholder-gray-500 transition-colors"
                         placeholder={t.lastnamePlaceholder}
                       />
                     </div>
@@ -370,7 +370,7 @@ const CareersPage = () => {
                       value={formData.correo}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary bg-white text-gray-900 placeholder-gray-500 transition-colors"
                       placeholder={t.emailPlaceholder}
                     />
 
@@ -380,7 +380,7 @@ const CareersPage = () => {
                       value={formData.telefono}
                       onChange={handleInputChange}
                       required
-                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary bg-white text-gray-900 placeholder-gray-500 transition-colors"
                       placeholder={t.phonePlaceholder}
                     />
 
@@ -391,7 +391,7 @@ const CareersPage = () => {
                         value={formData.contrasena}
                         onChange={handleInputChange}
                         required
-                        className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary bg-white text-gray-900 placeholder-gray-500 transition-colors"
                         placeholder={t.passwordPlaceholder}
                       />
                       <select
@@ -400,7 +400,7 @@ const CareersPage = () => {
                         onChange={handleInputChange}
                         required
                         disabled={isLoadingDistritos}
-                        className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white disabled:opacity-50 disabled:cursor-not-allowed"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary bg-white text-gray-900 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                       >
                         <option value="">
                           {isLoadingDistritos ? 'Cargando distritos...' : 'Selecciona tu distrito'}
@@ -417,7 +417,7 @@ const CareersPage = () => {
                         onChange={handleInputChange}
                         required
                         disabled={isLoadingVehiculos}
-                        className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white disabled:opacity-50 disabled:cursor-not-allowed"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary bg-white text-gray-900 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                       >
                         <option value="">
                           {isLoadingVehiculos ? t.loadingVehicles || 'Cargando vehículos...' : t.selectVehicle || 'Selecciona tu vehículo'}
@@ -434,7 +434,7 @@ const CareersPage = () => {
                       value={formData.experiencia}
                       onChange={handleInputChange}
                       rows={3}
-                      className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white resize-none"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary bg-white text-gray-900 placeholder-gray-500 resize-none transition-colors"
                       placeholder={t.experiencePlaceholder}
                     />
 
@@ -458,7 +458,7 @@ const CareersPage = () => {
                       </a>
                     </div>
 
-                    <p className="text-xs text-gray-500 dark:text-gray-400 text-center">
+                    <p className="text-xs text-gray-500 text-center">
                       {t.verificationNote}
                     </p>
                   </form>
@@ -468,10 +468,10 @@ const CareersPage = () => {
                   <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                     <Mail className="w-8 h-8 text-green-600" />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">
                     {t.successTitle}
                   </h3>
-                  <p className="text-gray-600 dark:text-gray-300 mb-4">
+                  <p className="text-gray-700 mb-4">
                     {t.successMessage}
                   </p>
                   <button

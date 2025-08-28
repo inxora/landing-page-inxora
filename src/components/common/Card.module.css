@@ -56,11 +56,6 @@
   border: 1px solid var(--color-border);
 }
 
-.dark .backdrop {
-  background-color: rgba(22, 33, 62, 0.9);
-  border-color: var(--color-dark-border);
-}
-
 /* === ESTADOS INTERACTIVOS === */
 .interactive {
   cursor: pointer;
@@ -102,13 +97,4 @@
   border-top: 1px solid var(--color-border);
 }
 
-/* === DARK MODE === */
-.dark .card {
-  background-color: var(--color-dark-surface);
-  border-color: var(--color-dark-border);
-}
 
-.dark .header,
-.dark .footer {
-  border-color: var(--color-dark-border);
-}
