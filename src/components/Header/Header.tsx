@@ -401,7 +401,11 @@ export const Header: React.FC = () => {
               : 'bg-[#13A0D8]'
         }`}
       >
-        <div className="w-full py-1.5 sm:py-2 md:py-2.5 flex items-center justify-between max-w-none border-b border-white/30 px-2 sm:px-4 md:px-6 lg:px-8">
+        <div className={`w-full py-1.5 sm:py-2 md:py-2.5 flex items-center justify-between max-w-none px-2 sm:px-4 md:px-6 lg:px-8 ${
+          (isScrolled || isMenuOpen || isProvidersForm) 
+            ? 'border-b border-white/30' 
+            : 'border-b border-white'
+        }`}>
           {renderLogo()}
           {renderDesktopNavigation()}
 

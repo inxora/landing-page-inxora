@@ -7,8 +7,8 @@ export const SaraXoraSection = () => {
   const { lang } = useLanguage();
   const t = saraSectionTranslation[lang];
 
-  // Ángulos optimizados para pentágono con mejor distribución horizontal
-  const angles = [-90, -18, 54, 126, 198]; // Pentágono con mejor separación horizontal
+  // Ángulos para distribución circular equitativa (5 puntos cada 72°)  
+  const angles = [-90, -18, 54, 126, 198]; // Circunferencia perfecta cada 72°
 
   // Responsividad: radio y tamaño de burbujas según ancho de pantalla
   const [windowWidth, setWindowWidth] = React.useState(1024);
@@ -88,7 +88,7 @@ export const SaraXoraSection = () => {
         
         {/* Contenedor de burbujas posicionadas absolutamente */}
         <div className="absolute inset-0 w-full h-full flex items-center justify-center">
-          {/* Líneas de conexión */}
+          {/* Circunferencia que conecta todas las burbujas */}
           <svg 
             width="100%" 
             height="100%" 
@@ -104,31 +104,19 @@ export const SaraXoraSection = () => {
                 </feMerge>
               </filter>
             </defs>
-            {bubbles.map((_, i) => {
-              const angle1 = angles[i];
-              const angle2 = angles[(i + 1) % bubbles.length];
-              const rad1 = (angle1 * Math.PI) / 180;
-              const rad2 = (angle2 * Math.PI) / 180;
-              const x1 = Math.cos(rad1) * radius;
-              const y1 = Math.sin(rad1) * radius;
-              const x2 = Math.cos(rad2) * radius;
-              const y2 = Math.sin(rad2) * radius;
-              
-              return (
-                <line
-                  key={`line-${i}`}
-                  x1={`calc(50% + ${x1}px)`}
-                  y1={`calc(50% + ${y1}px)`}
-                  x2={`calc(50% + ${x2}px)`}
-                  y2={`calc(50% + ${y2}px)`}
-                  stroke="#139ED4"
-                  strokeWidth={windowWidth < 600 ? 2 : 3}
-                  strokeDasharray="8 8"
-                  opacity={0.6}
-                  filter="url(#glow)"
-                />
-              );
-            })}
+            
+            {/* Circunferencia principal */}
+            <circle
+              cx="50%"
+              cy="50%"
+              r={radius}
+              fill="none"
+              stroke="#139ED4"
+              strokeWidth={windowWidth < 600 ? 2 : 3}
+              strokeDasharray="8 8"
+              opacity={0.6}
+              filter="url(#glow)"
+            />
           </svg>
           
           {/* Burbujas posicionadas */}

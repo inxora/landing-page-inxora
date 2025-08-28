@@ -11,7 +11,7 @@ export const HowItWorksSection = () => {
           <span className="font-orbitron text-primary-dark dark:text-dark-text">{t.titleMain} </span>
           <span className="font-orbitron text-accent-bright">{t.titleAccent}</span>
         </h2>
-        <p className="font-montserrat text-base md:text-lg text-primary dark:text-primary-light max-w-3xl mx-auto line-clamp-2 md:line-clamp-none">
+        <p className="font-montserrat text-base md:text-lg text-foreground-secondary dark:text-primary-light max-w-3xl mx-auto line-clamp-2 md:line-clamp-none">
           {t.subtitle}
         </p>
       </div>
@@ -28,8 +28,11 @@ export const HowItWorksSection = () => {
             {t.steps.map((step, idx) => (
               <div
                 key={step.title}
-                className={`bg-white/80 dark:bg-dark-surface/80 backdrop-blur-md p-6 rounded-xl shadow-md border-b-4 relative transition-all duration-200 min-h-[220px] flex flex-col hover:scale-105 hover:shadow-xl`}
-                style={{ borderBottomColor: '#fff' }}
+                className={`bg-white/80 backdrop-blur-md p-6 rounded-xl shadow-md border border-b-4 relative transition-all duration-200 min-h-[220px] flex flex-col hover:scale-105 hover:shadow-xl`}
+                style={{ 
+                  borderColor: colors[idx],        // Color sólido para borde perimetral
+                  borderBottomColor: colors[idx]   // Color sólido para borde inferior
+                }}
               >
                 <div
                   className="absolute -top-3 -left-3 text-white h-8 w-8 md:h-10 md:w-10 rounded-full flex items-center justify-center font-bold text-base md:text-lg shadow-md"

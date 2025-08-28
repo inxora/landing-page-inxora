@@ -40,27 +40,39 @@ export const SolutionSection = () => {
           </div>
         </div>
         {/* Beneficios */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8 mt-6 md:mt-8">
-          <div className="card-inxora hover-scale-sm text-center">
-            <Clock size={48} className="text-accent-bright mb-2 drop-shadow" />
-            <h4 className="font-orbitron font-bold text-primary-dark dark:text-dark-text mb-3 text-lg drop-shadow-sm">{t.benefits[0].title}</h4>
-            <p className="text-primary dark:text-primary-light text-sm">{t.benefits[0].desc}</p>
-          </div>
-          <div className="card-inxora hover-scale-sm text-center">
-            <DollarSign size={48} className="text-primary mb-2 drop-shadow" />
-            <h4 className="font-orbitron font-bold text-primary-dark dark:text-dark-text mb-3 text-lg drop-shadow-sm">{t.benefits[1].title}</h4>
-            <p className="text-primary dark:text-primary-light text-sm">{t.benefits[1].desc}</p>
-          </div>
-          <div className="card-inxora hover-scale-sm text-center">
-            <CheckCircle size={48} className="text-primary-light mb-2 drop-shadow" />
-            <h4 className="font-orbitron font-bold text-primary-dark dark:text-dark-text mb-3 text-lg drop-shadow-sm">{t.benefits[2].title}</h4>
-            <p className="text-primary dark:text-primary-light text-sm">{t.benefits[2].desc}</p>
-          </div>
-          <div className="card-inxora hover-scale-sm text-center">
-            <Headphones size={48} className="text-accent mb-2 drop-shadow" />
-            <h4 className="font-orbitron font-bold text-primary-dark dark:text-dark-text mb-3 text-lg drop-shadow-sm">{t.benefits[3].title}</h4>
-            <p className="text-primary dark:text-primary-light text-sm">{t.benefits[3].desc}</p>
-          </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 mt-6 md:mt-8 overflow-hidden px-2">
+          {(() => {
+            const colors = [
+              'var(--color-accent-bright)', // Beneficio 1: Fucsia
+              'var(--color-primary)', // Beneficio 2: Azul
+              'var(--color-primary-light)', // Beneficio 3: Azul claro
+              'var(--color-accent)', // Beneficio 4: Accent
+            ];
+            return t.benefits.map((benefit, idx) => (
+              <div
+                key={idx}
+                className={`bg-white/80 backdrop-blur-md p-4 rounded-xl shadow-md border border-b-4 transition-all duration-200 flex flex-col hover:shadow-lg text-center`}
+                style={{ 
+                  borderColor: colors[idx],        // Color sólido para borde perimetral
+                  borderBottomColor: colors[idx]   // Color sólido para borde inferior
+                }}
+              >
+                {/* Solo el icono centrado, SIN numeración */}
+                <div className="mb-3 flex items-center justify-center">
+                  {idx === 0 && <Clock size={36} className="drop-shadow" style={{ color: colors[0] }} />}
+                  {idx === 1 && <DollarSign size={36} className="drop-shadow" style={{ color: colors[1] }} />}
+                  {idx === 2 && <CheckCircle size={36} className="drop-shadow" style={{ color: colors[2] }} />}
+                  {idx === 3 && <Headphones size={36} className="drop-shadow" style={{ color: colors[3] }} />}
+                </div>
+                <h4 className="font-orbitron text-sm md:text-base font-semibold mb-2 text-primary-dark">
+                  {benefit.title}
+                </h4>
+                <p className="text-primary text-xs md:text-sm leading-relaxed">
+                  {benefit.desc}
+                </p>
+              </div>
+            ));
+          })()}
         </div>
       </div>
     </section>
