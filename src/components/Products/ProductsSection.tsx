@@ -1,3 +1,5 @@
+
+// ProductsSection.jsx - COMPONENTE ARREGLADO
 import React, { useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import "keen-slider/keen-slider.min.css";
@@ -133,7 +135,7 @@ export const ProductsSection = () => {
           <div ref={sliderRef} className="keen-slider transition-all duration-500 ease-in-out" key={lang}>
             {displayCategories.map((cat, idx) => (
               <div key={cat.name + idx} className="keen-slider__slide flex flex-col">
-                <div className="bg-white/80 backdrop-blur-md rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 border-t-4 border-[var(--color-accent)] hover:border-[var(--color-accent-bright)] flex flex-col h-full transform hover:scale-105">
+                <div className="bg-white/80 backdrop-blur-md rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 border-t-4 border-[var(--color-accent)] hover:border-[var(--color-accent-bright)] flex flex-col h-full transform hover:-translate-y-1">
                   <div className="aspect-square overflow-hidden flex items-center justify-center">
                     <img 
                       src={cat.imageUrl} 
@@ -152,7 +154,7 @@ export const ProductsSection = () => {
                       href="/Folleto INXORA.pdf" 
                       target="_blank" 
                       rel="noopener noreferrer" 
-                      className="font-orbitron text-accent hover:text-accent-bright font-medium flex items-center justify-center transition-all duration-200 hover:scale-105 text-xs md:text-base px-2 py-1 md:px-6 md:py-3"
+                      className="font-orbitron text-accent hover:text-accent-bright font-medium flex items-center justify-center transition-all duration-200 hover:-translate-y-0.5 text-xs md:text-base px-2 py-1 md:px-6 md:py-3"
                     >
                       {t.verProductos} <ChevronRight size={16} className="ml-1" />
                     </a>
@@ -163,7 +165,7 @@ export const ProductsSection = () => {
           </div>
         </div>
         <div className="text-center mt-8">
-          <a href="/Folleto INXORA.pdf" target="_blank" rel="noopener noreferrer" className="bg-primary text-white px-6 py-3 rounded-md font-medium hover:bg-[var(--color-primary-dark)] transition-all duration-200 inline-flex items-center shadow-lg hover:shadow-xl hover:scale-105">
+          <a href="/Folleto INXORA.pdf" target="_blank" rel="noopener noreferrer" className="bg-primary text-white px-6 py-3 rounded-md font-medium hover:bg-[var(--color-primary-dark)] transition-all duration-200 inline-flex items-center shadow-lg hover:shadow-xl hover:-translate-y-1">
             {t.verCatalogo} <ChevronRight size={20} className="ml-2" />
           </a>
         </div>

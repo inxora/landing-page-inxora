@@ -112,7 +112,7 @@ export const ProveedorForm = () => {
   const [currentStep, setCurrentStep] = useState(0);
   const [completedSteps, setCompletedSteps] = useState([false, false, false, false]);
   const totalSteps = 4;
-  const stepLabels = ["Acuerdo", t.paso1 || "Datos Empresa", t.paso2 || "Archivos", t.paso3 || "Condiciones"];
+  const stepLabels = [t.stepperAcuerdo || "Acuerdo", t.stepperDatos || "Datos de la Empresa", t.stepperDocumentos || "Documentos", t.stepperCondiciones || "Condiciones Comerciales"];
 
   // Estado para el acuerdo
   const [acuerdoAceptado, setAcuerdoAceptado] = useState(false);
@@ -225,15 +225,6 @@ export const ProveedorForm = () => {
           setPaisId(peru.id);
         }
 
-        // Mostrar advertencia si hay problemas de conectividad
-        if (!paisesData?.length || !monedasData?.length) {
-          setDataLoadError(true);
-          setFeedback({
-            type: 'error',
-            message: 'Conexión limitada detectada. El formulario funcionará con datos básicos. Las marcas pueden agregarse en comentarios.'
-          });
-        }
-
       } catch (error) {
         console.error('Error al cargar datos de referencia:', error);
         setDataLoadError(true);
@@ -246,10 +237,6 @@ export const ProveedorForm = () => {
         setPaisId(1);
         setMarcasDisponibles([]);
 
-        setFeedback({
-          type: 'error',
-          message: 'Error de conectividad. El formulario funcionará con datos básicos. Puede especificar las marcas en comentarios.'
-        });
       } finally {
         setLoadingData(false);
       }
@@ -274,7 +261,7 @@ export const ProveedorForm = () => {
     
     switch (step) {
       case 0: // Acuerdo de colaboración
-        if (!acuerdoAceptado) return "Debe aceptar el acuerdo de colaboración comercial para continuar";
+        if (!acuerdoAceptado) return t.validaciones?.acuerdoRequerido || "Debe aceptar el acuerdo de colaboración comercial para continuar";
         return null;
       
       case 1: // Datos de la empresa
@@ -581,52 +568,52 @@ export const ProveedorForm = () => {
       case 0: // Acuerdo de colaboración
         return (
           <div className="space-y-6 h-full flex flex-col">
-            <div className="bg-white dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700 flex-1 flex flex-col overflow-hidden">
-              <div className="border-b border-gray-200 dark:border-gray-700 px-6 py-4">
-                <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
+            <div className="bg-white rounded-lg border border-gray-200 flex-1 flex flex-col overflow-hidden">
+              <div className="border-b border-gray-200 px-6 py-4">
+                <h2 className="text-xl font-semibold text-gray-900">
                   {t.introTitulo || 'Acuerdo de Colaboración Comercial'}
                 </h2>
-                <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
+                <p className="text-sm text-gray-600 mt-1">
                   Para proveedores interesados en nuestra plataforma
                 </p>
               </div>
               <div className="p-6 space-y-6 flex-1 overflow-y-auto">
-                <div className="bg-gray-50 dark:bg-gray-700/50 rounded-lg p-4">
-                  <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                    {t.introLinea1 || 'INXORA es una plataforma B2B que conecta proveedores industriales con empresas compradoras, facilitando transacciones comerciales eficientes y transparentes.'}
+                <div className="bg-gray-50 rounded-lg p-4">
+                  <p className="text-gray-800 leading-relaxed font-medium">
+                    Para proveedores interesados en ofrecer sus productos a través de nuestra plataforma.
                   </p>
                 </div>
                 <div className="space-y-6">
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-3 flex items-center gap-2">
                       <div className="w-2 h-2 bg-primary rounded-full"></div>
-                      {t.introQuienes || 'Quiénes somos'}
+                      ¿QUIÉNES SOMOS?
                     </h3>
-                    <p className="text-gray-600 dark:text-gray-300 mb-3 leading-relaxed">
-                      {t.introQuienesDesc || 'Somos INXORA, un marketplace B2B especializado en suministros industriales que opera como intermediario comercial inteligente.'}
+                    <p className="text-gray-800 mb-3 leading-relaxed">
+                      INXORA es una plataforma digital B2B especializada en el abastecimiento industrial. Atendemos a empresas del sector manufacturero, agroindustrial, minero y energético en todo el país.
                     </p>
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-3 flex items-center gap-2">
                       <div className="w-2 h-2 bg-primary rounded-full"></div>
-                      {t.introQueBuscamos || 'Qué buscamos'}
+                      ¿QUÉ BUSCAMOS?
                     </h3>
-                    <p className="text-gray-600 dark:text-gray-300 mb-3 leading-relaxed">
-                      {t.introQueBuscamosDesc || 'Buscamos proveedores confiables que puedan ofrecer productos industriales de calidad con condiciones comerciales competitivas.'}
+                    <p className="text-gray-800 mb-3 leading-relaxed">
+                      Queremos incorporar tus productos a nuestra plataforma para revenderlos bajo condiciones claras, con soporte técnico y márgenes competitivos.
                     </p>
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3 flex items-center gap-2">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-3 flex items-center gap-2">
                       <div className="w-2 h-2 bg-primary rounded-full"></div>
-                      {t.introQueNecesitamos || 'Qué necesitamos'}
+                      ¿QUÉ NECESITAMOS PARA INICIAR?
                     </h3>
-                    <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                      {t.introQueNecesitamosDesc || 'Necesitamos que complete este formulario con información precisa y actualizada de su empresa y productos.'}
+                    <p className="text-gray-800 leading-relaxed">
+                      Por favor, completa la siguiente información para evaluar la viabilidad de trabajar juntos. Nos encantaría contar contigo como aliado estratégico.
                     </p>
                   </div>
                 </div>
               </div>
-              <div className="border-t border-gray-200 dark:border-gray-700 p-6 bg-gray-50 dark:bg-gray-800/50">
+              <div className="border-t border-gray-200 p-6 bg-gray-50">
                 <div className="flex items-start gap-3">
                   <input
                     type="checkbox"
@@ -638,11 +625,11 @@ export const ProveedorForm = () => {
                     }}
                     className="mt-0.5 w-4 h-4 text-primary bg-white border-gray-300 rounded focus:ring-1 focus:ring-primary"
                   />
-                  <label htmlFor="acuerdo" className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed cursor-pointer">
-                    <span className="font-medium text-gray-900 dark:text-white">
-                      {t.aceptoAcuerdo || 'Acepto el acuerdo de colaboración comercial'}
+                  <label htmlFor="acuerdo" className="text-sm text-gray-800 leading-relaxed cursor-pointer">
+                    <span className="font-medium text-gray-900">
+                      Acepto el acuerdo de colaboración comercial
                     </span>
-                    {" "}{t.aceptoDesc || 'y confirmo que he leído y entendido los términos para ser proveedor de INXORA.'}
+                    {" "}y confirmo que he leído y entendido los términos para ser proveedor de INXORA.
                   </label>
                 </div>
               </div>
@@ -674,13 +661,13 @@ export const ProveedorForm = () => {
             )}
 
             <div className="space-y-2">
-              <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300">
+              <label className="block text-sm font-semibold text-gray-900">
                 País <span className="text-red-500">*</span>
               </label>
               <select
                 value={paisId}
                 onChange={e => setPaisId(parseInt(e.target.value))}
-                className="w-full border-2 border-gray-200 dark:border-gray-600 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-dark-surface text-gray-900 dark:text-white shadow-sm transition-all duration-200"
+                className="w-full border-2 border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-white text-gray-900 shadow-sm transition-all duration-200"
                 disabled={loadingData}
               >
                 {paises.map(pais => (
@@ -693,14 +680,14 @@ export const ProveedorForm = () => {
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               <div className="space-y-2">
-                <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300">
+                <label className="block text-sm font-semibold text-gray-900">
                   {t.razonSocial || "Razón Social"} <span className="text-red-500">*</span>
                 </label>
                 <input
                   required
                   type="text"
                   placeholder={(t.razonSocial || "Razón Social") + ' (se autocompletará con el RUC)'}
-                  className="w-full border-2 border-gray-200 dark:border-gray-600 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-dark-surface text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 shadow-sm transition-all duration-200"
+                  className="w-full border-2 border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-white text-gray-900 placeholder-gray-500 shadow-sm transition-all duration-200"
                   value={razonSocial}
                   onChange={e => setRazonSocial(e.target.value)}
                   autoComplete="organization"
@@ -709,7 +696,7 @@ export const ProveedorForm = () => {
               </div>
 
               <div className="space-y-2">
-                <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300">
+                <label className="block text-sm font-semibold text-gray-900">
                   {paisSeleccionado && paisSeleccionado.iso_code_2 === 'PE' ? (t.ruc || 'RUC') : 'Documento de Identidad Fiscal'} <span className="text-red-500">*</span>
                 </label>
                 <div className="flex gap-2">
@@ -717,7 +704,7 @@ export const ProveedorForm = () => {
                     required
                     type="text"
                     placeholder="20123456789"
-                    className="flex-1 border-2 border-gray-200 dark:border-gray-600 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-dark-surface text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 shadow-sm transition-all duration-200"
+                    className="flex-1 border-2 border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-white text-gray-900 placeholder-gray-500 shadow-sm transition-all duration-200"
                     value={documentoEmpresa}
                     onChange={e => setDocumentoEmpresa(e.target.value)}
                     autoComplete="off"
@@ -747,14 +734,14 @@ export const ProveedorForm = () => {
               </div>
 
               <div className="space-y-2 lg:col-span-2">
-                <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300">
+                <label className="block text-sm font-semibold text-gray-900">
                   {t.direccion || "Dirección"} <span className="text-red-500">*</span>
                 </label>
                 <input
                   required
                   type="text"
                   placeholder="Av. Principal 123, Distrito, Provincia"
-                  className="w-full border-2 border-gray-200 dark:border-gray-600 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-dark-surface text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 shadow-sm transition-all duration-200"
+                  className="w-full border-2 border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-white text-gray-900 placeholder-gray-500 shadow-sm transition-all duration-200"
                   value={direccion}
                   onChange={e => setDireccion(e.target.value)}
                   autoComplete="address-line1"
@@ -763,14 +750,14 @@ export const ProveedorForm = () => {
               </div>
 
               <div className="space-y-2">
-                <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300">
+                <label className="block text-sm font-semibold text-gray-900">
                   Nombre del contacto <span className="text-red-500">*</span>
                 </label>
                 <input
                   required
                   type="text"
                   placeholder="Juan"
-                  className="w-full border-2 border-gray-200 dark:border-gray-600 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-dark-surface text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 shadow-sm transition-all duration-200"
+                  className="w-full border-2 border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-white text-gray-900 placeholder-gray-500 shadow-sm transition-all duration-200"
                   value={nombreContacto}
                   onChange={e => setNombreContacto(e.target.value)}
                   autoComplete="given-name"
@@ -778,14 +765,14 @@ export const ProveedorForm = () => {
               </div>
 
               <div className="space-y-2">
-                <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300">
+                <label className="block text-sm font-semibold text-gray-900">
                   Apellidos del contacto <span className="text-red-500">*</span>
                 </label>
                 <input
                   required
                   type="text"
                   placeholder="Pérez García"
-                  className="w-full border-2 border-gray-200 dark:border-gray-600 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-dark-surface text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 shadow-sm transition-all duration-200"
+                  className="w-full border-2 border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-white text-gray-900 placeholder-gray-500 shadow-sm transition-all duration-200"
                   value={apellidosContacto}
                   onChange={e => setApellidosContacto(e.target.value)}
                   autoComplete="family-name"
@@ -793,14 +780,14 @@ export const ProveedorForm = () => {
               </div>
 
               <div className="space-y-2">
-                <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300">
+                <label className="block text-sm font-semibold text-gray-900">
                   {t.correoContacto || "Correo de Contacto"} <span className="text-red-500">*</span>
                 </label>
                 <input
                   required
                   type="email"
                   placeholder="contacto@empresa.com"
-                  className="w-full border-2 border-gray-200 dark:border-gray-600 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-dark-surface text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 shadow-sm transition-all duration-200"
+                  className="w-full border-2 border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-white text-gray-900 placeholder-gray-500 shadow-sm transition-all duration-200"
                   value={correoContacto}
                   onChange={e => setCorreoContacto(e.target.value)}
                   autoComplete="email"
@@ -808,12 +795,12 @@ export const ProveedorForm = () => {
               </div>
 
               <div className="space-y-2">
-                <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300">
+                <label className="block text-sm font-semibold text-gray-900">
                   {t.telefono || "Teléfono"} <span className="text-red-500">*</span>
                 </label>
                 <div className="flex gap-2">
                   {paisSeleccionado && (
-                    <span className="px-3 py-3 bg-gray-100 dark:bg-gray-700 border-2 border-gray-200 dark:border-gray-600 rounded-lg text-gray-700 dark:text-gray-300 font-medium">
+                    <span className="px-3 py-3 bg-gray-100 border-2 border-gray-200 rounded-lg text-gray-800 font-medium">
                       {paisSeleccionado.prefijo_telefonico}
                     </span>
                   )}
@@ -821,7 +808,7 @@ export const ProveedorForm = () => {
                     required
                     type="tel"
                     placeholder="987654321"
-                    className="flex-1 border-2 border-gray-200 dark:border-gray-600 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-dark-surface text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 shadow-sm transition-all duration-200"
+                    className="flex-1 border-2 border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-white text-gray-900 placeholder-gray-500 shadow-sm transition-all duration-200"
                     value={telefono}
                     onChange={e => setTelefono(e.target.value)}
                     pattern={paisSeleccionado?.patron_telefono || ''}
@@ -832,19 +819,19 @@ export const ProveedorForm = () => {
               </div>
 
               <div className="space-y-2">
-                <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300">
-                  WhatsApp <span className="text-gray-400">(opcional)</span>
+                <label className="block text-sm font-semibold text-gray-900">
+                  WhatsApp <span className="text-gray-600">(opcional)</span>
                 </label>
                 <div className="flex gap-2">
                   {paisSeleccionado && (
-                    <span className="px-3 py-3 bg-gray-100 dark:bg-gray-700 border-2 border-gray-200 dark:border-gray-600 rounded-lg text-gray-700 dark:text-gray-300 font-medium">
+                    <span className="px-3 py-3 bg-gray-100 border-2 border-gray-200 rounded-lg text-gray-800 font-medium">
                       {paisSeleccionado.prefijo_telefonico}
                     </span>
                   )}
                   <input
                     type="tel"
                     placeholder="987654321"
-                    className="flex-1 border-2 border-gray-200 dark:border-gray-600 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-dark-surface text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 shadow-sm transition-all duration-200"
+                    className="flex-1 border-2 border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-white text-gray-900 placeholder-gray-500 shadow-sm transition-all duration-200"
                     value={whatsapp}
                     onChange={e => setWhatsapp(e.target.value)}
                     pattern={paisSeleccionado?.patron_telefono || ''}
@@ -855,9 +842,9 @@ export const ProveedorForm = () => {
               </div>
 
               <div className="space-y-2 lg:col-span-2">
-                <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300">
+                <label className="block text-sm font-semibold text-gray-900">
                   Marcas que distribuye {!dataLoadError && <span className="text-red-500">*</span>}
-                  {dataLoadError && <span className="text-gray-400">(especificar en comentarios)</span>}
+                  {dataLoadError && <span className="text-gray-600">(especificar en comentarios)</span>}
                 </label>
                 <Select
                   isMulti
@@ -877,7 +864,7 @@ export const ProveedorForm = () => {
                   classNamePrefix="react-select"
                 />
                 {(marcasSeleccionadas.length === 0 || dataLoadError) && (
-                  <p className="text-sm text-gray-500 dark:text-gray-400">
+                  <p className="text-sm text-gray-700">
                     {dataLoadError 
                       ? "Especifique las marcas que distribuye en el campo de comentarios al final del formulario."
                       : "También puedes escribir las marcas en el campo de comentarios al final si no las encuentras en la lista."
@@ -887,7 +874,7 @@ export const ProveedorForm = () => {
               </div>
 
               <div className="space-y-2">
-                <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300">
+                <label className="block text-sm font-semibold text-gray-900">
                   {t.soporteTecnico || "Soporte Técnico"} <span className="text-red-500">*</span>
                 </label>
                 <Select
@@ -917,11 +904,11 @@ export const ProveedorForm = () => {
               {t.archivos || "Documentos"}
             </h2>
 
-            <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4">
-              <h3 className="font-semibold text-blue-800 dark:text-blue-200 mb-2">
+            <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+              <h3 className="font-semibold text-blue-900 mb-2">
                 {t.archivosDesc1 || "Documentos opcionales"}
               </h3>
-              <p className="text-blue-700 dark:text-blue-300 text-sm mb-3">
+              <p className="text-blue-800 text-sm mb-3">
                 {t.archivosDesc2 || "Puede adjuntar catálogos, listas de precios, certificados, etc."}
               </p>
               <a
@@ -934,7 +921,7 @@ export const ProveedorForm = () => {
             </div>
 
             <div className="space-y-4">
-              <div className="border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-lg p-6 text-center">
+              <div className="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center">
                 <input
                   ref={fileInputRef}
                   type="file"
@@ -950,17 +937,17 @@ export const ProveedorForm = () => {
                 >
                   📎 {t.elegirArchivos || "Elegir archivos"}
                 </label>
-                <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
+                <p className="text-sm text-gray-700 mt-2">
                   {t.archivosNota || "Máximo 5 archivos de 10MB cada uno"}
                 </p>
               </div>
 
               {files.length > 0 && (
                 <div className="space-y-2">
-                  <h4 className="font-semibold text-gray-700 dark:text-gray-300">Archivos seleccionados:</h4>
+                  <h4 className="font-semibold text-gray-900">Archivos seleccionados:</h4>
                   {files.map((file, index) => (
-                    <div key={index} className="flex items-center justify-between bg-gray-50 dark:bg-gray-800 p-3 rounded-lg">
-                      <span className="text-sm text-gray-700 dark:text-gray-300 truncate flex-1">
+                    <div key={index} className="flex items-center justify-between bg-gray-50 p-3 rounded-lg">
+                      <span className="text-sm text-gray-800 truncate flex-1">
                         📄 {file.name} ({(file.size / 1024 / 1024).toFixed(2)} MB)
                       </span>
                       <button
@@ -988,7 +975,7 @@ export const ProveedorForm = () => {
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               <div className="space-y-2">
-                <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300">
+                <label className="block text-sm font-semibold text-gray-900">
                   {t.ofreceCredito || "¿Ofrece crédito?"}
                 </label>
                 <Select
@@ -1010,7 +997,7 @@ export const ProveedorForm = () => {
               {ofreceCredito === 'si' && (
                 <>
                   <div className="space-y-2">
-                    <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300">
+                    <label className="block text-sm font-semibold text-gray-900">
                       Días de crédito
                     </label>
                     <input
@@ -1018,18 +1005,18 @@ export const ProveedorForm = () => {
                       min="0"
                       max="365"
                       placeholder="30"
-                      className="w-full border-2 border-gray-200 dark:border-gray-600 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-dark-surface text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 shadow-sm transition-all duration-200"
+                      className="w-full border-2 border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-white text-gray-900 placeholder-gray-500 shadow-sm transition-all duration-200"
                       value={diasCredito}
                       onChange={e => setDiasCredito(e.target.value)}
                     />
                   </div>
                   <div className="space-y-2 lg:col-span-2">
-                    <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300">
+                    <label className="block text-sm font-semibold text-gray-900">
                       {t.condicionesCredito || "Condiciones de crédito"}
                     </label>
                     <textarea
                       placeholder="Condiciones específicas del crédito..."
-                      className="w-full border-2 border-gray-200 dark:border-gray-600 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-dark-surface text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 shadow-sm transition-all duration-200 resize-none"
+                      className="w-full border-2 border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-white text-gray-900 placeholder-gray-500 shadow-sm transition-all duration-200 resize-none"
                       rows={3}
                       value={condicionesCredito}
                       onChange={e => setCondicionesCredito(e.target.value)}
@@ -1039,13 +1026,13 @@ export const ProveedorForm = () => {
               )}
 
               <div className="space-y-2">
-                <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300">
+                <label className="block text-sm font-semibold text-gray-900">
                   Moneda para pedido mínimo
                 </label>
                 <select
                   value={monedaMinimoPedido}
                   onChange={e => setMonedaMinimoPedido(parseInt(e.target.value))}
-                  className="w-full border-2 border-gray-200 dark:border-gray-600 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-dark-surface text-gray-900 dark:text-white shadow-sm transition-all duration-200"
+                  className="w-full border-2 border-gray-200 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent bg-white text-gray-900 shadow-sm transition-all duration-200"
                 >
                   {monedas.map(moneda => (
                     <option key={moneda.id} value={moneda.id}>
@@ -1229,17 +1216,6 @@ export const ProveedorForm = () => {
             {/* Contenido del paso actual */}
             <div className="p-6 flex-1 overflow-auto">
               {renderStep()}
-
-              {/* Feedback */}
-              {feedback && (
-                <div className={`mt-4 p-3 rounded-lg text-sm font-medium ${
-                  feedback.type === 'error'
-                    ? 'bg-red-50 text-red-700 border border-red-200'
-                    : 'bg-green-50 text-green-700 border border-green-200'
-                }`}>
-                  {feedback.message}
-                </div>
-              )}
             </div>
 
             {/* Botones de navegación fijos en la parte inferior */}

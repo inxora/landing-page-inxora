@@ -48,7 +48,8 @@ export const providersFormTranslation = {
       archivoNoPermitido: "Archivo no permitido: {file}",
       tipoArchivo: "Tipo de archivo no permitido: {file}. Solo se permiten archivos: PDF, Excel, Word e imágenes.",
       tamanoArchivo: "El archivo {file} excede el tamaño máximo permitido de 10MB",
-      nombreArchivo: "El nombre del archivo {file} contiene caracteres no permitidos. Solo se permiten letras, números, espacios, guiones, puntos y acentos."
+      nombreArchivo: "El nombre del archivo {file} contiene caracteres no permitidos. Solo se permiten letras, números, espacios, guiones, puntos y acentos.",
+      acuerdoRequerido: "Debe aceptar el acuerdo de colaboración comercial para continuar"
     },
     recomendacionArchivoTitulo: "Recomendación:",
     recomendacionArchivoLinea1: "Para una mejor gestión, nombra tu archivo como: RazónSocial_Propuesta",
@@ -111,7 +112,18 @@ export const providersFormTranslation = {
     buscar: "Buscar",
     selecciona: "Selecciona una opción",
     buscando: "Buscando datos de SUNAT...",
-    datosEncontrados: "Datos encontrados con éxito."
+    datosEncontrados: "Datos encontrados con éxito.",
+    
+    // Navegación mejorada
+    stepperAcuerdo: "Acuerdo",
+    stepperDatos: "Datos de la Empresa",
+    stepperDocumentos: "Documentos", 
+    stepperCondiciones: "Condiciones Comerciales",
+    
+    // Campos adicionales
+    introSubtitulo: "Para proveedores interesados en ofrecer sus productos a través de nuestra plataforma.",
+    apellido_contacto: "Apellidos del contacto*",
+    documentos: "Documentos"
   },
   en: {
     // Step navigation
@@ -162,7 +174,8 @@ export const providersFormTranslation = {
       archivoNoPermitido: "File not allowed: {file}",
       tipoArchivo: "File type not allowed: {file}. Only PDF, Excel, Word and image files are allowed.",
       tamanoArchivo: "File {file} exceeds the maximum allowed size of 10MB",
-      nombreArchivo: "File name {file} contains invalid characters. Only letters, numbers, spaces, hyphens, dots and accents are allowed."
+      nombreArchivo: "File name {file} contains invalid characters. Only letters, numbers, spaces, hyphens, dots and accents are allowed.",
+      acuerdoRequerido: "You must accept the commercial collaboration agreement to continue"
     },
     recomendacionArchivoTitulo: "Recommendation:",
     recomendacionArchivoLinea1: "For better management, name your file as: CompanyName_Proposal",
@@ -225,7 +238,18 @@ export const providersFormTranslation = {
     buscar: "Search",
     selecciona: "Select an option",
     buscando: "Searching SUNAT data...",
-    datosEncontrados: "Data found successfully."
+    datosEncontrados: "Data found successfully.",
+    
+    // Enhanced navigation
+    stepperAcuerdo: "Agreement",
+    stepperDatos: "Company Data",
+    stepperDocumentos: "Documents",
+    stepperCondiciones: "Commercial Terms",
+    
+    // Additional fields
+    introSubtitulo: "For suppliers interested in offering their products through our platform.",
+    apellido_contacto: "Contact last name*",
+    documentos: "Documents"
   },
   pt: {
     // Navegação de passos
@@ -276,7 +300,8 @@ export const providersFormTranslation = {
       archivoNoPermitido: "Arquivo não permitido: {file}",
       tipoArchivo: "Tipo de arquivo não permitido: {file}. Apenas arquivos PDF, Excel, Word e imagens são permitidos.",
       tamanoArchivo: "O arquivo {file} excede o tamanho máximo permitido de 10MB",
-      nombreArchivo: "O nome do arquivo {file} contém caracteres não permitidos. Apenas letras, números, espaços, hífens, pontos e acentos são permitidos."
+      nombreArchivo: "O nome do arquivo {file} contém caracteres não permitidos. Apenas letras, números, espaços, hífens, pontos e acentos são permitidos.",
+      acuerdoRequerido: "Deve aceitar o acordo de colaboração comercial para continuar"
     },
     recomendacionArchivoTitulo: "Recomendação:",
     recomendacionArchivoLinea1: "Para uma melhor gestão, nomeie seu arquivo como: RazãoSocial_Proposta",
@@ -339,6 +364,17 @@ export const providersFormTranslation = {
     buscar: "Buscar",
     selecciona: "Selecione uma opção",
     buscando: "Buscando dados SUNAT...",
-    datosEncontrados: "Dados encontrados com sucesso."
+    datosEncontrados: "Dados encontrados com sucesso.",
+    
+    // Navegação aprimorada
+    stepperAcuerdo: "Acordo",
+    stepperDatos: "Dados da Empresa",
+    stepperDocumentos: "Documentos",
+    stepperCondiciones: "Condições Comerciais",
+    
+    // Campos adicionais
+    introSubtitulo: "Para fornecedores interessados em oferecer seus produtos através da nossa plataforma.",
+    apellido_contacto: "Sobrenome do Contato*",
+    documentos: "Documentos"
   }
 }; 

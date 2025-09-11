@@ -1,3 +1,4 @@
+// ProvidersSection.jsx - COMPONENTE ARREGLADO  
 import React, { useEffect } from 'react';
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
@@ -122,7 +123,7 @@ export const ProvidersSection = () => {
           <p className="text-lg text-gray-600 max-w-3xl mx-auto mb-6">
             {t.join}
           </p>
-          <Link to={getRouteByLang('providersForm', lang)} className="border-2 border-[var(--color-accent-bright)] text-accent-bright px-6 py-3 rounded-md font-medium hover:bg-primary hover:text-white transition-all duration-200 inline-block shadow-sm hover:shadow-md hover:scale-105">
+          <Link to={getRouteByLang('providersForm', lang)} className="border-2 border-[var(--color-accent-bright)] text-accent-bright px-6 py-3 rounded-md font-medium hover:bg---color-accent-bright hover:text-white transition-all duration-200 inline-block shadow-sm hover:shadow-md hover:-translate-y-1">
             {t.cta}
           </Link>
         </div>
