@@ -6,6 +6,12 @@
   <link rel="icon" type="image/png" href="/logo_inxora/LOGO-03.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <!-- URL Canónica -->
+  <link rel="canonical" href="https://inxora.com/" />
+
+  <!-- Meta Robots para mejor indexación -->
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+
   <!-- SEO PRINCIPAL (Español) -->
   <title>INXORA - Marketplace Industrial B2B | Cotización Rápida y Soluciones para Empresas</title>
   <meta name="description"
@@ -26,12 +32,13 @@
   <meta name="keywords" lang="pt"
     content="marketplace industrial, cotação industrial, suprimentos industriais, B2B, compras industriais, integração IA, soluções industriais, manufatura, mineração, agronegócio, energia, INXORA" />
 
-  <!-- Hreflang multilingüe -->
-  <link rel="alternate" hreflang="es" href="https://inxora.com/es/" />
-  <link rel="alternate" hreflang="en" href="https://inxora.com/en/" />
-  <link rel="alternate" hreflang="pt" href="https://inxora.com/pt/" />
+  <!-- Hreflang multilingüe optimizado para SPA -->
+  <link rel="alternate" hreflang="es" href="https://inxora.com/?lang=es" />
+  <link rel="alternate" hreflang="en" href="https://inxora.com/?lang=en" />
+  <link rel="alternate" hreflang="pt" href="https://inxora.com/?lang=pt" />
+  <link rel="alternate" hreflang="x-default" href="https://inxora.com/" />
 
-  <!-- Open Graph -->
+  <!-- Open Graph optimizado -->
   <meta property="og:title"
     content="INXORA - Marketplace Industrial B2B | Cotización Rápida y Soluciones para Empresas" />
   <meta property="og:description"
@@ -40,14 +47,18 @@
   <meta property="og:url" content="https://inxora.com/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="INXORA" />
+  <meta property="og:locale" content="es_ES" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:locale:alternate" content="pt_BR" />
 
   <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
+  <!-- <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title"
     content="INXORA - Marketplace Industrial B2B | Cotización Rápida y Soluciones para Empresas" />
   <meta name="twitter:description"
     content="Cotiza suministros industriales en minutos. INXORA conecta empresas con los mejores proveedores del sector manufacturero, minero, agroindustrial y energético." />
   <meta name="twitter:image" content="https://inxora.com/og-image-inxora.png" />
+  <meta name="twitter:site" content="@inxora_global" /> -->
 
   <!-- Redes Sociales Oficiales INXORA -->
   <meta property="article:publisher" content="https://www.facebook.com/profile.php?id=61577615567230" />
@@ -57,8 +68,91 @@
   <meta property="og:see_also" content="https://www.linkedin.com/company/inxoraglobal/about/" />
   <link rel="me" href="https://www.linkedin.com/company/inxoraglobal/about/" />
 
-  <!-- Otros -->
+  <!-- Schema Markup para SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "INXORA",
+    "legalName": "INXORA S.A.C.",
+    "url": "https://inxora.com",
+    "logo": "https://inxora.com/logo_inxora/LOGO-03.png",
+    "description": "Marketplace B2B líder en suministros industriales con tecnología IA, financiamiento de órdenes de compra y gestión logística integral",
+    "foundingDate": "2024",
+    "founders": [
+      {
+        "@type": "Person",
+        "name": "Roberto Aponte",
+        "jobTitle": "CEO"
+      }
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "PE"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "sales",
+      "url": "https://inxora.com"
+    },
+    "sameAs": [
+      "https://www.facebook.com/profile.php?id=61577615567230",
+      "https://www.instagram.com/inxora.global/",
+      "https://www.linkedin.com/company/inxoraglobal/about/"
+    ],
+    "serviceType": [
+      "Industrial Supplies Marketplace",
+      "B2B Procurement Platform", 
+      "Industrial Equipment Distribution",
+      "Purchase Order Financing"
+    ],
+    "areaServed": [
+      {
+        "@type": "Country",
+        "name": "Peru"
+      },
+      {
+        "@type": "Country", 
+        "name": "Chile"
+      },
+      {
+        "@type": "Country",
+        "name": "Colombia"
+      }
+    ]
+  }
+  </script>
+
+  <!-- Schema Markup para Marketplace -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "INXORA Marketplace Industrial",
+    "url": "https://inxora.com",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://inxora.com/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "INXORA"
+    }
+  }
+  </script>
+
+  <!-- Preconnect para optimización de rendimiento -->
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <link rel="preconnect" href="https://connect.facebook.net">
+
+  <!-- DNS Prefetch para recursos externos -->
+  <link rel="dns-prefetch" href="//fonts.googleapis.com">
+  <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+
+  <!-- Control de traducción automática -->
   <meta name="google" content="notranslate">
+
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17453519670"></script>
   <script>
@@ -71,31 +165,29 @@
   
   <!-- Meta Pixel Code -->
   <script>
-    !function (f, b, e, v, n, t, s) {
-      if (f.fbq) return; n = f.fbq = function () {
-        n.callMethod ?
-        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-      };
-      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
-      n.queue = []; t = b.createElement(e); t.async = !0;
-      t.src = v; s = b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t, s)
-    }(window, document, 'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '670863002708360');
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1356325709448784');
     fbq('track', 'PageView');
   </script>
-
-  <!-- End Meta Pixel Code -->
+  <!-- End Meta Pixel Code -->
 </head>
 
 <body>
   <div id="root"></div>
   <script type="module" src="/src/index.tsx"></script>
-    <!-- Meta Pixel noscript -->
-  <noscript><img height="1" width="1" style="display:none"
-  src="https://www.facebook.com/tr?id=670863002708360&ev=PageView&noscript=1"
-  /></noscript>
+  
+  <!-- Meta Pixel noscript -->
+  <noscript>
+    <img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1356325709448784&ev=PageView&noscript=1" />
+  </noscript>
   <!-- End Meta Pixel noscript -->
 </body>
 
