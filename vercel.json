@@ -8,6 +8,19 @@
       "destination": "/index.html"
     }
   ],
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "destination": "https://www.inxora.com/$1",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "inxora.com"
+        }
+      ]
+    }
+  ],
   "headers": [
     {
       "source": "/sitemap.xml",
