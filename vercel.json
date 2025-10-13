@@ -4,8 +4,28 @@
   "framework": "vite",
   "rewrites": [
     {
-      "source": "/((?!.*\\.(png|jpg|jpeg|gif|svg|ico|webp|pdf|css|js|woff|woff2|ttf|eot)).*)",
+      "source": "/((?!.*\\.(png|jpg|jpeg|gif|svg|ico|webp|pdf|css|js|woff|woff2|ttf|eot|xml|txt)).*)",
       "destination": "/index.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/robots.txt",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "text/plain; charset=utf-8"
+        }
+      ]
+    },
+    {
+      "source": "/sitemap.xml",
+      "headers": [
+        {
+          "key": "Content-Type",
+          "value": "application/xml; charset=utf-8"
+        }
+      ]
     }
   ]
 }
