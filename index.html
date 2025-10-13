@@ -11,7 +11,7 @@
 
   <!-- Meta Robots para mejor indexación -->
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
-  
+
   <!-- Sitemap para SEO -->
   <link rel="sitemap" type="application/xml" title="Sitemap" href="https://www.inxora.com/sitemap.xml" />
 
@@ -54,14 +54,26 @@
   <meta property="og:locale:alternate" content="en_US" />
   <meta property="og:locale:alternate" content="pt_BR" />
 
-  <!-- Twitter Card -->
-  <!-- <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title"
-    content="INXORA - Marketplace Industrial B2B | Cotización Rápida y Soluciones para Empresas" />
-  <meta name="twitter:description"
-    content="Cotiza suministros industriales en minutos. INXORA conecta empresas con los mejores proveedores del sector manufacturero, minero, agroindustrial y energético." />
-  <meta name="twitter:image" content="https://www.inxora.com/og-image-inxora.png" />
-  <meta name="twitter:site" content="@inxora_global" /> -->
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RCJ4FPQ1P6"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-RCJ4FPQ1P6');
+  </script>
+
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-K66457P8');</script>
+  <!-- End Google Tag Manager -->
 
   <!-- Redes Sociales Oficiales INXORA -->
   <meta property="article:publisher" content="https://www.facebook.com/profile.php?id=61577615567230" />
@@ -172,7 +184,7 @@
     !function (f, b, e, v, n, t, s) {
       if (f.fbq) return; n = f.fbq = function () {
         n.callMethod ?
-        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
       };
       if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
       n.queue = []; t = b.createElement(e); t.async = !0;
@@ -187,6 +199,11 @@
 </head>
 
 <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K66457P8" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K66457P8" height="0" width="0"
       style="display:none;visibility:hidden"></iframe></noscript>

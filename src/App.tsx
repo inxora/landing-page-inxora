@@ -25,6 +25,8 @@ import EmailConfirmed from './components/Auth/EmailConfirmed';
 import { EmailVerificationPage } from './components/Auth/EmailVerificationPage';
 import CareersPage from './components/Footer/enlaces/Careers/CareersPage';
 import NotFound404 from './components/NotFound404';
+import SitemapPage from './pages/SitemapPage';
+import RobotsPage from './pages/RobotsPage';
 import { routeSlugs } from './components/types/routes';
 import { useLanguage } from './context/LanguageContext';
 import { getRouteKeyByPath, getRouteByLang } from './components/types/routes';
@@ -100,6 +102,8 @@ export function App() {
           <Route path={routeSlugs.terms[lang]} element={<TermsAndConditions />} />
           <Route path={routeSlugs.legal[lang]} element={<LegalNotice />} />
           <Route path={routeSlugs.claims[lang]} element={<ClaimsBook />} />
+          <Route path="/sitemap.xml" element={<SitemapPage />} />
+          <Route path="/robots.txt" element={<RobotsPage />} />
           <Route path="*" element={<NotFound404 />} />
         </Routes>
       </main>
