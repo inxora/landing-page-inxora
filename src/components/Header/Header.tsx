@@ -163,6 +163,15 @@ export const Header: React.FC = () => {
     setIsMenuOpen(false);
   };
 
+  const getStoreUrl = (): string => {
+    const langMap: Record<string, string> = {
+      'es': 'es',
+      'en': 'en',
+      'pt': 'pt'
+    };
+    return `https://tienda.inxora.com/${langMap[lang] || 'es'}`;
+  };
+
   const toggleMobileMenu = (): void => {
     setIsMenuOpen(prev => !prev);
   };
@@ -212,6 +221,24 @@ export const Header: React.FC = () => {
             </button>
           </li>
         ))}
+        <li>
+          <a
+            href={getStoreUrl()}
+            target="_blank"
+            rel="noopener noreferrer"
+            onMouseDown={(e) => e.preventDefault()}
+            className={`font-bold text-lg xl:text-xl 2xl:text-2xl transition-all duration-300 hover:scale-105 focus:outline-none focus-visible:ring-2 rounded-md px-3 py-2 ${
+              isScrolled
+                ? 'text-primary hover:text-primary-dark focus-visible:ring-[var(--color-primary)]'
+                : 'text-white hover:text-primary-light focus-visible:ring-[var(--color-primary-light)] font-extrabold'
+            }`}
+            style={!isScrolled ? {
+              textShadow: '2px 2px 4px rgba(0,0,0,0.8), 0 0 10px rgba(255,255,255,0.3)'
+            } : {}}
+          >
+            {t.tienda}
+          </a>
+        </li>
       </ul>
     </nav>
   );
@@ -346,6 +373,19 @@ export const Header: React.FC = () => {
               </button>
             </li>
           ))}
+          <li>
+            <a
+              href={getStoreUrl()}
+              target="_blank"
+              rel="noopener noreferrer"
+              onMouseDown={(e) => e.preventDefault()}
+              className="w-full text-left text-primary hover:text-primary-dark font-bold text-lg
+                         py-4 px-3 transition-colors rounded-md hover:bg-[#f0f9ff]
+                         focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)]"
+            >
+              {t.tienda}
+            </a>
+          </li>
           <li className="pt-4">
             <a
               href={WHATSAPP_URL}
