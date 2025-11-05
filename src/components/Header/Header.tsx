@@ -224,8 +224,6 @@ export const Header: React.FC = () => {
         <li>
           <a
             href={getStoreUrl()}
-            target="_blank"
-            rel="noopener noreferrer"
             onMouseDown={(e) => e.preventDefault()}
             className={`font-bold text-lg xl:text-xl 2xl:text-2xl transition-all duration-300 hover:scale-105 focus:outline-none focus-visible:ring-2 rounded-md px-3 py-2 ${
               isScrolled
@@ -376,8 +374,6 @@ export const Header: React.FC = () => {
           <li>
             <a
               href={getStoreUrl()}
-              target="_blank"
-              rel="noopener noreferrer"
               onMouseDown={(e) => e.preventDefault()}
               className="w-full text-left text-primary hover:text-primary-dark font-bold text-lg
                          py-4 px-3 transition-colors rounded-md hover:bg-[#f0f9ff]
