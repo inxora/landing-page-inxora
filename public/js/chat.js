@@ -447,16 +447,6 @@
 
         // Respuesta del bot
         try {
-            console.log("📤 Enviando mensaje al webhook:", {
-                url: config.webhook.url,
-                body: {
-                    action: "sendMessage",
-                    sessionId: currentSessionId,
-                    chatInput: message,
-                    route: config.webhook.route
-                }
-            });
-
             const response = await fetch(config.webhook.url, {
                 method: "POST",
                 headers: { 
@@ -469,13 +459,6 @@
                     chatInput: message,
                     route: config.webhook.route
                 })
-            });
-            
-            console.log("📥 Respuesta del servidor:", {
-                status: response.status,
-                statusText: response.statusText,
-                headers: Object.fromEntries(response.headers.entries()),
-                ok: response.ok
             });
             
             // Verificar si la respuesta es exitosa
@@ -496,18 +479,10 @@
             
             // Leer el texto completo antes de parsear
             const responseText = await response.text();
-            console.log("📄 Respuesta en texto plano:", responseText);
             
             let data;
             try {
                 data = JSON.parse(responseText);
-                console.log("✅ JSON parseado correctamente:", data);
-                console.log("🔍 Estructura de datos:", {
-                    tipo: typeof data,
-                    esArray: Array.isArray(data),
-                    keys: data && typeof data === 'object' ? Object.keys(data) : 'N/A',
-                    contenido: data
-                });
             } catch (jsonError) {
                 console.error("❌ Error al parsear JSON:", jsonError);
                 console.error("📄 Texto que falló:", responseText);
@@ -523,35 +498,25 @@
             // Intentar múltiples formas de extraer el mensaje
             if (data && data.output) {
                 messageText = data.output;
-                console.log("✅ Mensaje encontrado en data.output");
             } else if (data && Array.isArray(data) && data[0] && data[0].output) {
                 messageText = data[0].output;
-                console.log("✅ Mensaje encontrado en data[0].output");
             } else if (data && typeof data === 'string') {
                 messageText = data;
-                console.log("✅ Mensaje es string directo");
             } else if (data && data.message) {
                 messageText = data.message;
-                console.log("✅ Mensaje encontrado en data.message");
             } else if (data && data.text) {
                 messageText = data.text;
-                console.log("✅ Mensaje encontrado en data.text");
             } else if (data && data.response) {
                 messageText = data.response;
-                console.log("✅ Mensaje encontrado en data.response");
             } else {
                 console.warn("⚠️ No se encontró mensaje en la estructura esperada. Data completo:", data);
             }
             
-            console.log("💬 Mensaje final a mostrar:", messageText);
             botMessage.textContent = messageText;
             messagesContainer.appendChild(botMessage);
 
         } catch (error) {
-            console.error("❌ Error completo:", error);
-            console.error("❌ Stack trace:", error.stack);
-            console.error("❌ Tipo de error:", error.name);
-            console.error("❌ Mensaje de error:", error.message);
+            console.error("❌ Error en chat:", error);
             
             // Eliminar indicador de escritura en caso de error
             if (typingIndicator && typingIndicator.parentNode) {
@@ -577,14 +542,10 @@
                 const isProduction = currentOrigin === "https://www.inxora.com" || currentOrigin === "https://inxora.com";
                 
                 if (!isProduction) {
-                    console.error("🚫 Error de CORS detectado. Estás en desarrollo local:", currentOrigin);
-                    console.error("🚫 El servidor solo permite: https://inxora.com");
+                    console.error("🚫 Error de CORS en desarrollo local:", currentOrigin);
                     errorText = "⚠️ Error de CORS: Estás probando desde desarrollo local. El servidor solo permite solicitudes desde https://www.inxora.com. En producción funcionará correctamente.";
                 } else {
-                    console.error("🚫 Error de CORS en producción.");
-                    console.error("🚫 Origen actual:", currentOrigin);
-                    console.error("🚫 El servidor n8n está configurado para permitir solo: https://inxora.com");
-                    console.error("🚫 SOLUCIÓN: Agrega 'https://www.inxora.com' a los orígenes permitidos en el nodo Webhook/Chat Trigger de n8n");
+                    console.error("🚫 Error de CORS en producción. Origen:", currentOrigin);
                     errorText = "⚠️ Error de configuración CORS: El servidor n8n solo permite 'https://inxora.com' pero el sitio está en 'https://www.inxora.com'. Por favor, agrega 'https://www.inxora.com' a los orígenes permitidos en la configuración del webhook de n8n.";
                 }
             }
@@ -630,14 +591,10 @@
         }
     });
     
-    // Debug
-    console.log("Chat widget INXORA v48 inicializado correctamente");
-    
     // Verificación de inicialización
     setTimeout(() => {
         if (!bubble.getAttribute('data-initialized')) {
             bubble.setAttribute('data-initialized', 'true');
-            console.log("Re-inicializando eventos del bubble");
             bubble.onclick = openChat;
         }
     }, 1000);
