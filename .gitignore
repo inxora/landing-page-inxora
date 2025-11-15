@@ -134,7 +134,7 @@ out
 
 # Gatsby files
 .cache/
-public
+# public - No ignorar, Vite necesita archivos estáticos en el repositorio
 
 # Storybook build outputs
 .out
