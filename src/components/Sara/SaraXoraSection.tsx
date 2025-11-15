@@ -225,8 +225,8 @@ export const SaraXoraSection = () => {
         }
       `}</style>
       
-      {/* BOTÓN FLOTANTE DE SARA CONVERTIDO A ENLACE WHATSAPP */}
-      <a
+      {/* BOTÓN FLOTANTE DE SARA CONVERTIDO A ENLACE WHATSAPP - COMENTADO: Ahora se usa el widget de chat */}
+      {/* <a
         href="https://wa.me/946885531?text=Hola%2C%20quiero%20hablar%20con%20Sara%20Xora%2C%20el%20asistente%20virtual%20de%20INXORA"
         target="_blank"
         rel="noopener noreferrer"
@@ -240,9 +240,8 @@ export const SaraXoraSection = () => {
           style={{ pointerEvents: 'none' }}
         />
         
-        {/* Indicador de disponibilidad */}
         <div className="absolute -top-1 -right-1 w-4 h-4 sm:w-5 sm:h-5 bg-[#25D366] rounded-full border-2 border-white animate-pulse shadow-lg"></div>
-      </a>
+      </a> */}
     </section>
   );
 };

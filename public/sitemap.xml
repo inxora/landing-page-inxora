@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <!-- Página Principal -->
+  <url>
+    <loc>https://www.inxora.com/</loc>
+    <lastmod>2025-01-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.inxora.com/?lang=es" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.inxora.com/?lang=en" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.inxora.com/?lang=pt" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.inxora.com/" />
+  </url>
+
+  <!-- Formulario para Proveedores -->
+  <url>
+    <loc>https://www.inxora.com/formulario-para-proveedores</loc>
+    <lastmod>2025-01-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.inxora.com/formulario-para-proveedores" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.inxora.com/suppliers-form" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.inxora.com/formulario-para-fornecedores" />
+  </url>
+
+  <url>
+    <loc>https://www.inxora.com/suppliers-form</loc>
+    <lastmod>2025-01-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.inxora.com/formulario-para-proveedores" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.inxora.com/suppliers-form" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.inxora.com/formulario-para-fornecedores" />
+  </url>
+
+  <url>
+    <loc>https://www.inxora.com/formulario-para-fornecedores</loc>
+    <lastmod>2025-01-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.inxora.com/formulario-para-proveedores" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.inxora.com/suppliers-form" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.inxora.com/formulario-para-fornecedores" />
+  </url>
+
+  <!-- Página de Inversores -->
+  <url>
+    <loc>https://www.inxora.com/inversores</loc>
+    <lastmod>2025-01-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.inxora.com/inversores" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.inxora.com/investors" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.inxora.com/investidores" />
+  </url>
+
+  <url>
+    <loc>https://www.inxora.com/investors</loc>
+    <lastmod>2025-01-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.inxora.com/inversores" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.inxora.com/investors" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.inxora.com/investidores" />
+  </url>
+
+  <url>
+    <loc>https://www.inxora.com/investidores</loc>
+    <lastmod>2025-01-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.inxora.com/inversores" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.inxora.com/investors" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.inxora.com/investidores" />
+  </url>
+
+  <!-- Página de Registro -->
+  <url>
+    <loc>https://www.inxora.com/registro</loc>
+    <lastmod>2025-01-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.inxora.com/registro" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.inxora.com/register" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.inxora.com/registro" />
+  </url>
+
+  <url>
+    <loc>https://www.inxora.com/register</loc>
+    <lastmod>2025-01-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.inxora.com/registro" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.inxora.com/register" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.inxora.com/registro" />
+  </url>
+
+  <!-- Página de Carreras -->
+  <url>
+    <loc>https://www.inxora.com/trabaja-con-nosotros</loc>
+    <lastmod>2025-01-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.inxora.com/trabaja-con-nosotros" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.inxora.com/careers" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.inxora.com/trabalhe-conosco" />
+  </url>
+
+  <url>
+    <loc>https://www.inxora.com/careers</loc>
+    <lastmod>2025-01-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.inxora.com/trabaja-con-nosotros" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.inxora.com/careers" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.inxora.com/trabalhe-conosco" />
+  </url>
+
+  <url>
+    <loc>https://www.inxora.com/trabalhe-conosco</loc>
+    <lastmod>2025-01-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.inxora.com/trabaja-con-nosotros" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.inxora.com/careers" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.inxora.com/trabalhe-conosco" />
+  </url>
+
+  <!-- Páginas Legales -->
+  <url>
+    <loc>https://www.inxora.com/politica-de-privacidad</loc>
+    <lastmod>2025-01-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.inxora.com/politica-de-privacidad" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.inxora.com/privacy-policy" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.inxora.com/politica-de-privacidade" />
+  </url>
+
+  <url>
+    <loc>https://www.inxora.com/privacy-policy</loc>
+    <lastmod>2025-01-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.inxora.com/politica-de-privacidad" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.inxora.com/privacy-policy" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.inxora.com/politica-de-privacidade" />
+  </url>
+
+  <url>
+    <loc>https://www.inxora.com/politica-de-privacidade</loc>
+    <lastmod>2025-01-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.inxora.com/politica-de-privacidad" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.inxora.com/privacy-policy" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.inxora.com/politica-de-privacidade" />
+  </url>
+
+  <url>
+    <loc>https://www.inxora.com/politica-de-cookies</loc>
+    <lastmod>2025-01-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.inxora.com/politica-de-cookies" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.inxora.com/cookies-policy" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.inxora.com/politica-de-cookies" />
+  </url>
+
+  <url>
+    <loc>https://www.inxora.com/cookies-policy</loc>
+    <lastmod>2025-01-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.inxora.com/politica-de-cookies" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.inxora.com/cookies-policy" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.inxora.com/politica-de-cookies" />
+  </url>
+
+  <url>
+    <loc>https://www.inxora.com/terminos-y-condiciones</loc>
+    <lastmod>2025-01-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.inxora.com/terminos-y-condiciones" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.inxora.com/terms-and-conditions" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.inxora.com/termos-e-condicoes" />
+  </url>
+
+  <url>
+    <loc>https://www.inxora.com/terms-and-conditions</loc>
+    <lastmod>2025-01-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.inxora.com/terminos-y-condiciones" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.inxora.com/terms-and-conditions" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.inxora.com/termos-e-condicoes" />
+  </url>
+
+  <url>
+    <loc>https://www.inxora.com/termos-e-condicoes</loc>
+    <lastmod>2025-01-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.inxora.com/terminos-y-condiciones" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.inxora.com/terms-and-conditions" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.inxora.com/termos-e-condicoes" />
+  </url>
+
+  <url>
+    <loc>https://www.inxora.com/aviso-legal</loc>
+    <lastmod>2025-01-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.inxora.com/aviso-legal" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.inxora.com/legal-notice" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.inxora.com/aviso-legal" />
+  </url>
+
+  <url>
+    <loc>https://www.inxora.com/legal-notice</loc>
+    <lastmod>2025-01-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.inxora.com/aviso-legal" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.inxora.com/legal-notice" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.inxora.com/aviso-legal" />
+  </url>
+
+  <url>
+    <loc>https://www.inxora.com/libro-de-reclamaciones</loc>
+    <lastmod>2025-01-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.inxora.com/libro-de-reclamaciones" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.inxora.com/claims-book" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.inxora.com/livro-de-reclamacoes" />
+  </url>
+
+  <url>
+    <loc>https://www.inxora.com/claims-book</loc>
+    <lastmod>2025-01-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.inxora.com/libro-de-reclamaciones" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.inxora.com/claims-book" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.inxora.com/livro-de-reclamacoes" />
+  </url>
+
+  <url>
+    <loc>https://www.inxora.com/livro-de-reclamacoes</loc>
+    <lastmod>2025-01-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.inxora.com/libro-de-reclamaciones" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.inxora.com/claims-book" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.inxora.com/livro-de-reclamacoes" />
+  </url>
+
+  <!-- Páginas de Autenticación -->
+  <url>
+    <loc>https://www.inxora.com/correo-confirmado</loc>
+    <lastmod>2025-01-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.inxora.com/correo-confirmado" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.inxora.com/email-confirmed" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.inxora.com/email-confirmado" />
+  </url>
+
+  <url>
+    <loc>https://www.inxora.com/email-confirmed</loc>
+    <lastmod>2025-01-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.inxora.com/correo-confirmado" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.inxora.com/email-confirmed" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.inxora.com/email-confirmado" />
+  </url>
+
+  <url>
+    <loc>https://www.inxora.com/email-confirmado</loc>
+    <lastmod>2025-01-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.inxora.com/correo-confirmado" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.inxora.com/email-confirmed" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.inxora.com/email-confirmado" />
+  </url>
+
+  <url>
+    <loc>https://www.inxora.com/verificar-email</loc>
+    <lastmod>2025-01-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.inxora.com/verificar-email" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.inxora.com/verify-email" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.inxora.com/verificar-email" />
+  </url>
+
+  <url>
+    <loc>https://www.inxora.com/verify-email</loc>
+    <lastmod>2025-01-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.inxora.com/verificar-email" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.inxora.com/verify-email" />
+    <xhtml:link rel="alternate" hreflang="pt" href="https://www.inxora.com/verificar-email" />
+  </url>
+
+</urlset>
