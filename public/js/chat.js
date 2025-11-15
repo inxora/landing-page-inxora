@@ -560,7 +560,33 @@
             
             const errorMessage = document.createElement("div");
             errorMessage.className = "chat-message bot";
-            errorMessage.textContent = "Lo siento, ha ocurrido un error al procesar tu mensaje. Por favor, intenta nuevamente más tarde.";
+            
+            // Detectar errores de CORS específicamente
+            let errorText = "Lo siento, ha ocurrido un error al procesar tu mensaje. Por favor, intenta nuevamente más tarde.";
+            
+            // Detectar errores de CORS
+            const isCorsError = error.message && (
+                error.message.includes("Failed to fetch") ||
+                error.message.includes("CORS") ||
+                error.message.includes("Access-Control")
+            );
+            
+            // Si es un error de CORS o estamos en un dominio diferente al de producción
+            if (isCorsError) {
+                const currentOrigin = window.location.origin;
+                const isProduction = currentOrigin === "https://www.inxora.com" || currentOrigin === "https://inxora.com";
+                
+                if (!isProduction) {
+                    console.error("🚫 Error de CORS detectado. Estás en desarrollo local:", currentOrigin);
+                    console.error("🚫 El servidor solo permite: https://inxora.com");
+                    errorText = "⚠️ Error de CORS: Estás probando desde desarrollo local. El servidor solo permite solicitudes desde https://www.inxora.com. En producción funcionará correctamente.";
+                } else {
+                    console.error("🚫 Error de CORS en producción. Verifica la configuración del servidor.");
+                    errorText = "Error de configuración: El servidor no permite solicitudes desde este dominio. Por favor, verifica la configuración de CORS en n8n.";
+                }
+            }
+            
+            errorMessage.textContent = errorText;
             messagesContainer.appendChild(errorMessage);
         }
 
