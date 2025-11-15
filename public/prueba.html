@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba Chat Widget - INXORA</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .container {
+            text-align: center;
+            max-width: 600px;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #13A0D8;
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+        }
+        
+        p {
+            color: #666;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        .info {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f0f9ff;
+            border-radius: 10px;
+            border-left: 4px solid #13A0D8;
+        }
+        
+        .info h2 {
+            color: #13A0D8;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+        
+        .info ul {
+            text-align: left;
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+        
+        .info li {
+            margin: 8px 0;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧪 Página de Prueba</h1>
+        <p>Esta es una página de prueba para el widget de chat SARA XORA.</p>
+        <p>Deberías ver la burbuja flotante en la esquina inferior derecha.</p>
+        
+        <div class="info">
+            <h2>Instrucciones:</h2>
+            <ul>
+                <li>Haz clic en la burbuja flotante para abrir el chat</li>
+                <li>Escribe un mensaje y envía</li>
+                <li>Verifica que SARA XORA responda correctamente</li>
+                <li>Prueba cerrar y abrir el chat varias veces</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Chat Widget SARA XORA -->
+    <script>
+        window.ChatWidgetConfig = {
+            webhook: {
+                url: 'https://paneln8n.wayrixai.com/webhook/bf0ec96d-8d41-4d7a-bcad-35367ca6de80/chat',
+                route: 'general'
+            },
+            branding: {
+                logo: '/logo_inxora/LOGO-03.png',
+                name: 'INXORA',
+                welcomeText: '¡Hola! Soy SARA XORA, tu asistente virtual. ¿En qué puedo ayudarte?',
+                responseTimeText: 'Respondemos en menos de 1 minuto.'
+            },
+            style: {
+                primaryColor: '#13A0D8', // Color primario de INXORA
+                secondaryColor: '#0d7ba8',
+                backgroundColor: '#ffffff',
+                fontColor: '#333333'
+            }
+        };
+    </script>
+    <script src="/js/chat.js?v=48"></script>
+    <!-- End Chat Widget SARA XORA -->
+</body>
+</html>
+
