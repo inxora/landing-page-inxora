@@ -581,8 +581,11 @@
                     console.error("🚫 El servidor solo permite: https://inxora.com");
                     errorText = "⚠️ Error de CORS: Estás probando desde desarrollo local. El servidor solo permite solicitudes desde https://www.inxora.com. En producción funcionará correctamente.";
                 } else {
-                    console.error("🚫 Error de CORS en producción. Verifica la configuración del servidor.");
-                    errorText = "Error de configuración: El servidor no permite solicitudes desde este dominio. Por favor, verifica la configuración de CORS en n8n.";
+                    console.error("🚫 Error de CORS en producción.");
+                    console.error("🚫 Origen actual:", currentOrigin);
+                    console.error("🚫 El servidor n8n está configurado para permitir solo: https://inxora.com");
+                    console.error("🚫 SOLUCIÓN: Agrega 'https://www.inxora.com' a los orígenes permitidos en el nodo Webhook/Chat Trigger de n8n");
+                    errorText = "⚠️ Error de configuración CORS: El servidor n8n solo permite 'https://inxora.com' pero el sitio está en 'https://www.inxora.com'. Por favor, agrega 'https://www.inxora.com' a los orígenes permitidos en la configuración del webhook de n8n.";
                 }
             }
             
