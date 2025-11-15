@@ -447,6 +447,16 @@
 
         // Respuesta del bot
         try {
+            console.log("📤 Enviando mensaje al webhook:", {
+                url: config.webhook.url,
+                body: {
+                    action: "sendMessage",
+                    sessionId: currentSessionId,
+                    chatInput: message,
+                    route: config.webhook.route
+                }
+            });
+
             const response = await fetch(config.webhook.url, {
                 method: "POST",
                 headers: { 
@@ -461,16 +471,46 @@
                 })
             });
             
+            console.log("📥 Respuesta del servidor:", {
+                status: response.status,
+                statusText: response.statusText,
+                headers: Object.fromEntries(response.headers.entries()),
+                ok: response.ok
+            });
+            
+            // Verificar si la respuesta es exitosa
+            if (!response.ok) {
+                const errorText = await response.text();
+                console.error("❌ Respuesta no exitosa:", {
+                    status: response.status,
+                    statusText: response.statusText,
+                    body: errorText
+                });
+                throw new Error(`Error del servidor: ${response.status} ${response.statusText}`);
+            }
+            
             // Eliminar indicador de escritura
             if (typingIndicator && typingIndicator.parentNode) {
                 typingIndicator.remove();
             }
             
+            // Leer el texto completo antes de parsear
+            const responseText = await response.text();
+            console.log("📄 Respuesta en texto plano:", responseText);
+            
             let data;
             try {
-                data = await response.json();
+                data = JSON.parse(responseText);
+                console.log("✅ JSON parseado correctamente:", data);
+                console.log("🔍 Estructura de datos:", {
+                    tipo: typeof data,
+                    esArray: Array.isArray(data),
+                    keys: data && typeof data === 'object' ? Object.keys(data) : 'N/A',
+                    contenido: data
+                });
             } catch (jsonError) {
-                console.error("Error al parsear JSON:", jsonError);
+                console.error("❌ Error al parsear JSON:", jsonError);
+                console.error("📄 Texto que falló:", responseText);
                 throw new Error("Error al procesar la respuesta del servidor");
             }
             
@@ -478,18 +518,40 @@
             botMessage.className = "chat-message bot";
             
             // Verificar diferentes estructuras de respuesta posibles
-            let responseText = "Lo siento, no pude procesar tu solicitud.";
+            let messageText = "Lo siento, no pude procesar tu solicitud.";
+            
+            // Intentar múltiples formas de extraer el mensaje
             if (data && data.output) {
-                responseText = data.output;
+                messageText = data.output;
+                console.log("✅ Mensaje encontrado en data.output");
             } else if (data && Array.isArray(data) && data[0] && data[0].output) {
-                responseText = data[0].output;
+                messageText = data[0].output;
+                console.log("✅ Mensaje encontrado en data[0].output");
+            } else if (data && typeof data === 'string') {
+                messageText = data;
+                console.log("✅ Mensaje es string directo");
+            } else if (data && data.message) {
+                messageText = data.message;
+                console.log("✅ Mensaje encontrado en data.message");
+            } else if (data && data.text) {
+                messageText = data.text;
+                console.log("✅ Mensaje encontrado en data.text");
+            } else if (data && data.response) {
+                messageText = data.response;
+                console.log("✅ Mensaje encontrado en data.response");
+            } else {
+                console.warn("⚠️ No se encontró mensaje en la estructura esperada. Data completo:", data);
             }
             
-            botMessage.textContent = responseText;
+            console.log("💬 Mensaje final a mostrar:", messageText);
+            botMessage.textContent = messageText;
             messagesContainer.appendChild(botMessage);
 
         } catch (error) {
-            console.error("Error:", error);
+            console.error("❌ Error completo:", error);
+            console.error("❌ Stack trace:", error.stack);
+            console.error("❌ Tipo de error:", error.name);
+            console.error("❌ Mensaje de error:", error.message);
             
             // Eliminar indicador de escritura en caso de error
             if (typingIndicator && typingIndicator.parentNode) {
