@@ -3,15 +3,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useLanguage } from '../../context/LanguageContext';
 import { productsSectionTranslation } from './productsSectionTranslation';
 import { buildCategoryUrl, buildCatalogUrl } from '../../utils/product-url';
-import { APP_CONFIG } from '../../config/appConfig';
-
-interface CategoriaApi {
-  id: number;
-  nombre: string;
-  descripcion: string;
-  activo: boolean;
-  logo_url: string | null;
-}
+import { getCategorias, type CategoriaApi } from '../../lib/api/categorias';
 
 export const ProductsSection = () => {
   const { lang } = useLanguage();
@@ -27,17 +19,12 @@ export const ProductsSection = () => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const fetchCategories = async () => {
+    const load = async () => {
       try {
         setLoading(true);
         setError(null);
-        const res = await fetch(APP_CONFIG.API_CATEGORIAS);
-        const json = await res.json();
-        if (!res.ok || !json.success) {
-          throw new Error(json.message ?? 'Error al cargar categorías');
-        }
-        const categorias = (json.data?.categoria ?? []) as CategoriaApi[];
-        setCategories(categorias.filter((c) => c.activo));
+        const categorias = await getCategorias();
+        setCategories(categorias);
       } catch (err) {
         setError(err instanceof Error ? err.message : 'Error al cargar categorías');
         setCategories([]);
@@ -45,7 +32,7 @@ export const ProductsSection = () => {
         setLoading(false);
       }
     };
-    fetchCategories();
+    load();
   }, []);
 
   const checkScrollability = () => {

@@ -20,6 +20,7 @@ export const APP_CONFIG = {
   },
   
   // API: ruta relativa /api/* → proxy/rewrite a app.inxora.com (evita CORS, mismo patrón que ecommerce-inxora)
+  // El servicio getCategorias() en lib/api/categorias.ts consume /api/categorias/
   API_CATEGORIAS: '/api/categorias/',
 
   // WhatsApp (números con +51 Perú)
