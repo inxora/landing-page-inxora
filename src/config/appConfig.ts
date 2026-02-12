@@ -20,7 +20,8 @@ export const APP_CONFIG = {
   },
   
   // API de categorías (app.inxora)
-  API_CATEGORIAS: 'https://app.inxora.com/api/categorias',
+  // Usar trailing slash para evitar 307 redirect que puede causar problemas CORS
+  API_CATEGORIAS: 'https://app.inxora.com/api/categorias/',
 
   // WhatsApp (números con +51 Perú)
   WHATSAPP: {
