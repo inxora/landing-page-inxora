@@ -1,8 +1,3 @@
 {
-  "rewrites": [
-    {
-      "source": "/api/:path*",
-      "destination": "https://app.inxora.com/api/:path*"
-    }
-  ]
+  "$schema": "https://openapi.vercel.sh/vercel.json"
 }

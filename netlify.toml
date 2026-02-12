@@ -1,6 +1,0 @@
-# Proxy /api/* a app.inxora.com (evita CORS, mismo patrón que ecommerce-inxora)
-[[redirects]]
-  from = "/api/*"
-  to = "https://app.inxora.com/api/:splat"
-  status = 200
-  force = true
