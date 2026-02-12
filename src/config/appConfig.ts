@@ -20,10 +20,8 @@ export const APP_CONFIG = {
   },
   
   // API de categorías (app.inxora)
-  // En dev: /api/categorias/ (proxy Vite) | En prod: URL absoluta con trailing slash
-  API_CATEGORIAS: import.meta.env.DEV
-    ? '/api/categorias/'
-    : 'https://app.inxora.com/api/categorias/',
+  // Trailing slash evita 307 redirect que puede causar headers CORS duplicados
+  API_CATEGORIAS: 'https://app.inxora.com/api/categorias/',
 
   // WhatsApp (números con +51 Perú)
   WHATSAPP: {

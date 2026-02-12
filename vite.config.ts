@@ -9,13 +9,4 @@ export default defineConfig({
       '@': path.resolve(__dirname, 'src'),
     },
   },
-  server: {
-    proxy: {
-      // En desarrollo, proxy /api/* a app.inxora.com para evitar CORS
-      '/api': {
-        target: 'https://app.inxora.com',
-        changeOrigin: true,
-      },
-    },
-  },
 });
