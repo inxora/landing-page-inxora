@@ -1,107 +1,115 @@
-
-// ProductsSection.jsx - COMPONENTE ARREGLADO
-import React, { useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import "keen-slider/keen-slider.min.css";
-import { useKeenSlider } from "keen-slider/react";
 import { useLanguage } from '../../context/LanguageContext';
 import { productsSectionTranslation } from './productsSectionTranslation';
-import { footerTranslations } from '../Footer/footerTranslations';
+import { buildCategoryUrl, buildCatalogUrl } from '../../utils/product-url';
+import { APP_CONFIG } from '../../config/appConfig';
+
+interface CategoriaApi {
+  id: number;
+  nombre: string;
+  descripcion: string;
+  activo: boolean;
+  logo_url: string | null;
+}
 
 export const ProductsSection = () => {
   const { lang } = useLanguage();
   const t = productsSectionTranslation[lang];
-  const tf = footerTranslations[lang];
-  const categories = [
-    {
-      name: tf.iluminacion,
-      imageUrl: '/categorias_productos/ILUMINACION INDUSTRIAL.jpg',
-    },
-    {
-      name: tf.componentes,
-      imageUrl: '/categorias_productos/COMPONENTES ELECTRICO.jpeg',
-    },
-    {
-      name: tf.instrumentacion,
-      imageUrl: '/categorias_productos/INSTRUMENTACION Y MEDICION.jpeg',
-    },
-    {
-      name: tf.neumatica,
-      imageUrl: '/categorias_productos/NEUMATICA E HIDRAULICA.jpeg',
-    },
-    {
-      name: tf.herramientas,
-      imageUrl: '/categorias_productos/HERRAMIENTAS Y MANIOBRAS.jpg',
-    },
-    {
-      name: tf.mecanica,
-      imageUrl: '/categorias_productos/MECANICA INDUSTRIAL.jpeg',
-    },
-    {
-      name: tf.valvulas,
-      imageUrl: '/categorias_productos/VALVULAS Y MANGUERAS.jpeg',
-    },
-    {
-      name: tf.limpieza,
-      imageUrl: '/categorias_productos/LIMPIEZA Y ADITIVOS.jpeg',
-    },
-  ];
+  const locale = lang === 'es' ? 'es' : lang === 'en' ? 'en' : 'pt';
 
-  // Triple duplicación para loop infinito suave
-  let displayCategories = categories;
-  if (categories.length <= 8) {
-    displayCategories = [...categories, ...categories, ...categories];
-  }
+  const [categories, setCategories] = useState<CategoriaApi[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
+  const [imageErrors, setImageErrors] = useState<Record<number, boolean>>({});
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
 
-  // Autoplay plugin para keen-slider mejorado y más rápido
-  const autoplay = (options = { delay: 2000, stopOnInteraction: false, pauseOnMouseEnter: true, disableOnInteraction: false }) => (slider: any) => {
-    let timeout: ReturnType<typeof setTimeout>;
-    let mouseOver = false;
-    function clearNextTimeout() {
-      clearTimeout(timeout);
+  useEffect(() => {
+    const fetchCategories = async () => {
+      try {
+        setLoading(true);
+        setError(null);
+        const res = await fetch(APP_CONFIG.API_CATEGORIAS);
+        const json = await res.json();
+        if (!res.ok || !json.success) {
+          throw new Error(json.message ?? 'Error al cargar categorías');
+        }
+        const categorias = (json.data?.categoria ?? []) as CategoriaApi[];
+        setCategories(categorias.filter((c) => c.activo));
+      } catch (err) {
+        setError(err instanceof Error ? err.message : 'Error al cargar categorías');
+        setCategories([]);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchCategories();
+  }, []);
+
+  const checkScrollability = () => {
+    if (scrollContainerRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
+      setCanScrollLeft(scrollLeft > 0);
+      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10);
     }
-    function nextTimeout() {
-      clearTimeout(timeout);
-      if (mouseOver && options.pauseOnMouseEnter) return;
-      timeout = setTimeout(() => {
-        if (slider) slider.next();
-      }, options.delay);
-    }
-    slider.on("created", () => {
-      slider.container.addEventListener("mouseenter", () => {
-        mouseOver = true;
-        clearNextTimeout();
-      });
-      slider.container.addEventListener("mouseleave", () => {
-        mouseOver = false;
-        nextTimeout();
-      });
-      nextTimeout();
-    });
-    slider.on("dragStarted", clearNextTimeout);
-    slider.on("animationEnded", nextTimeout);
-    slider.on("updated", nextTimeout);
   };
 
-  const [sliderRef, slider] = useKeenSlider({
-    slides: { perView: 2.2, spacing: 16 },
-    breakpoints: {
-      '(min-width: 1024px)': {
-        slides: { perView: 4, spacing: 24 },
-      },
-    },
-    loop: true,
-    drag: true,
-    mode: "snap",
-  }, [autoplay({ delay: 2000, stopOnInteraction: false, pauseOnMouseEnter: true, disableOnInteraction: false })]);
-
-  // Reinicializa el slider cuando cambie el idioma
   useEffect(() => {
-    if (slider && slider.current) {
-      slider.current.update();
-      slider.current.moveToIdx(0);
-    }
-  }, [lang]);
+    checkScrollability();
+    const handleResize = () => checkScrollability();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [categories]);
+
+  const scroll = (direction: 'left' | 'right') => {
+    if (!scrollContainerRef.current) return;
+    const container = scrollContainerRef.current;
+    const scrollAmount = container.clientWidth * 0.8;
+    const newPosition = direction === 'left'
+      ? container.scrollLeft - scrollAmount
+      : container.scrollLeft + scrollAmount;
+    container.scrollTo({ left: newPosition, behavior: 'smooth' });
+  };
+
+  const handleImageError = (categoryId: number) => {
+    setImageErrors(prev => ({ ...prev, [categoryId]: true }));
+  };
+
+  if (loading) {
+    return (
+      <section id="productos" className="py-8 md:py-12 lg:py-16 bg-gray-50 w-full scroll-mt-20 md:scroll-mt-32">
+        <div className="container mx-auto px-3 sm:px-4 lg:px-8">
+          <div className="text-center mb-8 md:mb-12">
+            <h2 className="font-orbitron text-3xl md:text-4xl font-bold mb-4">
+              <span className="text-primary-dark">{t.titleMain} </span>
+              <span className="text-accent-bright">{t.titleAccent}</span>
+            </h2>
+          </div>
+          <div className="flex justify-center py-16">
+            <div className="animate-pulse flex gap-4 overflow-hidden">
+              {[...Array(4)].map((_, i) => (
+                <div key={i} className="w-40 h-40 bg-gray-200 rounded-xl" />
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  if (error || !categories || categories.length === 0) {
+    return (
+      <section id="productos" className="py-8 md:py-12 lg:py-16 bg-gray-50 w-full scroll-mt-20 md:scroll-mt-32">
+        <div className="container mx-auto px-3 sm:px-4 lg:px-8">
+          <div className="text-center py-12">
+            <p className="text-gray-600 font-montserrat">{error ?? 'No hay categorías disponibles'}</p>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section id="productos" className="py-8 md:py-12 lg:py-16 bg-gray-50 w-full scroll-mt-20 md:scroll-mt-32">
@@ -115,61 +123,108 @@ export const ProductsSection = () => {
             {t.subtitle}
           </p>
         </div>
-        {/* Slider responsive con keen-slider */}
-        <div className="relative mb-6 md:mb-10 lg:mb-12 overflow-hidden">
-          {/* Botones solo visibles en desktop */}
-          <button
-            className="hidden lg:flex absolute -left-12 top-1/2 -translate-y-1/2 w-12 h-12 items-center justify-center bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-accent-bright)] text-white rounded-full z-20 transition-all duration-200 hover:scale-110 shadow-lg hover:shadow-xl"
-            onClick={() => slider && slider.current && slider.current.prev()}
-            aria-label="Anterior"
+
+        <div className="relative w-full">
+          {/* Botones de navegación */}
+          {categories.length > 4 && (
+            <>
+              <button
+                onClick={() => scroll('left')}
+                disabled={!canScrollLeft}
+                className={`absolute left-0 top-1/2 -translate-y-1/2 z-10 p-2 sm:p-3 rounded-full bg-white shadow-lg hover:bg-gray-50 transition-all duration-200 ${
+                  !canScrollLeft ? 'opacity-0 pointer-events-none' : 'opacity-100'
+                }`}
+                aria-label="Anterior"
+              >
+                <ChevronLeft className="h-5 w-5 sm:h-6 sm:w-6 text-primary-dark" />
+              </button>
+              <button
+                onClick={() => scroll('right')}
+                disabled={!canScrollRight}
+                className={`absolute right-0 top-1/2 -translate-y-1/2 z-10 p-2 sm:p-3 rounded-full bg-white shadow-lg hover:bg-gray-50 transition-all duration-200 ${
+                  !canScrollRight ? 'opacity-0 pointer-events-none' : 'opacity-100'
+                }`}
+                aria-label="Siguiente"
+              >
+                <ChevronRight className="h-5 w-5 sm:h-6 sm:w-6 text-primary-dark" />
+              </button>
+            </>
+          )}
+
+          {/* Gradientes laterales */}
+          {canScrollLeft && (
+            <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-gray-50 to-transparent z-[5] pointer-events-none" />
+          )}
+          {canScrollRight && (
+            <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-gray-50 to-transparent z-[5] pointer-events-none" />
+          )}
+
+          {/* Contenedor del carousel */}
+          <div
+            ref={scrollContainerRef}
+            className="flex gap-4 sm:gap-6 lg:gap-8 overflow-x-auto scrollbar-hide scroll-smooth px-2 py-4"
+            onScroll={checkScrollability}
           >
-            <ChevronLeft size={24} />
-          </button>
-          <button
-            className="hidden lg:flex absolute -right-12 top-1/2 -translate-y-1/2 w-12 h-12 items-center justify-center bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-accent-bright)] text-white rounded-full z-20 transition-all duration-200 hover:scale-110 shadow-lg hover:shadow-xl"
-            onClick={() => slider && slider.current && slider.current.next()}
-            aria-label="Siguiente"
-          >
-            <ChevronRight size={24} />
-          </button>
-          <div ref={sliderRef} className="keen-slider transition-all duration-500 ease-in-out" key={lang}>
-            {displayCategories.map((cat, idx) => (
-              <div key={cat.name + idx} className="keen-slider__slide flex flex-col">
-                <div className="bg-white/80 backdrop-blur-md rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 border-t-4 border-[var(--color-accent)] hover:border-[var(--color-accent-bright)] flex flex-col h-full transform hover:-translate-y-1">
-                  <div className="aspect-square overflow-hidden flex items-center justify-center">
-                    <img 
-                      src={cat.imageUrl} 
-                      alt={cat.name}
-                      loading="lazy"
-                      className="w-full h-full object-contain drop-shadow-md"
-                    />
+            {categories.map((category) => {
+              const categoryUrl = buildCategoryUrl(category.nombre, locale);
+              const hasError = imageErrors[category.id];
+
+              return (
+                <a
+                  key={category.id}
+                  href={categoryUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex-shrink-0 flex flex-col transition-transform duration-300 hover:scale-105"
+                  style={{ width: 'clamp(140px, 18vw, 200px)' }}
+                >
+                  <div className="bg-white/80 backdrop-blur-md rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300 border-t-4 border-accent hover:border-accent-bright flex flex-col h-full">
+                    <div className="relative w-full aspect-square overflow-hidden flex items-center justify-center">
+                      {category.logo_url && !hasError ? (
+                        <img
+                          src={category.logo_url}
+                          alt={`Categoría ${category.nombre} - Suministros industriales`}
+                          title={`Categoría ${category.nombre} - Suministros industriales`}
+                          className="w-full h-full object-contain p-3 sm:p-4 transition-transform duration-500 group-hover:scale-110"
+                          loading="lazy"
+                          onError={() => handleImageError(category.id)}
+                        />
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-primary/20 to-accent/20">
+                          <span className="text-2xl sm:text-3xl font-bold text-primary">
+                            {category.nombre.substring(0, 2).toUpperCase()}
+                          </span>
+                        </div>
+                      )}
+                    </div>
+                    <div className="p-4">
+                      <h3 className="font-orbitron text-sm md:text-base font-bold text-center text-primary-dark break-words leading-tight line-clamp-2 group-hover:text-accent transition-colors">
+                        {category.nombre}
+                      </h3>
+                    </div>
+                    <div className="bg-gray-50 px-6 py-3 mt-auto">
+                      <span className="font-orbitron text-accent hover:text-accent-bright font-medium flex items-center justify-center transition-all duration-200 text-xs md:text-base">
+                        {t.verProductos} <ChevronRight size={16} className="ml-1" />
+                      </span>
+                    </div>
                   </div>
-                  <div className="p-4">
-                    <h3 className="font-orbitron text-sm md:text-2xl font-bold text-center text-primary-dark break-words break-keep whitespace-normal drop-shadow-sm max-w-[12ch] mx-auto">
-                      {cat.name}
-                    </h3>
-                  </div>
-                  <div className="bg-gray-50 px-6 py-3 mt-auto">
-                    <a 
-                      href="/Folleto INXORA.pdf" 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      className="font-orbitron text-accent hover:text-accent-bright font-medium flex items-center justify-center transition-all duration-200 hover:-translate-y-0.5 text-xs md:text-base px-2 py-1 md:px-6 md:py-3"
-                    >
-                      {t.verProductos} <ChevronRight size={16} className="ml-1" />
-                    </a>
-                  </div>
-                </div>
-              </div>
-            ))}
+                </a>
+              );
+            })}
           </div>
         </div>
+
         <div className="text-center mt-8">
-          <a href="/Folleto INXORA.pdf" target="_blank" rel="noopener noreferrer" className="bg-primary text-white px-6 py-3 rounded-md font-medium hover:bg-[var(--color-primary-dark)] transition-all duration-200 inline-flex items-center shadow-lg hover:shadow-xl hover:-translate-y-1">
+          <a
+            href={buildCatalogUrl(locale)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-primary text-white px-6 py-3 rounded-md font-medium hover:bg-[var(--color-primary-dark)] transition-all duration-200 inline-flex items-center shadow-lg hover:shadow-xl hover:-translate-y-1"
+          >
             {t.verCatalogo} <ChevronRight size={20} className="ml-2" />
           </a>
         </div>
       </div>
     </section>
   );
-}
+};

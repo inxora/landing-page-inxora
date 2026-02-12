@@ -365,6 +365,17 @@
 }
 
 /* ===================================================
+   SCROLLBAR HIDE (carousel horizontal)
+   =================================================== */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* ===================================================
    PRINT STYLES
    =================================================== */
 @media print {

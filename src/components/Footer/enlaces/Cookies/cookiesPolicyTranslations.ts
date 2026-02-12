@@ -1,7 +1,7 @@
 export const cookiesPolicyTranslations = {
   es: {
     title: "Política de Cookies",
-    content: `<p>Esta Política de Cookies explica qué son las cookies y cómo las utiliza INXORA, con RUC 20603436475 (TECNOTOTAL S.A.C.), en su sitio web. Al navegar o utilizar nuestros servicios, el usuario acepta el uso que hacemos de las cookies, de acuerdo con lo establecido en esta política.</p>
+    content: `<p>Esta Política de Cookies explica qué son las cookies y cómo las utiliza INXORA, con INXORA S.A.C. (RUC: 20614841681), en su sitio web. Al navegar o utilizar nuestros servicios, el usuario acepta el uso que hacemos de las cookies, de acuerdo con lo establecido en esta política.</p>
 <h2>¿Qué son las cookies?</h2>
 <p>Las cookies son pequeños archivos de texto que se almacenan en su dispositivo cuando visita un sitio web. Permiten que el sitio recuerde información sobre su visita, lo que puede facilitar su próxima visita y hacer que el sitio le resulte más útil.</p>
 <h2>¿Qué tipos de cookies utiliza este sitio web?</h2>
@@ -20,7 +20,7 @@ export const cookiesPolicyTranslations = {
   },
   en: {
     title: "Cookies Policy",
-    content: `<p>This Cookies Policy explains what cookies are and how INXORA, with RUC 20603436475 (TECNOTOTAL S.A.C.), uses them on its website. By browsing or using our services, the user accepts our use of cookies as set out in this policy.</p>
+    content: `<p>This Cookies Policy explains what cookies are and how INXORA, with INXORA S.A.C. (RUC: 20614841681), uses them on its website. By browsing or using our services, the user accepts our use of cookies as set out in this policy.</p>
 <h2>What are cookies?</h2>
 <p>Cookies are small text files that are stored on your device when you visit a website. They allow the site to remember information about your visit, which can make your next visit easier and the site more useful to you.</p>
 <h2>What types of cookies does this website use?</h2>
@@ -39,7 +39,7 @@ export const cookiesPolicyTranslations = {
   },
   pt: {
     title: "Política de Cookies",
-    content: `<p>Esta Política de Cookies explica o que são cookies e como a INXORA, com RUC 20603436475 (TECNOTOTAL S.A.C.), os utiliza em seu site. Ao navegar ou utilizar nossos serviços, o usuário aceita o uso que fazemos dos cookies, conforme estabelecido nesta política.</p>
+    content: `<p>Esta Política de Cookies explica o que são cookies e como a INXORA, com INXORA S.A.C. (RUC: 20614841681), os utiliza em seu site. Ao navegar ou utilizar nossos serviços, o usuário aceita o uso que fazemos dos cookies, conforme estabelecido nesta política.</p>
 <h2>O que são cookies?</h2>
 <p>Cookies são pequenos arquivos de texto que são armazenados em seu dispositivo quando você visita um site. Eles permitem que o site lembre informações sobre sua visita, o que pode facilitar sua próxima visita e tornar o site mais útil para você.</p>
 <h2>Que tipos de cookies este site utiliza?</h2>

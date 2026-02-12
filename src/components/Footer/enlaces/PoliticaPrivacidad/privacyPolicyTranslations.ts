@@ -1,7 +1,7 @@
 export const privacyPolicyTranslations = {
   es: {
     title: "Política de Privacidad",
-    content: `<p>Esta Política de Privacidad establece los términos en que INXORA, con RUC 20603436475 (TECNOTOTAL S.A.C.), utiliza y protege la información que es proporcionada por sus usuarios al momento de utilizar su sitio web. Esta compañía está comprometida con la seguridad de los datos de sus usuarios. Cuando le pedimos llenar los campos de información personal con la cual usted pueda ser identificado, lo hacemos asegurando que sólo se empleará de acuerdo con los términos de este documento.</p>
+    content: `<p>Esta Política de Privacidad establece los términos en que INXORA, con INXORA S.A.C. (RUC: 20614841681), utiliza y protege la información que es proporcionada por sus usuarios al momento de utilizar su sitio web. Esta compañía está comprometida con la seguridad de los datos de sus usuarios. Cuando le pedimos llenar los campos de información personal con la cual usted pueda ser identificado, lo hacemos asegurando que sólo se empleará de acuerdo con los términos de este documento.</p>
 <h2>Información que es recogida</h2>
 <p>Nuestro sitio web podrá recoger información personal, por ejemplo: Nombre, información de contacto como su dirección de correo electrónico e información demográfica. Así mismo, cuando sea necesario podrá ser requerida información específica para procesar algún pedido o realizar una entrega o facturación.</p>
 <h2>Uso de la información recogida</h2>
@@ -19,7 +19,7 @@ export const privacyPolicyTranslations = {
   },
   en: {
     title: "Privacy Policy",
-    content: `<p>This Privacy Policy sets out how INXORA, with RUC 20603436475 (TECNOTOTAL S.A.C.), uses and protects any information that you give when you use this website. INXORA is committed to ensuring that your privacy is protected. Should we ask you to provide certain information by which you can be identified when using this website, then you can be assured that it will only be used in accordance with this privacy statement.</p>
+    content: `<p>This Privacy Policy sets out how INXORA, with INXORA S.A.C. (RUC: 20614841681), uses and protects any information that you give when you use this website. INXORA is committed to ensuring that your privacy is protected. Should we ask you to provide certain information by which you can be identified when using this website, then you can be assured that it will only be used in accordance with this privacy statement.</p>
 <h2>Information Collected</h2>
 <p>Our website may collect personal information such as your name, contact information including your email address, and demographic information. Specific information may also be required to process an order or to make a delivery or billing.</p>
 <h2>Use of Collected Information</h2>
@@ -37,7 +37,7 @@ export const privacyPolicyTranslations = {
   },
   pt: {
     title: "Política de Privacidade",
-    content: `<p>Esta Política de Privacidade estabelece os termos em que a INXORA, com RUC 20603436475 (TECNOTOTAL S.A.C.), utiliza e protege as informações fornecidas por seus usuários ao utilizar seu site. Esta empresa está comprometida com a segurança dos dados de seus usuários. Quando solicitamos que você preencha os campos de informações pessoais com as quais possa ser identificado, fazemos isso garantindo que serão usadas apenas de acordo com os termos deste documento.</p>
+    content: `<p>Esta Política de Privacidade estabelece os termos em que a INXORA, com INXORA S.A.C. (RUC: 20614841681), utiliza e protege as informações fornecidas por seus usuários ao utilizar seu site. Esta empresa está comprometida com a segurança dos dados de seus usuários. Quando solicitamos que você preencha os campos de informações pessoais com as quais possa ser identificado, fazemos isso garantindo que serão usadas apenas de acordo com os termos deste documento.</p>
 <h2>Informações que são coletadas</h2>
 <p>Nosso site pode coletar informações pessoais, por exemplo: Nome, informações de contato como seu endereço de e-mail e informações demográficas. Da mesma forma, quando necessário, podem ser solicitadas informações específicas para processar algum pedido ou realizar uma entrega ou faturamento.</p>
 <h2>Uso das informações coletadas</h2>

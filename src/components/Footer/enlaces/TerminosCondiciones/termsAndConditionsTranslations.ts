@@ -1,9 +1,9 @@
 export const termsAndConditionsTranslations = {
   es: {
     title: "Términos y Condiciones",
-    content: `<p>Estos Términos y Condiciones regulan el acceso y uso del sitio web de INXORA, con RUC 20603436475 (TECNOTOTAL S.A.C.), así como la contratación de productos y servicios ofrecidos a través del mismo. Al acceder y utilizar este sitio web, el usuario acepta estos términos en su totalidad.</p>
+    content: `<p>Estos Términos y Condiciones regulan el acceso y uso del sitio web de INXORA, con INXORA S.A.C. (RUC: 20614841681), así como la contratación de productos y servicios ofrecidos a través del mismo. Al acceder y utilizar este sitio web, el usuario acepta estos términos en su totalidad.</p>
 <h2>1. Información General</h2>
-<p>INXORA es una plataforma digital dedicada a la comercialización de suministros industriales en Perú. El titular del sitio web es TECNOTOTAL S.A.C., con RUC 20603436475.</p>
+<p>INXORA es una plataforma digital dedicada a la comercialización de suministros industriales en Perú. El titular del sitio web es INXORA S.A.C. (RUC: 20614841681).</p>
 <h2>2. Condiciones de Uso</h2>
 <p>El usuario se compromete a utilizar el sitio web, sus servicios y contenidos sin contravenir la legislación vigente, la buena fe, los usos generalmente aceptados y el orden público. Queda prohibido el uso del sitio web con fines ilícitos o lesivos para INXORA o cualquier tercero.</p>
 <h2>3. Propiedad Intelectual</h2>
@@ -17,9 +17,9 @@ export const termsAndConditionsTranslations = {
   },
   en: {
     title: "Terms and Conditions",
-    content: `<p>These Terms and Conditions govern the access and use of the INXORA website, with RUC 20603436475 (TECNOTOTAL S.A.C.), as well as the contracting of products and services offered through it. By accessing and using this website, the user fully accepts these terms.</p>
+    content: `<p>These Terms and Conditions govern the access and use of the INXORA website, with INXORA S.A.C. (RUC: 20614841681), as well as the contracting of products and services offered through it. By accessing and using this website, the user fully accepts these terms.</p>
 <h2>1. General Information</h2>
-<p>INXORA is a digital platform dedicated to the commercialization of industrial supplies in Peru. The owner of the website is TECNOTOTAL S.A.C., with RUC 20603436475.</p>
+<p>INXORA is a digital platform dedicated to the commercialization of industrial supplies in Peru. The owner of the website is INXORA S.A.C. (RUC: 20614841681).</p>
 <h2>2. Terms of Use</h2>
 <p>The user undertakes to use the website, its services and contents without contravening current legislation, good faith, generally accepted uses and public order. The use of the website for illicit purposes or purposes harmful to INXORA or any third party is prohibited.</p>
 <h2>3. Intellectual Property</h2>
@@ -33,9 +33,9 @@ export const termsAndConditionsTranslations = {
   },
   pt: {
     title: "Termos e Condições",
-    content: `<p>Estes Termos e Condições regulam o acesso e uso do site da INXORA, com RUC 20603436475 (TECNOTOTAL S.A.C.), bem como a contratação de produtos e serviços oferecidos através dele. Ao acessar e utilizar este site, o usuário aceita integralmente estes termos.</p>
+    content: `<p>Estes Termos e Condições regulam o acesso e uso do site da INXORA, com INXORA S.A.C. (RUC: 20614841681), bem como a contratação de produtos e serviços oferecidos através dele. Ao acessar e utilizar este site, o usuário aceita integralmente estes termos.</p>
 <h2>1. Informações Gerais</h2>
-<p>A INXORA é uma plataforma digital dedicada à comercialização de suprimentos industriais no Peru. O titular do site é a TECNOTOTAL S.A.C., com RUC 20603436475.</p>
+<p>A INXORA é uma plataforma digital dedicada à comercialização de suprimentos industriais no Peru. O titular do site é a INXORA S.A.C. (RUC: 20614841681).</p>
 <h2>2. Condições de Uso</h2>
 <p>O usuário compromete-se a utilizar o site, seus serviços e conteúdos sem contrariar a legislação vigente, a boa-fé, os usos geralmente aceitos e a ordem pública. É proibido o uso do site para fins ilícitos ou prejudiciais à INXORA ou a terceiros.</p>
 <h2>3. Propriedade Intelectual</h2>

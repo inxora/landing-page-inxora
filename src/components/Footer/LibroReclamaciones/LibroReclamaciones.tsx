@@ -43,7 +43,7 @@ export default function ClaimsBook() {
     tipoConsumo: "Producto",
     numPedido: "",
     fechaReclamo: "",
-    proveedor: "INXORA (TECNOTOTAL S.A.C.)",
+    proveedor: "INXORA S.A.C. (RUC: 20614841681)",
     monto: "",
     descripcion: "",
     fechaCompra: "",

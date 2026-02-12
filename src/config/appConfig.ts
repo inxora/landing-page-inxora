@@ -19,6 +19,19 @@ export const APP_CONFIG = {
     AUTH_CALLBACK: '/auth/callback'
   },
   
+  // API de categorías (app.inxora)
+  API_CATEGORIAS: 'https://app.inxora.com/api/categorias',
+
+  // WhatsApp (números con +51 Perú)
+  WHATSAPP: {
+    SARA: '51946885531',
+    COTIZAR: '51946885531',
+    getUrl: (phone: string, text?: string) => {
+      const base = `https://wa.me/${phone}`;
+      return text ? `${base}?text=${encodeURIComponent(text)}` : base;
+    },
+  },
+
   // Configuración de Supabase Auth
   getEmailRedirectUrl: (path: string) => `${APP_CONFIG.BASE_URL}${path}`,
   

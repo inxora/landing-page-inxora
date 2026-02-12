@@ -2,8 +2,8 @@ export const legalNoticeTranslations = {
   es: {
     title: "Aviso Legal",
     content: `<h2>Identificación y Titularidad</h2>
-<p>Titular: INXORA (TECNOTOTAL S.A.C.)<br />
-RUC: 20603436475<br />
+<p>Titular: INXORA S.A.C.<br />
+RUC: 20614841681<br />
 Domicilio: Av. Oscar R. Benavides 3046 Int. 102 B, Cercado de Lima, Lima – Perú.<br />
 Correo electrónico: contacto@inxora.com<br />
 Teléfono de contacto: +51 946 885 531<br />
@@ -32,13 +32,13 @@ Sitio Web: https://www.inxora.com/</p>
 <p>El titular no declara ni garantiza que los servicios o contenidos sean interrumpidos o que estén libres de errores, que los defectos sean corregidos, o que el servicio o el servidor que lo pone a disposición estén libres de virus u otros componentes nocivos.</p>
 <p>El titular declina cualquier responsabilidad en caso de que existan interrupciones o un mal funcionamiento de los servicios o contenidos ofrecidos en Internet, cualquiera que sea su causa.</p>
 <h2>Contacto</h2>
-<p>En caso de que tenga cualquier duda acerca de este Aviso Legal o quiera realizar cualquier comentario sobre el sitio web, puede enviar un mensaje de correo electrónico a la dirección: contacto@tecnototalperu.com</p>`
+<p>En caso de que tenga cualquier duda acerca de este Aviso Legal o quiera realizar cualquier comentario sobre el sitio web, puede enviar un mensaje de correo electrónico a la dirección: contacto@inxora.com</p>`
   },
   en: {
     title: "Legal Notice",
     content: `<h2>Identification and Ownership</h2>
-<p>Owner: INXORA (TECNOTOTAL S.A.C.)<br />
-RUC: 20603436475<br />
+<p>Owner: INXORA S.A.C.<br />
+RUC: 20614841681<br />
 Address: Av. Oscar R. Benavides 3046 Int. 102 B, Cercado de Lima, Lima – Peru.<br />
 Email: contacto@inxora.com<br />
 Contact phone: +51 946 885 531<br />
@@ -67,13 +67,13 @@ Website: https://www.inxora.com/</p>
 <p>The owner does not represent or warrant that the services or content will be uninterrupted or error-free, that defects will be corrected, or that the service or the server that makes it available are free of viruses or other harmful components.</p>
 <p>The owner disclaims any liability in the event of interruptions or malfunction of the services or content offered on the Internet, whatever their cause.</p>
 <h2>Contact</h2>
-<p>If you have any questions about this Legal Notice or want to make any comments about the website, you can send an email to: contacto@tecnototalperu.com</p>`
+<p>If you have any questions about this Legal Notice or want to make any comments about the website, you can send an email to: contacto@inxora.com</p>`
   },
   pt: {
     title: "Aviso Legal",
     content: `<h2>Identificação e Titularidade</h2>
-<p>Titular: INXORA (TECNOTOTAL S.A.C.)<br />
-RUC: 20603436475<br />
+<p>Titular: INXORA S.A.C.<br />
+RUC: 20614841681<br />
 Endereço: Av. Oscar R. Benavides 3046 Int. 102 B, Cercado de Lima, Lima – Peru.<br />
 E-mail: contato@inxora.com<br />
 Telefone de contato: +51 946 885 531<br />
@@ -102,6 +102,6 @@ Site: https://www.inxora.com/</p>
 <p>O titular não declara nem garante que os serviços ou conteúdos serão ininterruptos ou isentos de erros, que os defeitos serão corrigidos ou que o serviço ou o servidor que o disponibiliza estão livres de vírus ou outros componentes nocivos.</p>
 <p>O titular declina qualquer responsabilidade caso existam interrupções ou mau funcionamento dos serviços ou conteúdos oferecidos na Internet, qualquer que seja a sua causa.</p>
 <h2>Contato</h2>
-<p>Caso tenha alguma dúvida sobre este Aviso Legal ou queira fazer algum comentário sobre o site, pode enviar um e-mail para: contato@tecnototalperu.com</p>`
+<p>Caso tenha alguma dúvida sobre este Aviso Legal ou queira fazer algum comentário sobre o site, pode enviar um e-mail para: contacto@inxora.com</p>`
   }
 };

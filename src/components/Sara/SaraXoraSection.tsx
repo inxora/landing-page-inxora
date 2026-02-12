@@ -2,6 +2,13 @@ import React from "react";
 import { useLanguage } from '../../context/LanguageContext';
 import { saraSectionTranslation } from './saraSectionTranslation';
 import { FaRegComments, FaWhatsapp, FaTruck, FaHeadset, FaFileInvoice } from 'react-icons/fa';
+import { APP_CONFIG } from '../../config/appConfig';
+
+const WHATSAPP_MSG = {
+  es: 'Hola, quiero hablar con Sara Xora, el asistente virtual de INXORA',
+  en: 'Hi, I want to talk to Sara Xora, INXORA virtual assistant',
+  pt: 'Olá, quero falar com a Sara Xora, assistente virtual da INXORA',
+};
 
 export const SaraXoraSection = () => {
   const { lang } = useLanguage();
@@ -56,10 +63,12 @@ export const SaraXoraSection = () => {
     containerHeight = "min-h-[380px]";
   }
 
+  const whatsappUrl = APP_CONFIG.WHATSAPP.getUrl(APP_CONFIG.WHATSAPP.SARA, WHATSAPP_MSG[lang]);
+
   // Definición de burbujas con íconos y textos
   const bubbles = [
     { icon: <FaRegComments className={`text-primary ${iconClass}`} />, text: t.cotiza },
-    { icon: <FaWhatsapp className={`text-[#25D366] ${iconClass}`} />, text: t.whatsapp },
+    { icon: <FaWhatsapp className={`text-[#25D366] ${iconClass}`} />, text: t.whatsapp, href: whatsappUrl },
     { icon: <FaTruck className={`text-primary ${iconClass}`} />, text: t.despachos },
     { icon: <FaHeadset className={`text-[#23B6E7] ${iconClass}`} />, text: t.atencion },
     { icon: <FaFileInvoice className={`text-primary ${iconClass}`} />, text: t.facturas },
@@ -146,7 +155,7 @@ export const SaraXoraSection = () => {
       
       {/* Botón de contacto moderno */}
       <a
-        href="https://wa.me/946885531?text=Hola%2C%20estoy%20interesado%20en%20cotizar%20productos%20industriales"
+        href={whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
         className="mt-8 bg-gradient-to-r from-[#139ED4] to-[#23B6E7] text-white px-10 py-4 rounded-full font-semibold shadow-xl hover:scale-105 hover:shadow-2xl transition-all duration-300 text-lg flex items-center gap-3 z-30 relative"
@@ -246,14 +255,26 @@ export const SaraXoraSection = () => {
   );
 };
 
-// Componente burbuja reutilizable mejorado
-const Bubble = ({ icon, text, bubbleClass }: { icon: React.ReactNode; text: string; bubbleClass: string }) => (
-  <div className={`flex flex-col items-center justify-center bg-white/95 backdrop-blur-sm shadow-xl rounded-2xl ${bubbleClass} text-center text-gray-800 font-semibold transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:bg-white pointer-events-auto select-none border border-gray-100 cursor-pointer group`}>
-    <div className="group-hover:scale-110 transition-transform duration-300">
-      {icon}
+// Componente burbuja reutilizable mejorado (con href opcional para enlaces)
+const Bubble = ({ icon, text, bubbleClass, href }: { icon: React.ReactNode; text: string; bubbleClass: string; href?: string }) => {
+  const baseClass = `flex flex-col items-center justify-center bg-white/95 backdrop-blur-sm shadow-xl rounded-2xl ${bubbleClass} text-center text-gray-800 font-semibold transition-all duration-300 hover:scale-110 hover:shadow-2xl hover:bg-white pointer-events-auto select-none border border-gray-100 cursor-pointer group`;
+  return href ? (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={baseClass}
+      aria-label={text}
+    >
+      <div className="group-hover:scale-110 transition-transform duration-300">{icon}</div>
+      <span className="leading-tight font-medium">{text}</span>
+    </a>
+  ) : (
+    <div className={baseClass}>
+      <div className="group-hover:scale-110 transition-transform duration-300">{icon}</div>
+      <span className="leading-tight font-medium">{text}</span>
     </div>
-    <span className="leading-tight font-medium">{text}</span>
-  </div>
-);
+  );
+};
 
 export default SaraXoraSection;
