@@ -19,9 +19,8 @@ export const APP_CONFIG = {
     AUTH_CALLBACK: '/auth/callback'
   },
   
-  // API de categorías (app.inxora)
-  // Trailing slash evita 307 redirect que puede causar headers CORS duplicados
-  API_CATEGORIAS: 'https://app.inxora.com/api/categorias/',
+  // API: ruta relativa /api/* → proxy/rewrite a app.inxora.com (evita CORS, mismo patrón que ecommerce-inxora)
+  API_CATEGORIAS: '/api/categorias/',
 
   // WhatsApp (números con +51 Perú)
   WHATSAPP: {

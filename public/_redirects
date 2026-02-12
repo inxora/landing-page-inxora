@@ -1,0 +1,3 @@
+# Netlify: proxy /api/* a app.inxora.com (evita CORS)
+# Si netlify.toml existe, tiene prioridad. Este archivo es respaldo.
+/api/*  https://app.inxora.com/api/:splat  200

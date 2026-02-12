@@ -9,4 +9,13 @@ export default defineConfig({
       '@': path.resolve(__dirname, 'src'),
     },
   },
+  // Proxy /api/* a app.inxora.com (evita CORS, mismo patrón que ecommerce-inxora)
+  server: {
+    proxy: {
+      '/api': {
+        target: 'https://app.inxora.com',
+        changeOrigin: true,
+      },
+    },
+  },
 });
