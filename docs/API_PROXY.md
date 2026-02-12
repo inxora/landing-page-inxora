@@ -8,7 +8,13 @@ La landing consume la API de app.inxora.com mediante **proxy** (mismo patrón qu
 El `vite.config.ts` ya tiene el proxy configurado. `npm run dev` hace que `/api/*` se reenvíe a app.inxora.com.
 
 ### Vercel
-`vercel.json` define rewrites. El deploy usa automáticamente estas reglas.
+`vercel.json` define rewrites con `/api/(.*)` → `https://app.inxora.com/api/$1`.
+
+**Si recibes 404 en producción:**
+1. Verifica que `vercel.json` esté en la raíz del proyecto y desplegado
+2. En Vercel Dashboard → Project Settings → General: confirma que "Root Directory" sea el correcto (vacío si el repo es solo la landing)
+3. Si usas monorepo, Root Directory debe apuntar a la carpeta de la landing
+4. Redeploy después de cambiar `vercel.json`
 
 ### Netlify
 `netlify.toml` y `public/_redirects` configuran el proxy. Cualquiera de los dos funciona.
