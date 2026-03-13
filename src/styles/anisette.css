@@ -1,0 +1,21 @@
+/* Anisette Petit - Tipografía para título del hero
+   Si usas archivos locales, coloca los .woff2 en public/fonts/
+   Mientras tanto se usa Outfit (Google Fonts) para que el título se vea distinto. */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap');
+
+@font-face {
+  font-family: 'Anisette Petit';
+  src:
+    local('Anisette Petit'),
+    local('AnisettePetit'),
+    url('/fonts/AnisettePetite.woff2') format('woff2'),
+    url('/fonts/AnisettePetite.woff') format('woff');
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-anisette-petit {
+  font-family: 'Anisette Petit', 'Outfit', 'Orbitron', Arial, Helvetica, sans-serif !important;
+}

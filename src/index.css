@@ -122,3 +122,11 @@
   background-color: var(--color-primary-dark);
   color: white;
 }
+
+/* Ocultar burbuja del conejo (chat widget) - ya no se muestra */
+#chatbot-burbuja,
+#chat-container {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
