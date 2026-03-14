@@ -21,6 +21,8 @@ export const footerTranslations = {
     derechos: "Todos los derechos reservados.",
     marketplace: "Marketplace de suministros industriales en Perú",
     libro: "Libro de Reclamaciones INXORA",
+    credits: "Elaborado por",
+    creditsAnd: " y ",
   },
   en: {
     productos: "Products",
@@ -44,6 +46,8 @@ export const footerTranslations = {
     derechos: "All rights reserved.",
     marketplace: "Industrial supplies marketplace in Peru",
     libro: "INXORA Complaints Book",
+    credits: "Developed by",
+    creditsAnd: " and ",
   },
   pt: {
     productos: "Produtos",
@@ -67,5 +71,7 @@ export const footerTranslations = {
     derechos: "Todos os direitos reservados.",
     marketplace: "Marketplace de suprimentos industriais no Peru",
     libro: "Livro de Reclamações INXORA",
+    credits: "Desenvolvido por",
+    creditsAnd: " e ",
   }
 }; 
