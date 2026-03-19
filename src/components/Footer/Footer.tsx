@@ -150,12 +150,7 @@ export const Footer = () => {
           <p>
           © {new Date().getFullYear()} INXORA. {t.derechos} | {t.marketplace}
           </p>
-          <p className="mt-3 text-primary-light/90">
-            {t.credits}{' '}
-            <a href="https://www.linkedin.com/in/ruth-pe%C3%B1a-valdez-65604a27b/" target="_blank" rel="noopener noreferrer" className="hover:text-accent-bright transition-colors underline">Ruth Peña</a>
-            {t.creditsAnd}
-            <a href="https://www.linkedin.com/in/jefferson-gutierrez-urbizagastegui04/" target="_blank" rel="noopener noreferrer" className="hover:text-accent-bright transition-colors underline">Jefferson Gutierrez</a>
-          </p>
+          <p className="mt-3 text-primary-light/90">{t.credits}</p>
         </div>
       </div>
     </footer>;
