@@ -25,8 +25,8 @@ export const APP_CONFIG = {
 
   // WhatsApp (números con +51 Perú)
   WHATSAPP: {
-    SARA: '51946885531',
-    COTIZAR: '51946885531',
+    SARA: '51913087207',
+    COTIZAR: '51913087207',
     getUrl: (phone: string, text?: string) => {
       const base = `https://wa.me/${phone}`;
       return text ? `${base}?text=${encodeURIComponent(text)}` : base;

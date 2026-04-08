@@ -9,7 +9,7 @@ export const ctaSectionTranslation = {
     precios: "Precios competitivos directos de fábrica",
     seguimiento: "Seguimiento personalizado de tu pedido",
     hablarDirecto: "¿Prefieres hablar directamente?",
-    telefono: "+51 946 885 531",
+    telefono: "+51 913 087 207",
     // Nuevas traducciones para beneficios
     beneficios: {
       cotizacionesRapidas: {
@@ -40,7 +40,7 @@ export const ctaSectionTranslation = {
     precios: "Competitive prices direct from the factory",
     seguimiento: "Personalized order tracking",
     hablarDirecto: "Prefer to talk directly?",
-    telefono: "+51 946 885 531",
+    telefono: "+51 913 087 207",
     // Nuevas traducciones para beneficios
     beneficios: {
       cotizacionesRapidas: {
@@ -71,7 +71,7 @@ export const ctaSectionTranslation = {
     precios: "Preços competitivos direto da fábrica",
     seguimiento: "Acompanhamento personalizado do seu pedido",
     hablarDirecto: "Prefere falar diretamente?",
-    telefono: "+51 946 885 531",
+    telefono: "+51 913 087 207",
     // Nuevas traducciones para beneficios
     beneficios: {
       cotizacionesRapidas: {

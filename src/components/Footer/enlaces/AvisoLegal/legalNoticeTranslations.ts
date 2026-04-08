@@ -6,7 +6,7 @@ export const legalNoticeTranslations = {
 RUC: 20614841681<br />
 Domicilio: Av. Oscar R. Benavides 3046 Int. 102 B, Cercado de Lima, Lima – Perú.<br />
 Correo electrónico: contacto@inxora.com<br />
-Teléfono de contacto: +51 946 885 531<br />
+Teléfono de contacto: +51 913 087 207<br />
 Sitio Web: https://www.inxora.com/</p>
 <h2>Finalidad</h2>
 <p>La finalidad del sitio web es la comercialización de suministros industriales y afines.</p>
@@ -41,7 +41,7 @@ Sitio Web: https://www.inxora.com/</p>
 RUC: 20614841681<br />
 Address: Av. Oscar R. Benavides 3046 Int. 102 B, Cercado de Lima, Lima – Peru.<br />
 Email: contacto@inxora.com<br />
-Contact phone: +51 946 885 531<br />
+Contact phone: +51 913 087 207<br />
 Website: https://www.inxora.com/</p>
 <h2>Purpose</h2>
 <p>The purpose of the website is the marketing of industrial supplies and related products.</p>
@@ -76,7 +76,7 @@ Website: https://www.inxora.com/</p>
 RUC: 20614841681<br />
 Endereço: Av. Oscar R. Benavides 3046 Int. 102 B, Cercado de Lima, Lima – Peru.<br />
 E-mail: contato@inxora.com<br />
-Telefone de contato: +51 946 885 531<br />
+Telefone de contato: +51 913 087 207<br />
 Site: https://www.inxora.com/</p>
 <h2>Finalidade</h2>
 <p>A finalidade do site é a comercialização de suprimentos industriais e afins.</p>

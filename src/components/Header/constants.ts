@@ -5,7 +5,7 @@ export const LANGUAGE_OPTIONS = [
   { value: 'pt', label: 'Português', code: 'PT' },
 ] as const;
 
-export const WHATSAPP_URL = "https://wa.me/51946885531?text=Hola%2C%20estoy%20interesado%20en%20cotizar%20productos%20industriales";
+export const WHATSAPP_URL = "https://wa.me/51913087207?text=Hola%2C%20estoy%20interesado%20en%20cotizar%20productos%20industriales";
 
 export const GEOIP_COUNTRIES = {
   PORTUGUESE: ["BR"],
