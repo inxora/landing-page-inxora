@@ -3,6 +3,6 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "rewrites": [
-    { "source": "/api/(.*)", "destination": "https://app.inxora.com/api/$1" }
+    { "source": "/api/(.*)", "destination": "https://api.inxora.com/api/$1" }
   ]
 }

@@ -1,6 +1,6 @@
 /**
  * Servicio de categorías - Consume /api/categorias (mismo patrón que ecommerce-inxora)
- * Ruta relativa /api/categorias → proxy a app.inxora.com
+ * Ruta relativa /api/categorias → proxy a api.inxora.com
  */
 
 import { apiClient } from './client'
@@ -15,17 +15,20 @@ export interface CategoriaApi {
 
 interface CategoriasResponse {
   success: boolean
-  data: { categoria: CategoriaApi[]; total: number }
+  /** API actual (api.inxora.com) usa `categorias`; `categoria` por compatibilidad */
+  data: { categorias?: CategoriaApi[]; categoria?: CategoriaApi[]; total?: number }
   message?: string
 }
 
 export async function getCategorias(): Promise<CategoriaApi[]> {
   const response = await apiClient<CategoriasResponse>('/api/categorias/')
 
-  if (!response?.success || !response?.data?.categoria) {
+  const lista =
+    response?.data?.categorias ?? response?.data?.categoria ?? null
+
+  if (!response?.success || !lista || !Array.isArray(lista)) {
     throw new Error(response?.message ?? 'Error al cargar categorías')
   }
 
-  const categorias = response.data.categoria as CategoriaApi[]
-  return categorias.filter((c) => c.activo)
+  return lista.filter((c) => c.activo)
 }
